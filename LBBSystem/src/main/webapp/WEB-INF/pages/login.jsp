@@ -26,7 +26,7 @@
             </div>
 
             <div class="text-center links-container">
-              <p class="sign-up-link">Don’t have an account? <a href="#" class="sign-up">Sign up</a></p>
+              <p class="sign-up-link">Don’t have an account? <a href="${pageContext.request.contextPath}/Register" class="sign-up">Sign up</a></p>
             </div>
           </form>
         </div>
