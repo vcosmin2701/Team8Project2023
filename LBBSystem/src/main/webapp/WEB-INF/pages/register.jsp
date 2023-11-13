@@ -23,6 +23,11 @@
                             <input type="password" class="form-control" placeholder="Password" required>
                         </div>
 
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                            <input type="password" class="form-control" placeholder="Confirm Password" required>
+                        </div>
+
                         <div class="form-group mb-4 d-flex align-items-center justify-content-center">
                             <button type="submit" class="btn btn-primary">Register</button>
                         </div>
