@@ -19,7 +19,7 @@
                     </div>
                 </div>
                 <div class="lc-block">
-                    <a class="btn btn-primary btn-lg" href="#" role="button">Getting started</a>
+                    <a class="btn btn-primary btn-lg" href="${pageContext.request.contextPath}/Login" role="button">Getting started</a>
                 </div>
             </div>
         </div>
