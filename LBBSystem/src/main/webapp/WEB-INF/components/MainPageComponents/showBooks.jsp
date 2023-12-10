@@ -5,8 +5,14 @@
             <label for="sortDropdown" class="form-label text-right d-block">Sort:</label>
             <select id="sortDropdown" class="form-control" onchange="">
                 <option value="all">All Categories</option>
-                <option value="category1">Category 1</option>
-                <option value="category2">Category 2</option>
+                <option value="author-a-z">Author A-z</option>
+                <option value="author-z-a">Author Z-a</option>
+                <option value="date-ascending">Date Ascending</option>
+                <option value="date-descending">Date Descending</option>
+                <option value="title-a-z">Title A-z</option>
+                <option value="title-z-a">Title Z-a</option>
+                <option value="publisher-a-z">Publisher A-z</option>
+                <option value="publisher-z-a">Publisher Z-a</option>
             </select>
         </div>
     </div>

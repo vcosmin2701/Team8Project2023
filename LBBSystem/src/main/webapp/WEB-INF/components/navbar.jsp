@@ -2,7 +2,10 @@
     <div class="container">
         <span>
             <a class="navbar-brand d-flex align-items-center" href="#">
-                <img width="30" height="30" src="https://img.icons8.com/emoji/48/books-emoji.png" alt="books-emoji"
+                <img width="30"
+                     height="30"
+                     src="../../images/books-emoji.png"
+                     alt="books-emoji"
                      class="me-2"/>
                 <span>Library System</span>
             </a>
