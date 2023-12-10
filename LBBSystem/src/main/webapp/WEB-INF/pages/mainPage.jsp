@@ -4,5 +4,4 @@
     <jsp:include page="/WEB-INF/components/MainPageComponents/searchBook.jsp"/>
     <jsp:include page="/WEB-INF/components/MainPageComponents/categoriesBook.jsp"/>
     <jsp:include page="/WEB-INF/components/MainPageComponents/showBooks.jsp"/>
-
 </t:libraryTemplate>

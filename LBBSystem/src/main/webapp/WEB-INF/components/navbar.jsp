@@ -11,15 +11,15 @@
                 class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
         <div id="navcol-2" class="collapse navbar-collapse">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link active" href="#"><i class="fas fa-home"></i> First Item
+                <li class="nav-item"><a class="nav-link active fs-5" href="#"><i class="fas fa-home"></i> First Item
                 </a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-globe"></i> Second Item
+                <li class="nav-item"><a class="nav-link fs-5" href="#"><i class="fas fa-globe"></i> Second Item
                 </a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-bell"></i> Third Item
+                <li class="nav-item"><a class="nav-link fs-5" href="#"><i class="fas fa-bell"></i> Third Item
                 </a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-bell"></i> Notifications
+                <li class="nav-item"><a class="nav-link fs-5" href="#"><i class="fas fa-bell"></i> Notifications
                     <span class="badge bg-danger">3</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-envelope"></i> Messages
+                <li class="nav-item "><a class="nav-link fs-5" href="#"><i class="fas fa-envelope"></i> Messages
                     <span class="badge bg-info">5</span></a></li>
             </ul>
             <div class="dropdown">
