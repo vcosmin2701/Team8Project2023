@@ -1,19 +1,15 @@
-    <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-    <%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
-    <t:libraryTemplate pageTitle="AccountInfo">
-
-        <head>
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-
-        </head>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
+<t:libraryTemplate pageTitle="AccountInfo">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
 
-        <section class="sectionClass">
-            <jsp:include page="/WEB-INF/components/MainPageComponents/accountPageTitle.jsp"/>
-            <jsp:include page="/WEB-INF/components/MainPageComponents/personInfo.jsp"/>
-            <jsp:include page="/WEB-INF/components/MainPageComponents/borrowedBooks.jsp"/>
+    <section class="sectionClass">
+        <jsp:include page="/WEB-INF/components/MainPageComponents/accountPageTitle.jsp"/>
+        <jsp:include page="/WEB-INF/components/MainPageComponents/personInfo.jsp"/>
+        <jsp:include page="/WEB-INF/components/MainPageComponents/borrowedBooks.jsp"/>
 
-        </section>
+    </section>
 
 
-    </t:libraryTemplate>
+</t:libraryTemplate>

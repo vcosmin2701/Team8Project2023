@@ -12,7 +12,7 @@ import java.io.IOException;
 public class AccountInfo extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/pages/accountinfo.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/pages/accountInfo.jsp").forward(request, response);
     }
 
     @Override
