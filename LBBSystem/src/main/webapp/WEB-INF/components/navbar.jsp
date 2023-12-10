@@ -4,7 +4,7 @@
             <a class="navbar-brand d-flex align-items-center" href="#">
                 <img width="30"
                      height="30"
-                     src="../../images/books-emoji.png"
+                     src="${pageContext.request.contextPath}/images/books-emoji.png"
                      alt="books-emoji"
                      class="me-2"/>
                 <span>Library System</span>
