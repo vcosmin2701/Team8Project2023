@@ -1,4 +1,4 @@
-<ul class="list-group InfoList">
+<ul class="list-group infoList">
     <li class="list-group-item d-flex align-items-center p-3 px-2">
         <i class="bi bi-person bs-icon-md bs-icon-rounded bs-icon-primary d-inline-block"></i>
         <h6 class="mb-0">First Name: </h6>

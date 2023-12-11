@@ -22,7 +22,7 @@
 }
 
 
-.InfoList li {
+.infoList li {
     background-color: #0d6efd;
     color: #fff;
     border: 1px solid #0d6efd;
@@ -30,11 +30,11 @@
     margin-bottom: 10px;
 }
 
-.InfoList li i {
+.infoList li i {
     margin-right: 10px;
 }
 
-.InfoList li h6 {
+.infoList li h6 {
     margin-right: 5px;
 }
 
