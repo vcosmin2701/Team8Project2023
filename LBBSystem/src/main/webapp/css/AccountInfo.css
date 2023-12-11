@@ -1,12 +1,25 @@
-.d-flex flex-column justify-content-center align-items-start h-100{
-    margin-right: 127px;background-color: #0d6efd;border-radius: 25px
+.container-id {
+    display: flex;
+    justify-content: space-between;
 }
-
+.component-id {
+    flex: 1;
+    padding: 20px;
+}
 .row1{
-    background-color: #0d6efd;
-
+    background-color: beige;
+    border-radius: 20px;
 }
-
-
+.Inside{
+    border-radius: 10px;
+    background-color:lightskyblue;
+    border-width: 5px;
+    border-color:black;
+}
+.InfoDiv{
+    justify-content: space-between;
+    border-width: 5px;
+    border-color: black;
+}
 
 

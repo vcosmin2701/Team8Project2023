@@ -1,7 +1,6 @@
 <div class="row1">
-    <div class="col-md-8 col-xl-6 text-center mx-auto">
-
-        <div class="col-md-12 col-lg-6 mb-3">
+    <div class="InfoDiv">
+        <div class="Inside">
             <div class="d-flex align-items-center p-3">
                 <div class="bs-icon-md bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon">
                     <i class="bi bi-person"></i>
@@ -12,7 +11,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-12 col-lg-6 mb-3">
+        <div class="Inside">
             <div class="d-flex align-items-center p-3">
                 <div class="bs-icon-md bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon">
                     <i class="bi bi-person"></i>
@@ -25,7 +24,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-12 col-lg-6 mb-3">
+        <div class="Inside">
             <div class="d-flex align-items-center p-3">
                 <div class="bs-icon-md bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon">
                     <i class="bi bi-envelope"></i>
@@ -38,7 +37,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-12 col-lg-6 mb-3">
+        <div class="Inside">
             <div class="d-flex align-items-center p-3">
                 <div class="bs-icon-md bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon">
                     <i class="bi bi-person-badge-fill"></i>

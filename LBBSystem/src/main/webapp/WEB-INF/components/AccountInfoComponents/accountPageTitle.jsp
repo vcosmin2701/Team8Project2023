@@ -5,5 +5,4 @@
             <p class="w-lg-50"></p>
         </div>
     </div>
-
 </div>
