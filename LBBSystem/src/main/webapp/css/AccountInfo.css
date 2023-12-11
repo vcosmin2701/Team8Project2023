@@ -1,13 +1,5 @@
-.container-id {
-    display: flex;
-    justify-content: space-between;
-}
-.component-id {
-    flex: 1;
-    padding: 20px;
-}
 .row1 {
-    background-color:#f7f7f7;
+    background-color: #f7f7f7;
     border-radius: 20px;
     max-width: 900px;
     margin-right: auto;
@@ -17,29 +9,19 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-left: 200px;
+    min-width: 400px;
 }
-.Inside {
-    border-radius: 10px;
-    background-color: #0d6efd;
-    border-width: 5px;
-    border-color: black;
+
+.container {
+    place-items: center;
+    padding-left: 200px;
 }
-.InfoDiv {
-    justify-content: space-between;
-    border-width: 5px;
-    border-color: black;
-    max-width: 900px;
+
+.list-group {
+    min-width: 400px;
 }
-.div-right {
-    min-width: 800px;
-    max-width: 800px;
-    margin-right: 100px;
-}
-.InfoList {
-    list-style: none;
-    padding: 0;
-}
+
+
 .InfoList li {
     background-color: #0d6efd;
     color: #fff;
@@ -47,17 +29,31 @@
     border-radius: 5px;
     margin-bottom: 10px;
 }
+
 .InfoList li i {
     margin-right: 10px;
 }
-.InfoList li h6,
-.InfoList li p {
-    margin: 5px;
-}
+
 .InfoList li h6 {
     margin-right: 5px;
 }
-.container{
+
+.container.bg-light.p-4 {
     max-height: 300px;
     overflow-y: auto;
+    min-width: 400px;
+    margin-right: 40px;
+    overflow-x: auto;
+}
+
+.row2 {
+    max-width: fit-content;
+    padding-left: 325px;
+
+}
+
+@media (max-width: 728px) {
+    .row2 {
+        padding: 0;
+    }
 }

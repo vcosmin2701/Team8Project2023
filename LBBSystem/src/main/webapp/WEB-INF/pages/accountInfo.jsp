@@ -1,8 +1,9 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <t:libraryTemplate pageTitle="AccountInfo">
+<div class="row2">
     <jsp:include page="/WEB-INF/components/AccountInfoComponents/accountPageTitle.jsp"/>
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <div class="component-id">
@@ -16,4 +17,6 @@
             </div>
         </div>
     </div>
+    </div>
+
 </t:libraryTemplate>
