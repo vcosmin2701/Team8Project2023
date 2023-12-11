@@ -1,52 +1,24 @@
-<div class="row1">
-    <div class="InfoDiv">
-        <div class="Inside">
-            <div class="d-flex align-items-center p-3">
-                <div class="bs-icon-md bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon">
-                    <i class="bi bi-person"></i>
-                </div>
-                <div class="px-2">
-                    <h6 class="mb-0">First Name</h6>
-                    <p class="mb-0"><span>User first name</span></p>
-                </div>
-            </div>
-        </div>
-        <div class="Inside">
-            <div class="d-flex align-items-center p-3">
-                <div class="bs-icon-md bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon">
-                    <i class="bi bi-person"></i>
-                </div>
-                <div class="px-2">
-                    <h6 class="mb-0">Last Name</h6>
-                    <p class="mb-0">
-                        <span class="spanclasa">User last name</span>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="Inside">
-            <div class="d-flex align-items-center p-3">
-                <div class="bs-icon-md bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon">
-                    <i class="bi bi-envelope"></i>
-                </div>
-                <div class="px-2">
-                    <h6 class="mb-0">Email</h6>
-                    <p class="mb-0">
-                        <span class="spanclasa">accountemail@example.com</span>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="Inside">
-            <div class="d-flex align-items-center p-3">
-                <div class="bs-icon-md bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon">
-                    <i class="bi bi-person-badge-fill"></i>
-                </div>
-                <div class="px-2">
-                    <h6 class="mb-0">Legitimation Number</h6>
-                    <p class="mb-0"><span>12345</span></p>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="row1 pb-light p-4">
+    <ul class="list-group InfoList">
+        <li class="list-group-item d-flex align-items-center p-3 px-2">
+            <i class="bi bi-person bs-icon-md bs-icon-rounded bs-icon-primary d-inline-block"></i>
+            <h6 class="mb-0">First Name: </h6>
+            <p class="mb-0">User first name</p>
+        </li>
+        <li class="list-group-item d-flex align-items-center p-3 px-2">
+            <i class="bi bi-person bs-icon-md bs-icon-rounded bs-icon-primary d-inline-block"></i>
+            <h6 class="mb-0">Last Name: </h6>
+            <p class="mb-0">User last name</p>
+        </li>
+        <li class="list-group-item d-flex align-items-center p-3 px-2">
+            <i class="bi bi-envelope bs-icon-md bs-icon-rounded bs-icon-primary d-inline-block"></i>
+            <h6 class="mb-0">Email: </h6>
+            <p class="mb-0">accountemail@example.com</p>
+        </li>
+        <li class="list-group-item d-flex align-items-center p-3 px-2">
+            <i class="bi bi-person-badge-fill bs-icon-md bs-icon-rounded bs-icon-primary d-inline-block"></i>
+            <h6 class="mb-0">Legitimation Number: </h6>
+            <p class="mb-0">12345</p>
+        </li>
+    </ul>
 </div>
