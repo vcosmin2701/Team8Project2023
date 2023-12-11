@@ -1,4 +1,4 @@
-<div class="row1 pb-light p-4">
+<div class="row1 bg-light p-4">
     <ul class="list-group InfoList">
         <li class="list-group-item d-flex align-items-center p-3 px-2">
             <i class="bi bi-person bs-icon-md bs-icon-rounded bs-icon-primary d-inline-block"></i>

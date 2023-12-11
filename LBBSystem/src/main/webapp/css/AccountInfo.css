@@ -57,3 +57,7 @@
 .InfoList li h6 {
     margin-right: 5px;
 }
+.container{
+    max-height: 300px;
+    overflow-y: auto;
+}
