@@ -3,6 +3,7 @@ table {
     border-collapse: collapse;
     margin-bottom: 20px;
 }
+
 th, td {
     padding: 12px;
     border: 1px solid #ddd;
@@ -16,6 +17,7 @@ th {
 .btn-container {
     text-align: center;
 }
+
 .back-btn {
     display: inline-block;
     padding: 10px 20px;
@@ -28,6 +30,7 @@ th {
     border-radius: 5px;
     cursor: pointer;
 }
+
 .back-btn:hover {
     background-color: #0056b3;
     border-color: #0056b3;
