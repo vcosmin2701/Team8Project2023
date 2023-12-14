@@ -5,10 +5,8 @@
                 <div class="card mb-5">
                     <div class="card-body p-sm-5">
                         <h3 class="text-center mb-4">We are here to help!</h3>
-                        <h2 class="text-center mb-4" style="font-size: smaller; font-style: italic;">Have any questions?
-                            Please contact our support team.</h2>
+                        <p class="text-center mb-4 fst-italic">Have any questions? Please contact our support team.</p>
                         <form method="post">
-                            <div class="mb-3"></div>
                             <div class="mb-3"></div>
                             <div class="mb-3"><textarea id="message-2" class="form-control" name="message" rows="6"
                                                         placeholder="Message"></textarea></div>
