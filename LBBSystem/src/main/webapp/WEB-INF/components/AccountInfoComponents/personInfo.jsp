@@ -1,23 +1,21 @@
-<ul class="list-group infoList">
-    <li class="list-group-item d-flex align-items-center p-3 px-2">
-        <i class="bi bi-person bs-icon-md bs-icon-rounded bs-icon-primary d-inline-block"></i>
-        <h6 class="mb-0">First Name: </h6>
-        <p class="mb-0">User first name</p>
-    </li>
-    <li class="list-group-item d-flex align-items-center p-3 px-2">
-        <i class="bi bi-person bs-icon-md bs-icon-rounded bs-icon-primary d-inline-block"></i>
-        <h6 class="mb-0">Last Name: </h6>
-        <p class="mb-0">User last name</p>
-    </li>
-    <li class="list-group-item d-flex align-items-center p-3 px-2">
-        <i class="bi bi-envelope bs-icon-md bs-icon-rounded bs-icon-primary d-inline-block"></i>
-        <h6 class="mb-0">Email: </h6>
-        <p class="mb-0">accountemail@example.com</p>
-    </li>
-    <li class="list-group-item d-flex align-items-center p-3 px-2">
-        <i class="bi bi-person-badge-fill bs-icon-md bs-icon-rounded bs-icon-primary d-inline-block"></i>
-        <h6 class="mb-0">Legitimation Number: </h6>
-        <p class="mb-0">12345</p>
-    </li>
-</ul>
-
+<div class="col-md-6">
+    <h5 class="mb-3">Your account info</h5>
+    <div class="info-box p-3 mb-4">
+        <div class="d-flex align-items-center mb-2">
+            <i class="fas fa-user icon-box"></i>
+            <span>First Name: Student Name</span>
+        </div>
+        <div class="d-flex align-items-center mb-2">
+            <i class="fas fa-user icon-box"></i>
+            <span>Last Name: Student Last Name</span>
+        </div>
+        <div class="d-flex align-items-center mb-2">
+            <i class="fas fa-envelope icon-box"></i>
+            <span>Email: studentemail@example.com</span>
+        </div>
+        <div class="d-flex align-items-center">
+            <i class="fas fa-id-badge icon-box"></i>
+            <span>Legitimation ID: Student leg. nr</span>
+        </div>
+    </div>
+</div>
