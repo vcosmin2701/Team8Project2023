@@ -1,59 +1,33 @@
-.row1 {
-    background-color: #f7f7f7;
-    border-radius: 20px;
-    max-width: 900px;
-    margin-right: auto;
-    margin-top: 45px;
+.account-info-container {
+    background-color: #fff;
     padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.container {
-    place-items: center;
-    padding-left: 200px;
-}
-
-.list-group {
-    min-width: 400px;
-}
-
-
-.infoList li {
-    background-color: #0d6efd;
-    color: #fff;
-    border: 1px solid #0d6efd;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-.infoList li i {
+.icon-box {
+    font-size: 24px;
     margin-right: 10px;
 }
 
-.infoList li h6 {
-    margin-right: 5px;
-}
-
-.container.bg-light.p-4 {
-    max-height: 300px;
+.book-list {
+    max-height: 200px;
     overflow-y: auto;
-    min-width: 400px;
-    margin-right: 40px;
-    overflow-x: auto;
 }
 
-.row2 {
-    max-width: fit-content;
-    padding-left: 325px;
-
+.info-box {
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
-
-@media (max-width: 728px) {
-    .row2 {
-        padding: 0;
-    }
+.book-history-btn {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: #fff;
+}
+.book-history-btn:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
 }
