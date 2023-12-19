@@ -3,7 +3,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <t:libraryTemplate pageTitle="ContactSupport">
     <jsp:include page="/WEB-INF/components/ContactSupportComponents/Form.jsp"/>
-    <script src="${pageContext.request.contextPath}/scripts/ContactSupport.js"></script>
+    <script src="${pageContext.request.contextPath}/scripts/contactSupport.js"></script>
     <c:if test="${not empty successMessage}">
         <div id="success-message" class="success-message" style="color: green;">${successMessage}</div>
     </c:if>
