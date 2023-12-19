@@ -9,7 +9,7 @@
                         <form method="post">
                             <div class="mb-3"></div>
                             <div class="mb-3"><textarea id="message-2" class="form-control" name="message" rows="6"
-                                                        placeholder="Message"></textarea></div>
+                                                        placeholder="Message" required></textarea></div>
                             <div>
                                 <button class="btn btn-primary d-block w-100" type="submit">Send</button>
                             </div>
