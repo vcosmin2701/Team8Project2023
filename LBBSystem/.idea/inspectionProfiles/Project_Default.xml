@@ -1,0 +1,29 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="15">
+            <item index="0" class="java.lang.String" itemvalue="nobr" />
+            <item index="1" class="java.lang.String" itemvalue="noembed" />
+            <item index="2" class="java.lang.String" itemvalue="comment" />
+            <item index="3" class="java.lang.String" itemvalue="noscript" />
+            <item index="4" class="java.lang.String" itemvalue="embed" />
+            <item index="5" class="java.lang.String" itemvalue="script" />
+            <item index="6" class="java.lang.String" itemvalue="justify-content-center" />
+            <item index="7" class="java.lang.String" itemvalue="align-items-start" />
+            <item index="8" class="java.lang.String" itemvalue="h-100" />
+            <item index="9" class="java.lang.String" itemvalue="flex-column" />
+            <item index="10" class="java.lang.String" itemvalue="align-items-center" />
+            <item index="11" class="java.lang.String" itemvalue="p-3" />
+            <item index="12" class="java.lang.String" itemvalue="d-flex" />
+            <item index="13" class="java.lang.String" itemvalue="col-lg-6" />
+            <item index="14" class="java.lang.String" itemvalue="mb-3" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+  </profile>
+</component>

@@ -1,0 +1,33 @@
+.account-info-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.icon-box {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.book-list {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.info-box {
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+.book-history-btn {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: #fff;
+}
+.book-history-btn:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
