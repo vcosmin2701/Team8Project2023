@@ -34,7 +34,7 @@
             <img class="rounded-circle" alt width="32" height="32" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" style="object-fit: cover;" />
         </a>
         <div class="dropdown-menu shadow text-small" data-popper-placement="top-start">
-            <a class="dropdown-item" href="#">Sign out</a>
+            <a class="dropdown-item" href="${pageContext.request.contextPath}/Login">Sign out</a>
         </div>
     </div>
 </div>

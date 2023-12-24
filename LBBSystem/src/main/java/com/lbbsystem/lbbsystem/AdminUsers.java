@@ -11,6 +11,9 @@ public class AdminUsers extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("createEntity", "User");
+        request.setAttribute("firstColumn", "Full Name");
+        request.setAttribute("secondColumn", "Email");
+        request.setAttribute("thirdColumn", "Role");
         request.getRequestDispatcher("/WEB-INF/pages/adminPages/usersPage.jsp").forward(request, response);
     }
 
