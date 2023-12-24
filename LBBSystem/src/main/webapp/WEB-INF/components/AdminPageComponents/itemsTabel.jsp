@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
-<t:adminTemplate pageTitle="BooksPage">
+<t:adminTemplate pageTitle="AdminPage">
   <div class="container margin-top">
     <div class="row justify-content-center">
       <div class="col-10">
@@ -11,12 +11,15 @@
               <th scope="col">${firstColumn}t</th>
               <th scope="col">${secondColumn}</th>
               <th scope="col" >${thirdColumn}</th>
+              <th scope="col" >${fourColumn}</th>
               <th> </th>
             </tr>
             </thead>
             <tbody>
             <tr>
+              <!-- ...here the duplications must be replaced when we make the database !!!!!!!!!!!!!!!!!! ... -->
               <td ><img class="image-padding-right" src="${pageContext.request.contextPath}/images/books-emoji.png" />Product Name Dada </td>
+              <td>3</td>
               <td><button type="button" class="btn btn-info me-2">Romance</button></td>
               <td>Octavian Goga</td>
               <td class="text-right">
@@ -26,6 +29,7 @@
             </tr>
             <tr>
               <td><img class="image-padding-right" src="${pageContext.request.contextPath}/images/books-emoji.png" />Product Name Toto</td>
+              <td>3</td>
               <td><button type="button" class="btn btn-info me-2">Romance</button></td>
               <td>Ion Luca Caragiale</td>
               <td class="text-right">
@@ -35,6 +39,7 @@
             </tr>
             <tr>
               <td><img class="image-padding-right" src="${pageContext.request.contextPath}/images/books-emoji.png" />Product Name Titi </td>
+              <td>3</td>
               <td><button type="button" class="btn btn-info me-2">Romance</button></td>
               <td>Mihai Eminescu</td>
               <td class="text-right">
@@ -44,6 +49,7 @@
             </tr>
             <tr>
               <td><img class="image-padding-right" src="${pageContext.request.contextPath}/images/books-emoji.png" />Product Name Titi </td>
+              <td>3</td>
               <td><button type="button" class="btn btn-info me-2">Romance</button></td>
               <td>Mihai Eminescu</td>
               <td class="text-right">
@@ -53,6 +59,7 @@
             </tr>
             <tr>
               <td><img class="image-padding-right" src="${pageContext.request.contextPath}/images/books-emoji.png" />Product Name Titi </td>
+              <td>3</td>
               <td><button type="button" class="btn btn-info me-2">Romance</button></td>
               <td>Mihai Eminescu</td>
               <td class="text-right">
@@ -62,6 +69,7 @@
             </tr>
             <tr>
               <td><img class="image-padding-right" src="${pageContext.request.contextPath}/images/books-emoji.png" />Product Name Titi </td>
+              <td>3</td>
               <td><button type="button" class="btn btn-info me-2">Romance</button></td>
               <td>Mihai Eminescu</td>
               <td class="text-right">
@@ -71,6 +79,7 @@
             </tr>
             <tr>
               <td><img class="image-padding-right" src="${pageContext.request.contextPath}/images/books-emoji.png" />Product Name Titi </td>
+              <td>3</td>
               <td><button type="button" class="btn btn-info me-2">Romance</button></td>
               <td>Mihai Eminescu</td>
               <td class="text-right">
@@ -80,6 +89,7 @@
             </tr>
             <tr>
               <td><img class="image-padding-right" src="${pageContext.request.contextPath}/images/books-emoji.png" />Product Name Titi </td>
+              <td>3</td>
               <td><button type="button" class="btn btn-info me-2">Romance</button></td>
               <td>Mihai Eminescu</td>
               <td class="text-right">
@@ -89,6 +99,7 @@
             </tr>
             <tr>
               <td><img class="image-padding-right" src="${pageContext.request.contextPath}/images/books-emoji.png" />Product Name Titi </td>
+              <td>3</td>
               <td><button type="button" class="btn btn-info me-2">Romance</button></td>
               <td>Mihai Eminescu</td>
               <td class="text-right">
@@ -98,6 +109,7 @@
             </tr>
             <tr>
               <td><img class="image-padding-right" src="${pageContext.request.contextPath}/images/books-emoji.png" />Product Name Titi </td>
+              <td>3</td>
               <td><button type="button" class="btn btn-info me-2">Romance</button></td>
               <td>Mihai Eminescu</td>
               <td class="text-right">
@@ -107,6 +119,7 @@
             </tr>
             <tr>
               <td><img class="image-padding-right" src="${pageContext.request.contextPath}/images/books-emoji.png" />Product Name Titi </td>
+              <td>3</td>
               <td><button type="button" class="btn btn-info me-2">Romance</button></td>
               <td>Mihai Eminescu</td>
               <td class="text-right">
@@ -116,6 +129,7 @@
             </tr>
             <tr>
               <td><img class="image-padding-right" src="${pageContext.request.contextPath}/images/books-emoji.png" />Product Name Titi </td>
+              <td>3</td>
               <td><button type="button" class="btn btn-info me-2">Romance</button></td>
               <td>Mihai Eminescu</td>
               <td class="text-right">
@@ -125,16 +139,15 @@
             </tr>
             <tr>
               <td><img class="image-padding-right" src="${pageContext.request.contextPath}/images/books-emoji.png" />Product Name Titi </td>
+              <td>3</td>
               <td><button type="button" class="btn btn-info me-2">Romance</button></td>
               <td>Mihai Eminescu</td>
               <td class="text-right">
                 <button class="btn btn-sm  btn-primary"><i class="bi bi-pencil-square"></i> </button>
                 <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button>
               </td>
+              <!-- ...here the duplications must be replaced when we make the database !!!!!!!!!!!!!!!!!! ... -->
             </tr>
-
-
-
 
             </tbody>
           </table>

@@ -12,8 +12,9 @@ public class BooksPage extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("createEntity", "Book");
         request.setAttribute("firstColumn", "Item");
-        request.setAttribute("secondColumn", "Category");
-        request.setAttribute("thirdColumn", "Author");
+        request.setAttribute("secondColumn", "Stock");
+        request.setAttribute("thirdColumn", "Category");
+        request.setAttribute("fourColumn", "Author");
         request.getRequestDispatcher("/WEB-INF/pages/adminPages/booksPage.jsp").forward(request, response);
 
     }

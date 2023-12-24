@@ -36,12 +36,51 @@
 }
 .table-responsive {
     overflow-y: auto;
-    max-height: 500px; /* Adjust based on your requirement */
+    max-height: 500px;
 }
 
 .table-responsive thead th {
     position: sticky;
     top: 0;
-    background-color: white; /* Ensure the text is visible over the background */
+    background-color: white;
     z-index: 10;
 }
+.font-size-25{
+    font-size: 25px;
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 0.5px solid #e3e6f0;
+    font-weight: lighter;
+}
+.list-group-item {
+    border: none;
+    padding: .75rem 1.25rem;
+}
+.title-list-align{
+    text-align: center;
+}
+.red-icon {
+    color: red;
+}
+.padding-icons{
+    padding:2%;
+}
+
+.list-position{
+    margin-left: 8%;
+    margin-top: 8%;
+}
+
+.list-fixed-item{
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 10;
+}
+.list-group-flush {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
