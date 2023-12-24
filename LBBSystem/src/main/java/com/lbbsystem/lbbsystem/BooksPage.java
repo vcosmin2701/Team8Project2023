@@ -6,11 +6,13 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 
-@WebServlet(name = "AdminPage", value = "/AdminPage")
-public class AdminPage extends HttpServlet {
+@WebServlet(name = "BooksPage", value = "/BooksPage")
+public class BooksPage extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/pages/adminPages/adminPage.jsp").forward(request, response);
+        request.setAttribute("createEntity", "Book");
+        request.getRequestDispatcher("/WEB-INF/pages/adminPages/booksPage.jsp").forward(request, response);
+
     }
 
     @Override

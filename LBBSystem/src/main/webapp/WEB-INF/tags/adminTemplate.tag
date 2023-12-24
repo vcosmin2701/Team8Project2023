@@ -14,10 +14,8 @@
             crossorigin="anonymous"></script>
     <meta name="theme-color" content="#712cf9">
 </head>
-<header>
-    <jsp:include page="/WEB-INF/components/AdminPageComponents/adminNavbar.jsp"/>
-</header>
 <body>
+<jsp:include page="/WEB-INF/components/AdminPageComponents/adminNavbar.jsp"/>
 <jsp:doBody/>
 </body>
 
