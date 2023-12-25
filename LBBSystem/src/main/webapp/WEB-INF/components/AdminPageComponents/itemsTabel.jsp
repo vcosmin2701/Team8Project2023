@@ -1,6 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
-<t:adminTemplate pageTitle="AdminPage">
+
   <div class="container margin-top">
     <div class="row justify-content-center">
       <div class="col-10">
@@ -155,5 +153,5 @@
       </div>
     </div>
   </div>
-</t:adminTemplate>
+
 

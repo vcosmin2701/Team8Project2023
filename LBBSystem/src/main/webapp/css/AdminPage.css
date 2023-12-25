@@ -1,0 +1,59 @@
+.title-books{
+    margin-left: 7%;
+    margin-top: 1.5%;
+    font-size: 2rem;
+}
+
+.font-size-25{
+    font-size: 25px;
+}
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 0.5px solid #e3e6f0;
+    font-weight: lighter;
+}
+.list-group-item {
+    border: none;
+    padding: .75rem 1.25rem;
+}
+.title-list-align{
+    text-align: center;
+}
+.red-icon {
+    color: red;
+}
+.padding-icons{
+    padding:2%;
+}
+
+.list-position{
+    margin-left: 8%;
+    margin-top: 4%;
+}
+.list-position .card {
+    width: 40rem; /* sau puteți folosi o valoare în pixeli, de ex. 800px */
+}
+
+.list-fixed-item{
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 10;
+}
+.list-group-flush {
+    max-height: 490px;
+    overflow-y: auto;
+}
+.position-modify-orders{
+    margin-right: 10%;
+    margin-left: -30%;
+}
+.dashboard-container {
+    display: flex;
+    justify-content: space-between;
+}
+.table-group-flush {
+    max-height: 250px;
+    overflow-y: auto;
+}
+

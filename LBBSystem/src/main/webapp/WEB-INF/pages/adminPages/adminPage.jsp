@@ -2,5 +2,8 @@
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <t:adminTemplate pageTitle="AdminPage">
     <h1 class="title-books">Dashboard</h1>
+    <div class="dashboard-container">
     <jsp:include page="/WEB-INF/components/AdminPageComponents/booksList.jsp"/>
+    <jsp:include page="/WEB-INF/components/AdminPageComponents/bookOrders.jsp"/>
+        </div>
 </t:adminTemplate>
