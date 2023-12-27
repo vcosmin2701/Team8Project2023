@@ -43,9 +43,6 @@
     background-color: white;
     z-index: 10;
 }
-.font-size-25{
-    font-size: 25px;
-}
 
 .card-header {
     background-color: #f8f9fa;
@@ -72,7 +69,6 @@
 }
 
 .list-fixed-item{
-    position: sticky;
     top: 0;
     background-color: white;
     z-index: 10;
@@ -84,7 +80,6 @@
     transform: translate(-50%, -50%);
     padding: 20px;
     border: 1px solid #ccc;
-    background-color: #fff;
     box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
     z-index: 1000;
 }
@@ -99,4 +94,7 @@
     background: rgba(0,0,0,0.5);
     display: none;
     z-index: 999;
+}
+.non-sticky-header {
+    position: relative;
 }

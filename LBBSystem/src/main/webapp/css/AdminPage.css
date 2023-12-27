@@ -4,9 +4,6 @@
     font-size: 2rem;
 }
 
-.font-size-25{
-    font-size: 25px;
-}
 .card-header {
     background-color: #f8f9fa;
     border-bottom: 0.5px solid #e3e6f0;
@@ -55,10 +52,10 @@
     margin-left: 2%;
 }
 .title-books-dashboard{
-    margin-left: 8%;
-    margin-top: 1.5%;
+    margin-left: 7%;
+    margin-top: 2%;
     font-size: 2rem;
-
 }
+
 
 
