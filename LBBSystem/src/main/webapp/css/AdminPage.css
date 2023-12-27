@@ -51,6 +51,14 @@
 }
 
 .column-margin{
+    margin-top: 9%;!important;
     margin-left: 2%;
 }
+.title-books-dashboard{
+    margin-left: 8%;
+    margin-top: 1.5%;
+    font-size: 2rem;
+
+}
+
 

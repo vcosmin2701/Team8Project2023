@@ -29,7 +29,7 @@
         </li>
         <li class="nav-item">
             <a class="nav-link py-3 border-bottom rounded-0 ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf
-("/")) eq '/BorrowPage.jsp' ? ' active' : ''}" href="${pageContext.request.contextPath}/AdminUsers">
+("/")) eq '/borrowedBooks.jsp' ? ' active' : ''}" href="${pageContext.request.contextPath}/BorrowedBooks">
                 <i class="bi bi-bookmark-check"></i>
             </a>
         </li>

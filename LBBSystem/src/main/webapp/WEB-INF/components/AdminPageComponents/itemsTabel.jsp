@@ -6,7 +6,7 @@
           <table class="table table-striped mt-4">
             <thead>
             <tr>
-              <th scope="col">${firstColumn}t</th>
+              <th scope="col">${firstColumn}</th>
               <th scope="col">${secondColumn}</th>
               <th scope="col" >${thirdColumn}</th>
               <th scope="col" >${fourColumn}</th>
