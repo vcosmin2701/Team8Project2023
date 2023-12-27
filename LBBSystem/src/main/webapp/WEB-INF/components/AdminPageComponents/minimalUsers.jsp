@@ -1,6 +1,6 @@
 <div class="users-container list-position">
   <div class="card">
-    <div class="card-header title-list-align list-fixed-item list-size">Users</div>
+    <div class="card-header title-list-align list-fixed-item">Users</div>
     <div class="card-body table-group-flush">
       <table class="table">
         <thead>
