@@ -26,13 +26,6 @@
     padding:2%;
 }
 
-.list-position{
-    margin-left: 8%;
-    margin-top: 4%;
-}
-.list-position .card {
-    width: 40rem; /* sau puteți folosi o valoare în pixeli, de ex. 800px */
-}
 
 .list-fixed-item{
     position: sticky;
@@ -41,19 +34,26 @@
     z-index: 10;
 }
 .list-group-flush {
-    max-height: 490px;
+    max-height: 500px;
     overflow-y: auto;
 }
-.position-modify-orders{
-    margin-right: 10%;
-    margin-left: -30%;
-}
-.dashboard-container {
-    display: flex;
-    justify-content: space-between;
-}
+
 .table-group-flush {
     max-height: 250px;
     overflow-y: auto;
 }
+.users-container .card-body {
+    max-height: 250px;
+    overflow-y: auto;
+}
+.position-modify-users{
+    margin-top: 90%;
+}
+.list-size{
+    width: 4rem;
+}
+.column-margin{
+    margin-left: 2%;
+}
+
 

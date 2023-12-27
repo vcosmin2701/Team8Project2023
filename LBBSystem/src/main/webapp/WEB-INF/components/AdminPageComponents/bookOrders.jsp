@@ -1,6 +1,6 @@
 
-  <div class="col-lg-4 ">
-    <div class="card position-modify-orders">
+  <div class="col-lg-4 list-position">
+    <div class="card">
       <div class="card-header title-list-align list-fixed-item">Borrowed Books</div>
       <div class="card-body table-group-flush">
         <table class="table ">

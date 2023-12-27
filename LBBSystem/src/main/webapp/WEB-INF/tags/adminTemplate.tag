@@ -20,7 +20,4 @@
 <body>
 <jsp:doBody/>
 </body>
-<footer>
-    <jsp:include page="/WEB-INF/components/footer.jsp"/>
-</footer>
 </html>

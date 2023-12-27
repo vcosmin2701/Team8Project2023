@@ -1,16 +1,55 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Mili
-  Date: 25.12.2023
-  Time: 18:10
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<div class="users-container list-position">
+  <div class="card">
+    <div class="card-header title-list-align list-fixed-item list-size">Users</div>
+    <div class="card-body table-group-flush">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>SSN</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>123-45-6789</td>
+          <td>John Doe</td>
+          <td>johndoe@example.com</td>
+          <td>(555) 123-4567</td>
+        </tr>
+        <tr>
+          <td>123-45-6789</td>
+          <td>John Doe</td>
+          <td>johndoe@example.com</td>
+          <td>(555) 123-4567</td>
+        </tr>
+        <tr>
+          <td>123-45-6789</td>
+          <td>John Doe</td>
+          <td>johndoe@example.com</td>
+          <td>(555) 123-4567</td>
+        </tr>
+        <tr>
+          <td>123-45-6789</td>
+          <td>John Doe</td>
+          <td>johndoe@example.com</td>
+          <td>(555) 123-4567</td>
+        </tr>
+        <tr>
+          <td>123-45-6789</td>
+          <td>John Doe</td>
+          <td>johndoe@example.com</td>
+          <td>(555) 123-4567</td>
+        </tr>
+        <tr>
+          <td>123-45-6789</td>
+          <td>John Doe</td>
+          <td>johndoe@example.com</td>
+          <td>(555) 123-4567</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
