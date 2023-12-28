@@ -16,11 +16,11 @@ public class BooksPage extends HttpServlet {
         request.setAttribute("thirdColumn", "Category");
         request.setAttribute("fourColumn", "Author");
 
+        request.setAttribute("popupName", "popupAdd");
         request.setAttribute("popupTitle", "Add new book");
         request.setAttribute("popupFirstLabel", "Book name");
-        request.setAttribute("popupSecondLabel", "Email");
-        request.setAttribute("popupThirdLabel", "Author");
-        request.setAttribute("popupFourthLabel", "Categories");
+        request.setAttribute("popupSecondLabel", "Author");
+        request.setAttribute("popupThirdLabel", "Categories");
         request.getRequestDispatcher("/WEB-INF/pages/adminPages/booksPage.jsp").forward(request, response);
 
     }

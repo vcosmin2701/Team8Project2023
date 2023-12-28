@@ -16,11 +16,12 @@ public class BorrowedBooks extends HttpServlet {
         request.setAttribute("thirdColumn", "Period of loan");
         request.setAttribute("fourColumn", "Status");
 
+        request.setAttribute("popupName", "popupAdd");
         request.setAttribute("popupTitle", "Add new loan");
-        request.setAttribute("popupFirstLabel", "Username");
-        request.setAttribute("popupSecondLabel", "Email");
-        request.setAttribute("popupThirdLabel", "Book");
-        request.setAttribute("popupFourthLabel", "Period of loan");
+        request.setAttribute("popupFirstLabel", "User");
+        request.setAttribute("popupSecondLabel", "Book");
+        request.setAttribute("popupThirdLabel", "Period of loan");
+
         request.getRequestDispatcher("/WEB-INF/pages/adminPages/borrowedBooks.jsp").forward(request, response);
     }
 
