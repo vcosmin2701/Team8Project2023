@@ -13,7 +13,7 @@
               <th> </th>
             </tr>
             </thead>
-            <tbody>
+            <tbody >
             <tr>
               <!-- ...here the duplications must be replaced when we make the database !!!!!!!!!!!!!!!!!! ... -->
               <td ><img class="image-padding-right" src="${pageContext.request.contextPath}/images/books-emoji.png" />Product Name Dada </td>

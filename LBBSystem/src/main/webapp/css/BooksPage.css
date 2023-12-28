@@ -39,12 +39,6 @@
     max-height: 450px;
 }
 
-.table-responsive thead th {
-    position: sticky;
-    top: 0;
-    background-color: white;
-
-}
 .card-header {
     background-color: #f8f9fa;
     border-bottom: 0.5px solid #e3e6f0;
@@ -70,7 +64,6 @@
 }
 
 .list-fixed-item{
-    position: sticky;
     top: 0;
     background-color: white;
 }

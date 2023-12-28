@@ -37,13 +37,6 @@
     max-height: 450px;
 }
 
-.table-responsive thead th {
-    position: sticky;
-    top: 0;
-    background-color: white;
-    z-index: 10;
-}
-
 .card-header {
     background-color: #f8f9fa;
     border-bottom: 0.5px solid #e3e6f0;
@@ -71,7 +64,6 @@
 .list-fixed-item{
     top: 0;
     background-color: white;
-    z-index: 10;
 }
 #popupDialog {
     position: fixed;
@@ -84,7 +76,6 @@
     z-index: 1000;
 }
 
-/* Optional: Add an overlay to dim the background */
 #overlay {
     position: fixed;
     top: 0;
@@ -94,7 +85,4 @@
     background: rgba(0,0,0,0.5);
     display: none;
     z-index: 999;
-}
-.non-sticky-header {
-    position: relative;
 }

@@ -1,4 +1,4 @@
-<div id="popupDialog" class="modal popup-dialog" tabindex="-1" style="display:none;">
+<div id="popupDialog" class="modal popup-dialog" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">

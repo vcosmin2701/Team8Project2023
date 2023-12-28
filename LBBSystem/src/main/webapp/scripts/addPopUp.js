@@ -14,11 +14,9 @@ document.getElementById('userForm').addEventListener('submit', function(event) {
 });
 function showPopup() {
     document.getElementById('popupDialog').style.display = 'block';
-    document.querySelector('.table-responsive thead th ').classList.add('non-sticky-header');
 }
 
 function closePopup() {
-    document.getElementById('popupDialog').style.display = 'none';
-    document.querySelector('.table-responsive thead th ').classList.remove('non-sticky-header');
 
+    document.getElementById('popupDialog').style.display = 'none';
 }

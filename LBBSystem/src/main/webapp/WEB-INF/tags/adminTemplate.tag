@@ -17,6 +17,6 @@
 </header>
 <body>
 <jsp:doBody/>
-<script src="${pageContext.request.contextPath}/scripts/searchBar.js"></script>
+<script src="${pageContext.request.contextPath}/scripts/addPopUp.js"></script>
 </body>
 </html>
