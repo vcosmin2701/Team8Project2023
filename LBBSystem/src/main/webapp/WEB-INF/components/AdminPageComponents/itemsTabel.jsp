@@ -14,14 +14,15 @@
             </tr>
             </thead>
             <tbody >
-            <tr>
+            <tr id="book1">
               <!-- ...here the duplications must be replaced when we make the database !!!!!!!!!!!!!!!!!! ... -->
               <td ><img class="image-padding-right" src="${pageContext.request.contextPath}/images/books-emoji.png" />Product Name Dada </td>
               <td>3</td>
               <td><button type="button" class="btn btn-info me-2">Romance</button></td>
               <td>Octavian Goga</td>
               <td class="text-right">
-                <button class="btn btn-sm  btn-primary"><i class="bi bi-pencil-square"></i> </button>
+                <button class="btn btn-sm  btn-primary" onclick="showEditPopup(book1)"><i class="bi bi-pencil-square"></i> </button>
+                <jsp:include page="/WEB-INF/components/AdminPageComponents/${popupEditName}.jsp"/>
                 <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button>
               </td>
             </tr>
@@ -41,7 +42,7 @@
               <td><button type="button" class="btn btn-info me-2">Romance</button></td>
               <td>Mihai Eminescu</td>
               <td class="text-right">
-                <button class="btn btn-sm  btn-primary"><i class="bi bi-pencil-square"></i> </button>
+                <button class="btn btn-sm  btn-primary" onclick="showPopup()"><i class="bi bi-pencil-square"></i> </button>
                 <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button>
               </td>
             </tr>

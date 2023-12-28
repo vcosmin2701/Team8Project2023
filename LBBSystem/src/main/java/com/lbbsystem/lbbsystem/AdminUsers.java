@@ -12,9 +12,11 @@ public class AdminUsers extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("createEntity", "User");
         request.setAttribute("firstColumn", "Full Name");
-        request.setAttribute("secondColumn", "Email");
-        request.setAttribute("thirdColumn", "Role");
-        request.setAttribute("popupName", "popupAddUser");
+        request.setAttribute("secondColumn", "SSN");
+        request.setAttribute("thirdColumn", "Email");
+        request.setAttribute("fourColumn", "Role");
+        request.setAttribute("popupName", "addUserPopup");
+        request.setAttribute("popupEditName", "editUserPopup");
 
         request.getRequestDispatcher("/WEB-INF/pages/adminPages/usersPage.jsp").forward(request, response);
     }

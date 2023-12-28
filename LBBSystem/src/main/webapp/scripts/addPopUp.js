@@ -20,3 +20,10 @@ function closePopup() {
 
     document.getElementById('popupDialog').style.display = 'none';
 }
+function showEditPopup(bookId) {
+    document.getElementById('editPopupDialog').style.display = 'block';
+}
+function closeEditPopup(bookId) {
+    document.getElementById('editPopupDialog').style.display = 'none';
+}
+
