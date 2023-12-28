@@ -14,6 +14,13 @@ public class AdminUsers extends HttpServlet {
         request.setAttribute("firstColumn", "Full Name");
         request.setAttribute("secondColumn", "Email");
         request.setAttribute("thirdColumn", "Role");
+
+        request.setAttribute("popupTitle", "Add new user");
+        request.setAttribute("popupFirstLabel", "Full name");
+        request.setAttribute("popupSecondLabel", "Email");
+        request.setAttribute("popupThirdLabel", "SSN");
+        request.setAttribute("popupFourthLabel", "Role");
+
         request.getRequestDispatcher("/WEB-INF/pages/adminPages/usersPage.jsp").forward(request, response);
     }
 
