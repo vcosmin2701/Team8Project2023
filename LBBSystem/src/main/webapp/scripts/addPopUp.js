@@ -9,8 +9,6 @@ document.getElementById('userForm').addEventListener('submit', function(event) {
 
     event.preventDefault();
 
-    // document.getElementById('popupDialog').style.display = 'none';
-    // document.getElementById('overlay').style.display = 'none';
 });
 function showPopup() {
     document.getElementById('popupDialog').style.display = 'block';

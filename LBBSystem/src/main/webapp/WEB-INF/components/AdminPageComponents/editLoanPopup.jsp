@@ -16,8 +16,11 @@
                         <input type="text" class="form-control" id="book" name="book" required>
                     </div>
                     <div class="mb-3">
-                        <label for="period" class="form-label">Period of loan:</label>
-                        <input type="text" class="form-control" id="period" name="period" required>
+                        <label for="start-date" class="form-label">Start Date:</label>
+                        <input type="date" class="form-control" id="start-date" name="start-date" required>
+
+                        <label for="end-date" class="form-label">End Date:</label>
+                        <input type="date" class="form-control" id="end-date" name="end-date" required>
                     </div>
                     <div class="mb-3">
                         <label for="status" class="form-label">Status:</label>
