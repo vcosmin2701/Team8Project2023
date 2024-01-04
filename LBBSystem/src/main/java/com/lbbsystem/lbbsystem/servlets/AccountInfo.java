@@ -1,4 +1,4 @@
-package com.lbbsystem.lbbsystem;
+package com.lbbsystem.lbbsystem.servlets;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

@@ -1,4 +1,4 @@
-package com.lbbsystem.lbbsystem;
+package com.lbbsystem.lbbsystem.servlets;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -8,11 +8,11 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet(name = "BooksHistory", value = "/BooksHistory")
-public class BooksHistory extends HttpServlet {
+@WebServlet(name = "CheckOut", value = "/CheckOut")
+public class CheckOut extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/pages/booksHistory.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/pages/checkOut.jsp").forward(request, response);
     }
 
     @Override
