@@ -1,4 +1,4 @@
-<div class="bg-body shadow d-flex flex-column flex-shrink-0 position-fixed top-0 bottom-0" style="width: 4.5rem; z-index: 100;">
+<div class="bg-body shadow d-flex flex-column flex-shrink-0 position-fixed top-0 bottom-0 " style="width: 4.5rem; z-index: 100 ">
     <a class="text-center link-body-emphasis d-block p-3 text-decoration-none border-bottom" href="${pageContext.request.contextPath}/AdminPage" title data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
         <img width="30"
              height="30"
