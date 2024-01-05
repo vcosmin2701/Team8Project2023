@@ -1,0 +1,62 @@
+.title-books{
+    margin-left: 7%;
+    margin-top: 1.5%;
+    font-size: 2rem;
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 0.5px solid #e3e6f0;
+    font-weight: lighter;
+}
+.list-group-item {
+    border: none;
+    padding: .75rem 1.25rem;
+}
+.title-list-align{
+    text-align: center;
+}
+.red-icon {
+    color: red;
+}
+.padding-icons{
+    padding:2%;
+}
+
+
+.list-fixed-item{
+    top: 0;
+    background-color: white;
+    z-index: 10;
+}
+.list-group-flush {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.table-group-flush {
+    max-height: 250px;
+    overflow-y: auto;
+}
+.users-container .card-body {
+    max-height: 250px;
+    overflow-y: auto;
+}
+.position-modify-users{
+    margin-top: 90%;
+}
+
+.column-margin{
+    margin-top: 9%;!important;
+    margin-left: 2%;
+}
+.title-books-dashboard{
+    margin-left: 7%;
+    margin-top: 2%;
+    font-size: 2rem;
+}
+
+
+
+
+
