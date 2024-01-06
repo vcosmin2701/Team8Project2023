@@ -4,11 +4,6 @@
             <h4 class="card-title">Check In</h4>
             <hr>
             <div class="form-group">
-                <label for="datepicker">Please enter the return date</label>
-                <input type="date" id="datepicker" name="datepicker" class="form-control">
-            </div>
-            <hr>
-            <div class="form-group">
                 <p>
                     Students must return books promptly to avoid sanctions, such as fines or restricted borrowing. Your
                     cooperation ensures fair access to library resources. Please check the box to acknowledge and accept
