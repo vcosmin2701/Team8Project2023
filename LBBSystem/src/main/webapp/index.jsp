@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
-<t:pageTemplate pageTitle="LBB System">
+<t:libraryTemplate pageTitle="LBB System">
     <section lc-helper="background" class="min-vh-100 overflow-hidden d-flex justify-content-center align-items-center" style="background:url(https://via.placeholder.com/1920x1080.png/f4f6fa/f4f6fa)  center / cover no-repeat;">
         <div class="row g-0">
             <div class="col-md-12 text-center">
@@ -24,4 +24,4 @@
             </div>
         </div>
     </section>
-</t:pageTemplate>
+</t:libraryTemplate>
