@@ -1,158 +1,39 @@
-
-  <div class="container margin-top">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<div class="container margin-top">
     <div class="row justify-content-center">
-      <div class="col-10">
-        <div class="table-responsive">
-          <table class="table table-striped">
-            <thead>
-            <tr>
-              <th scope="col">${firstColumn}</th>
-              <th scope="col">${secondColumn}</th>
-              <th scope="col" >${thirdColumn}</th>
-              <th scope="col" >${fourColumn}</th>
-              <th> </th>
-            </tr>
-            </thead>
-            <tbody >
-            <tr id="book1">
-              <!-- ...here the duplications must be replaced when we make the database !!!!!!!!!!!!!!!!!! ... -->
-              <td ><img class="image-padding-right" src="${pageContext.request.contextPath}/images/books-emoji.png" />Product Name Dada </td>
-              <td>3</td>
-              <td><button type="button" class="btn btn-info me-2">Romance</button></td>
-              <td>Octavian Goga</td>
-              <td class="text-right">
-                <button class="btn btn-sm  btn-primary" onclick="showEditPopup(book1)"><i class="bi bi-pencil-square"></i> </button>
-                <jsp:include page="/WEB-INF/components/AdminPageComponents/${popupEditName}.jsp"/>
-                <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button>
-              </td>
-            </tr>
-            <tr>
-              <td><img class="image-padding-right" src="${pageContext.request.contextPath}/images/books-emoji.png" />Product Name Toto</td>
-              <td>3</td>
-              <td><button type="button" class="btn btn-info me-2">Romance</button></td>
-              <td>Ion Luca Caragiale</td>
-              <td class="text-right">
-                <button class="btn btn-sm  btn-primary"><i class="bi bi-pencil-square"></i> </button>
-                <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button>
-              </td>
-            </tr>
-            <tr>
-              <td><img class="image-padding-right" src="${pageContext.request.contextPath}/images/books-emoji.png" />Product Name Titi </td>
-              <td>3</td>
-              <td><button type="button" class="btn btn-info me-2">Romance</button></td>
-              <td>Mihai Eminescu</td>
-              <td class="text-right">
-                <button class="btn btn-sm  btn-primary" onclick="showPopup()"><i class="bi bi-pencil-square"></i> </button>
-                <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button>
-              </td>
-            </tr>
-            <tr>
-              <td><img class="image-padding-right" src="${pageContext.request.contextPath}/images/books-emoji.png" />Product Name Titi </td>
-              <td>3</td>
-              <td><button type="button" class="btn btn-info me-2">Romance</button></td>
-              <td>Mihai Eminescu</td>
-              <td class="text-right">
-                <button class="btn btn-sm  btn-primary"><i class="bi bi-pencil-square"></i> </button>
-                <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button>
-              </td>
-            </tr>
-            <tr>
-              <td><img class="image-padding-right" src="${pageContext.request.contextPath}/images/books-emoji.png" />Product Name Titi </td>
-              <td>3</td>
-              <td><button type="button" class="btn btn-info me-2">Romance</button></td>
-              <td>Mihai Eminescu</td>
-              <td class="text-right">
-                <button class="btn btn-sm  btn-primary"><i class="bi bi-pencil-square"></i> </button>
-                <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button>
-              </td>
-            </tr>
-            <tr>
-              <td><img class="image-padding-right" src="${pageContext.request.contextPath}/images/books-emoji.png" />Product Name Titi </td>
-              <td>3</td>
-              <td><button type="button" class="btn btn-info me-2">Romance</button></td>
-              <td>Mihai Eminescu</td>
-              <td class="text-right">
-                <button class="btn btn-sm  btn-primary"><i class="bi bi-pencil-square"></i> </button>
-                <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button>
-              </td>
-            </tr>
-            <tr>
-              <td><img class="image-padding-right" src="${pageContext.request.contextPath}/images/books-emoji.png" />Product Name Titi </td>
-              <td>3</td>
-              <td><button type="button" class="btn btn-info me-2">Romance</button></td>
-              <td>Mihai Eminescu</td>
-              <td class="text-right">
-                <button class="btn btn-sm  btn-primary"><i class="bi bi-pencil-square"></i> </button>
-                <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button>
-              </td>
-            </tr>
-            <tr>
-              <td><img class="image-padding-right" src="${pageContext.request.contextPath}/images/books-emoji.png" />Product Name Titi </td>
-              <td>3</td>
-              <td><button type="button" class="btn btn-info me-2">Romance</button></td>
-              <td>Mihai Eminescu</td>
-              <td class="text-right">
-                <button class="btn btn-sm  btn-primary"><i class="bi bi-pencil-square"></i> </button>
-                <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button>
-              </td>
-            </tr>
-            <tr>
-              <td><img class="image-padding-right" src="${pageContext.request.contextPath}/images/books-emoji.png" />Product Name Titi </td>
-              <td>3</td>
-              <td><button type="button" class="btn btn-info me-2">Romance</button></td>
-              <td>Mihai Eminescu</td>
-              <td class="text-right">
-                <button class="btn btn-sm  btn-primary"><i class="bi bi-pencil-square"></i> </button>
-                <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button>
-              </td>
-            </tr>
-            <tr>
-              <td><img class="image-padding-right" src="${pageContext.request.contextPath}/images/books-emoji.png" />Product Name Titi </td>
-              <td>3</td>
-              <td><button type="button" class="btn btn-info me-2">Romance</button></td>
-              <td>Mihai Eminescu</td>
-              <td class="text-right">
-                <button class="btn btn-sm  btn-primary"><i class="bi bi-pencil-square"></i> </button>
-                <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button>
-              </td>
-            </tr>
-            <tr>
-              <td><img class="image-padding-right" src="${pageContext.request.contextPath}/images/books-emoji.png" />Product Name Titi </td>
-              <td>3</td>
-              <td><button type="button" class="btn btn-info me-2">Romance</button></td>
-              <td>Mihai Eminescu</td>
-              <td class="text-right">
-                <button class="btn btn-sm  btn-primary"><i class="bi bi-pencil-square"></i> </button>
-                <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button>
-              </td>
-            </tr>
-            <tr>
-              <td><img class="image-padding-right" src="${pageContext.request.contextPath}/images/books-emoji.png" />Product Name Titi </td>
-              <td>3</td>
-              <td><button type="button" class="btn btn-info me-2">Romance</button></td>
-              <td>Mihai Eminescu</td>
-              <td class="text-right">
-                <button class="btn btn-sm  btn-primary"><i class="bi bi-pencil-square"></i> </button>
-                <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button>
-              </td>
-            </tr>
-            <tr>
-              <td><img class="image-padding-right" src="${pageContext.request.contextPath}/images/books-emoji.png" />Product Name Titi </td>
-              <td>3</td>
-              <td><button type="button" class="btn btn-info me-2">Romance</button></td>
-              <td>Mihai Eminescu</td>
-              <td class="text-right">
-                <button class="btn btn-sm  btn-primary"><i class="bi bi-pencil-square"></i> </button>
-                <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button>
-              </td>
-              <!-- ...here the duplications must be replaced when we make the database !!!!!!!!!!!!!!!!!! ... -->
-            </tr>
-
-            </tbody>
-          </table>
+        <div class="col-10">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">${firstColumn}</th>
+                        <th scope="col">${secondColumn}</th>
+                        <th scope="col">${thirdColumn}</th>
+                        <th scope="col">${fourColumn}</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <c:forEach var="book" items="${books}">
+                        <tr>
+                            <td><img class="image-padding-right"
+                                     src="${pageContext.request.contextPath}/images/books-emoji.png"/>${book.title}</td>
+                            <td>${book.author}</td>
+                            <td>
+                                <button type="button" class="btn btn-info me-2">${book.category}</button>
+                            </td>
+                            <td class="text-right">
+                                <button class="btn btn-sm  btn-primary" onclick="showEditPopup(book)"><i
+                                        class="bi bi-pencil-square"></i></button>
+                                <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>
 
 
