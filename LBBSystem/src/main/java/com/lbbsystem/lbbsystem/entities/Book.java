@@ -8,7 +8,7 @@ public class Book {
     private String author;
     private String category;
     private int stock;
-    
+
     @Id
     @GeneratedValue
     public Long getBookId() {
