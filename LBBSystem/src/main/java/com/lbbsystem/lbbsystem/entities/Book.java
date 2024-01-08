@@ -1,24 +1,25 @@
 package com.lbbsystem.lbbsystem.entities;
-import jakarta.persistence.*;
+
+import jakarta.persistence.Basic;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @Entity
 public class Book {
-    private Long bookId;
-    private String title;
-    private String author;
-    private String category;
-    private int stock;
-    private String isbn;
 
     @Id
-    @GeneratedValue
-    public Long getBookId() {
-        return bookId;
+    private Long id;
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void setBookId(Long bookId) {
-        this.bookId = bookId;
+    public Long getId() {
+        return id;
     }
+
+    @Basic
+    private String title;
 
     public String getTitle() {
         return title;
@@ -27,6 +28,8 @@ public class Book {
     public void setTitle(String title) {
         this.title = title;
     }
+
+    private String author;
 
     public String getAuthor() {
         return author;
@@ -44,6 +47,14 @@ public class Book {
         this.category = category;
     }
 
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
     public int getStock() {
         return stock;
     }
@@ -52,11 +63,8 @@ public class Book {
         this.stock = stock;
     }
 
-    public String getIsbn() {
-        return isbn;
-    }
+    private String category;
+    private String isbn;
+    private int stock;
 
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
-    }
 }

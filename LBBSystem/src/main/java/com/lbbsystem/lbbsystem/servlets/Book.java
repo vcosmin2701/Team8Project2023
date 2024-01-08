@@ -13,7 +13,7 @@ import java.util.List;
 @WebServlet(name = "Book", value = "/Book")
 public class Book extends HttpServlet {
     @Inject
-    private BookBean bookBean;
+    BookBean bookBean;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<BookDto> books = bookBean.findAllBooks();
@@ -23,13 +23,6 @@ public class Book extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String title = request.getParameter("title");
-        String author = request.getParameter("author");
-        String category = request.getParameter("category");
-        String isbn = request.getParameter("isbn");
 
-        bookBean.createBook(title, author, category, isbn);
-
-        response.sendRedirect(request.getContextPath() + "/Book");
     }
 }

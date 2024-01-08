@@ -7,7 +7,7 @@
         <button type="button" class="btn-close" onclick="closePopup()"></button>
       </div>
       <div class="modal-body">
-        <form id="bookForm" action="${pageContext.request.contextPath}/Book" method="post">
+        <form id="bookForm" action="${pageContext.request.contextPath}/Books" method="post">
           <div class="mb-3">
             <label for="title" class="form-label">Book name:</label>
             <input type="text" class="form-control" id="title" name="title" required>

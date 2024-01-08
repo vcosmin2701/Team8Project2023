@@ -6,6 +6,7 @@
   <persistence-unit name="default" transaction-type="JTA">
     <jta-data-source>jdbc/LbbSystemResource</jta-data-source>
     <class>com.lbbsystem.lbbsystem.entities.User</class>
+    <class>com.lbbsystem.lbbsystem.entities.Book</class>
 
     <properties>
       <property name="jakarta.persistence.schema-generation.database.action" value="create-or-extend-tables"/>

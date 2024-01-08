@@ -1,20 +1,18 @@
 package com.lbbsystem.lbbsystem.common;
 
-import com.lbbsystem.lbbsystem.entities.Book;
-
 public class BookDto {
     private Long id;
     private String title;
     private String author;
     private String category;
-    private String isbn;
+    private String stock;
 
-    public BookDto(Long id, String title, String author, String category, String isbn) {
+    public BookDto(Long id, String title, String author, String category, String stock) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.category = category;
-        this.isbn = isbn;
+        this.stock = stock;
     }
 
     public Long getId() {
@@ -49,11 +47,11 @@ public class BookDto {
         this.category = category;
     }
 
-    public String getIsbn() {
-        return isbn;
+    public String getStock() {
+        return stock;
     }
 
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
+    public void setStock(String stock) {
+        this.stock = stock;
     }
 }
