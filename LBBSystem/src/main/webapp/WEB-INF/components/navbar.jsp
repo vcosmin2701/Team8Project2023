@@ -40,12 +40,10 @@
               </a>
             </li>
           </ul>
-
-          <div class="dropdown">
             <button id="userDropdown" class="btn btn-primary ms-md-2 dropdown-toggle" type="button"
                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fas fa-user"></i>
-              User
+                ${pageContext.request.getRemoteUser()}
             </button>
             <div class="dropdown-menu" aria-labelledby="userDropdown">
               <a class="dropdown-item" href="${pageContext.request.contextPath}/AccountInfo">Profile </a>
@@ -55,7 +53,6 @@
             </div>
           </div>
         </div>
-      </div>
     </nav>
   </c:when>
 </c:choose>
