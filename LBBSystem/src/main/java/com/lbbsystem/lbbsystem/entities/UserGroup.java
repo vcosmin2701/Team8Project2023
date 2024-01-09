@@ -1,5 +1,6 @@
 package com.lbbsystem.lbbsystem.entities;
 
+import com.lbbsystem.lbbsystem.roles.UserRole;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -10,7 +11,7 @@ public class UserGroup {
 
   private String email;
 
-  private String userGroup;
+  private UserRole userGroup;
 
   @Id
   @GeneratedValue
@@ -30,11 +31,11 @@ public class UserGroup {
     this.email = email;
   }
 
-  public String getUserGroup() {
+  public UserRole getUserGroup() {
     return userGroup;
   }
 
-  public void setUserGroup(String userGroup) {
+  public void setUserGroup(UserRole userGroup) {
     this.userGroup = userGroup;
   }
 }
