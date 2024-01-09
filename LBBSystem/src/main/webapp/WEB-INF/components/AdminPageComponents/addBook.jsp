@@ -1,14 +1,34 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<form id="bookForm" method="POST" action="${pageContext.request.contextPath}/AddBook">
-    <label for="title">Title:</label><br>
-    <input type="text" id="title" name="title" required><br>
-    <label for="author">Author:</label><br>
-    <input type="text" id="author" name="author" required><br>
-    <label for="category">Category:</label><br>
-    <input type="text" id="category" name="category" required><br>
-    <label for="stock">Stock:</label><br>
-    <input type="number" id="stock" name="stock" required><br>
-    <label for="isbn">ISBN:</label><br>
-    <input type="text" id="isbn" name="isbn" required><br>
-    <input type="submit" value="Submit">
-</form>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/AddBook.css">
+<div>
+    <title>Add Book</title>
+    <form id="bookFrom" method="POST" class="form" action="${pageContext.request.contextPath}/AddBook">
+        <div class="title">Add books to Library</div>
+        <div class="input-container ic1">
+            <input id="title" name="title" class="input" type="text" placeholder=" " required/>
+            <div class="cut"></div>
+            <label for="title" class="placeholder">Title of book</label>
+        </div>
+        <div class="input-container ic1">
+            <input id="author" name="author" class="input" type="text" placeholder=" " required/>
+            <div class="cut"></div>
+            <label for="author" class="placeholder">Author of book</label>
+        </div>
+        <div class="input-container ic2">
+            <input id="category" name="category" class="input" type="text" placeholder=" "/>
+            <div class="cut"></div>
+            <label for="category" class="placeholder">Category of book</label>
+        </div>
+        <div class="input-container ic2">
+            <input id="stock" name="stock" class="input" type="number" placeholder=" "/>
+            <div class="cut"></div>
+            <label for="stock" class="placeholder">Stock</label>
+        </div>
+        <div class="input-container ic2">
+            <input id="isbn" name="isbn" class="input" type="text" placeholder=" "/>
+            <div class="cut"></div>
+            <label for="isbn" class="placeholder">ISBN</label>
+        </div>
+        <button type="text" class="submit">submit</button>
+    </form>
+</div>

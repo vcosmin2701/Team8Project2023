@@ -15,7 +15,7 @@ public class AddBook extends HttpServlet {
     BookBean bookBean;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/components/AdminPageComponents/addBookPopup.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/components/AdminPageComponents/addBook.jsp").forward(request, response);
     }
 
     @Override
