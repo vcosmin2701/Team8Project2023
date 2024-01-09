@@ -23,6 +23,8 @@ public class AccountInfo extends HttpServlet {
         String userEmail = user.getName();
         UserDto u = usersBean.findUserByEmail(userEmail);
         request.setAttribute("FirstName", u.getFirstName());
+        request.setAttribute("LastName", u.getLastName());
+        request.setAttribute("Email",userEmail);
         request.getRequestDispatcher("/WEB-INF/pages/accountInfo.jsp").forward(request, response);
     }
 

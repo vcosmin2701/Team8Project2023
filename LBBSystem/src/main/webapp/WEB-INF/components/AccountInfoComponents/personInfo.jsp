@@ -7,11 +7,11 @@
         </div>
         <div class="d-flex align-items-center mb-2">
             <i class="fas fa-user icon-box"></i>
-            <span>Last Name: Student Last Name</span>
+            <span>Last Name: ${LastName}</span>
         </div>
         <div class="d-flex align-items-center mb-2">
             <i class="fas fa-envelope icon-box"></i>
-            <span>Email: studentemail@example.com</span>
+            <span>Email: ${Email}</span>
         </div>
         <div class="d-flex align-items-center">
             <i class="fas fa-id-badge icon-box"></i>
