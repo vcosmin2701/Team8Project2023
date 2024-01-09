@@ -18,6 +18,17 @@ public class BookBean {
     @PersistenceContext
     EntityManager entityManager;
 
+    public void addBook(BookDto bookDto){
+        Book book = new Book();
+        LOG.info("addBook");
+        book.setTitle(bookDto.getTitle());
+        book.setAuthor(bookDto.getTitle());
+        book.setCategory(bookDto.getCategory());
+        book.setStock(bookDto.getStock());
+        book.setIsbn(bookDto.getIsbn());
+        entityManager.persist(book);
+    }
+
     public List<BookDto> findAllBooks() {
         LOG.info("findAllBooks");
         try {
@@ -37,7 +48,8 @@ public class BookBean {
                     book.getTitle(),
                     book.getAuthor(),
                     book.getCategory(),
-                    String.valueOf(book.getStock())
+                    book.getStock(),
+                    book.getIsbn()
             );
             bookDtoList.add(bookDto);
         }
@@ -50,6 +62,4 @@ public class BookBean {
             entityManager.remove(book);
         }
     }
-
-
 }

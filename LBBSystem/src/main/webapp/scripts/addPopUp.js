@@ -1,27 +1,15 @@
-document.getElementById('addUserButton').addEventListener('click', function(event) {
-    event.preventDefault();
-
-    document.getElementById('popupDialog').style.display = 'block';
-    document.getElementById('overlay').style.display = 'block';
-});
-
-document.getElementById('userForm').addEventListener('submit', function(event) {
-
-    event.preventDefault();
-
-});
-function showPopup() {
+function showAddBookPopup() {
     document.getElementById('popupDialog').style.display = 'block';
 }
 
 function closePopup() {
-
     document.getElementById('popupDialog').style.display = 'none';
 }
-function showEditPopup(bookId) {
+
+function showEditPopup() {
     document.getElementById('editPopupDialog').style.display = 'block';
 }
-function closeEditPopup(bookId) {
+
+function closeEditPopup() {
     document.getElementById('editPopupDialog').style.display = 'none';
 }
-

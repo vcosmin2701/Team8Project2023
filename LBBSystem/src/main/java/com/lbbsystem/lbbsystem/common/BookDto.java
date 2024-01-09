@@ -5,14 +5,24 @@ public class BookDto {
     private String title;
     private String author;
     private String category;
-    private String stock;
+    private int stock;
+    private String isbn;
 
-    public BookDto(Long id, String title, String author, String category, String stock) {
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    public BookDto(Long id, String title, String author, String category, int stock, String isbn) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.category = category;
         this.stock = stock;
+        this.isbn = isbn;
     }
 
     public Long getId() {
@@ -47,11 +57,11 @@ public class BookDto {
         this.category = category;
     }
 
-    public String getStock() {
+    public int getStock() {
         return stock;
     }
 
-    public void setStock(String stock) {
+    public void setStock(int stock) {
         this.stock = stock;
     }
 }

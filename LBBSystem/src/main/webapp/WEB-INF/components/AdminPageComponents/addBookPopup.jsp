@@ -7,7 +7,7 @@
         <button type="button" class="btn-close" onclick="closePopup()"></button>
       </div>
       <div class="modal-body">
-        <form id="bookForm" action="${pageContext.request.contextPath}/Books" method="post">
+        <form id="bookForm" method="POST" action="${pageContext.request.contextPath}/AddBook">
           <div class="mb-3">
             <label for="title" class="form-label">Book name:</label>
             <input type="text" class="form-control" id="title" name="title" required>
@@ -19,6 +19,10 @@
           <div class="mb-3">
             <label for="category" class="form-label">Category:</label>
             <input type="text" class="form-control" id="category" name="category" required>
+          </div>
+          <div class="mb-3">
+            <label for="stock" class="form-label">Stock:</label>
+            <input type="number" class="form-control" id="stock" name="stock" required>
           </div>
           <div class="mb-3">
             <label for="category" class="form-label">ISBN:</label>
