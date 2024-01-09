@@ -2,9 +2,13 @@ package com.lbbsystem.lbbsystem.ejb;
 
 import com.lbbsystem.lbbsystem.common.UserDto;
 import com.lbbsystem.lbbsystem.entities.User;
+import com.lbbsystem.lbbsystem.entities.UserGroup;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+
+import java.util.List;
+import java.util.Optional;
 import java.util.logging.Logger;
 
 @Stateless
@@ -20,6 +24,14 @@ public class UsersBean {
     entityManager.persist(user);
   }
 
+  private void assignGroupToUser(String email) {
+    LOG.info("assignGroupToUser");
+
+    UserGroup userGroup = new UserGroup();
+    userGroup.setEmail(email);
+    entityManager.persist(userGroup);
+  }
+
   private User convertUserDtoToUser(UserDto userDto) {
     User user = new User();
     user.setFirstName(userDto.getFirstName());
@@ -29,4 +41,19 @@ public class UsersBean {
 
     return user;
   }
+
+  public UserDto findUserByEmail(String email) {
+    LOG.info("Finding user by email: " + email);
+    User user = entityManager
+            .createQuery("SELECT u FROM User u WHERE u.email = :email", User.class)
+            .setParameter("email", email)
+            .getResultStream()
+            .findFirst().get();
+
+    return convertUserToUserDto(user);
+  }
+
+  private UserDto convertUserToUserDto(User user) {
+    return new UserDto(user.getFirstName(), user.getLastName(), user.getEmail(), user.getPassword(), user.getPassword());
+}
 }
