@@ -10,16 +10,25 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "MainPage", value = "/MainPage")
-public class MainPage extends HttpServlet {
+@WebServlet(name = "BooksPage", value = "/BooksPage")
+public class BooksPage extends HttpServlet {
   @Inject
   BookBean bookBean;
 
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    request.setAttribute("createEntity", "Book");
+    request.setAttribute("firstColumn", "Book name");
+    request.setAttribute("secondColumn", "Stock");
+    request.setAttribute("thirdColumn", "Category");
+    request.setAttribute("fourColumn", "Author");
+
+    request.setAttribute("popupName", "addBookPopup");
+    request.setAttribute("popupEditName", "editBookPopup");
+
     List<BookDto> books = bookBean.findAllBooks();
     request.setAttribute("books", books);
-    request.getRequestDispatcher("/WEB-INF/pages/mainPage.jsp").forward(request, response);
+    request.getRequestDispatcher("/WEB-INF/pages/adminPages/booksPage.jsp").forward(request, response);
   }
 
   @Override
