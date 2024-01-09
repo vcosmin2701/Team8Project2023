@@ -26,7 +26,10 @@
               <td class="text-right">
                 <button class="btn btn-sm  btn-primary" onclick="showEditPopup(book)"><i
                   class="bi bi-pencil-square"></i></button>
-                <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                <form action="${pageContext.request.contextPath}/DeleteBook" method="post">
+                  <input type="hidden" name="bookId" value="${book.id}">
+                  <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                </form>
               </td>
             </tr>
           </c:forEach>

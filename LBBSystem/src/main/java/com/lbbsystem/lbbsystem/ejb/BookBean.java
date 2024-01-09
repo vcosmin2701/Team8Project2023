@@ -43,4 +43,13 @@ public class BookBean {
         }
         return bookDtoList;
     }
+
+    public void deleteBook(Long id) {
+        Book book = entityManager.find(Book.class, id);
+        if(book != null) {
+            entityManager.remove(book);
+        }
+    }
+
+
 }
