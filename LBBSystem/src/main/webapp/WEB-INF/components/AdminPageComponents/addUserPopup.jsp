@@ -3,7 +3,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Add new user</h5>
-        <button type="button" class="btn-close" onclick="closePopup()"></button>
+        <button type="button" class="btn-close"></button>
       </div>
       <div class="modal-body">
         <form id="userForm">
@@ -28,7 +28,7 @@
             <input type="text" class="form-control" id="role" name="role" required>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" onclick="closePopup()">Close</button>
+            <button type="button" class="btn btn-secondary">Close</button>
             <input type="submit" class="btn btn-primary" value="Submit">
           </div>
         </form>
