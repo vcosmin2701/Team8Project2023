@@ -34,7 +34,6 @@ public class UsersBean {
   }
 
 
-
   public UserDto findUserByEmail(String email) {
     LOG.info("Finding user by email: " + email);
     User user = entityManager
@@ -46,38 +45,32 @@ public class UsersBean {
     return convertUserToUserDto(user);
   }
 
+  public UserDto findUserByLegitimationNumber(Long legitimationNumber) {
+    Optional<User> userOptional = entityManager
+            .createQuery("SELECT u FROM User u WHERE u.legitimationNumber = :legitimationNumber", User.class)
+            .setParameter("legitimationNumber", legitimationNumber)
+            .getResultStream()
+            .findFirst();
+
+    if (userOptional.isPresent()) {
+      return convertUserToUserDto(userOptional.get());
+    }
+    return null;
+  }
+
+
   private User convertUserDtoToUser(UserDto userDto) {
     User user = new User();
     user.setFirstName(userDto.getFirstName());
     user.setLastName(userDto.getLastName());
     user.setEmail(userDto.getEmail());
     user.setPassword(userDto.getPassword());
-    user.setLegitimationNumber(generateUniqueLegitimationNumber());
+    user.setLegitimationNumber(userDto.getLegitimationNumber());
 
     return user;
   }
 
-  private Long generateUniqueLegitimationNumber() {
-    Random random = new Random();
-    Long generatedNumber = (long) (1000000 + random.nextInt(9000000));
-
-    while (!isLegitimationNumberUnique(generatedNumber)) {
-      generatedNumber = (long) (1000000 + random.nextInt(9000000));
-    }
-
-    return generatedNumber;
-  }
-
-  private boolean isLegitimationNumberUnique(Long legitimationNumber) {
-    List<User> existingUsers = entityManager
-            .createQuery("SELECT u FROM User u WHERE u.legitimationNumber = :legitimationNumber", User.class)
-            .setParameter("legitimationNumber", legitimationNumber)
-            .getResultList();
-
-    return existingUsers.isEmpty();
-  }
-
   private UserDto convertUserToUserDto(User user) {
-    return new UserDto(user.getFirstName(), user.getLastName(), user.getEmail(), user.getPassword(), user.getPassword(),user.getLegitimationNumber());
+    return new UserDto(user.getFirstName(), user.getLastName(), user.getEmail(), user.getPassword(), user.getPassword(), user.getLegitimationNumber());
 }
 }
