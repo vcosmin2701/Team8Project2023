@@ -3,11 +3,11 @@ package com.lbbsystem.lbbsystem.ejb;
 import com.lbbsystem.lbbsystem.common.UserDto;
 import com.lbbsystem.lbbsystem.entities.User;
 import com.lbbsystem.lbbsystem.entities.UserGroup;
+import com.lbbsystem.lbbsystem.roles.UserRole;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 
-import java.util.List;
 import java.util.Optional;
 import java.util.logging.Logger;
 
@@ -46,20 +46,20 @@ public class UsersBean {
   public UserDto findUserByEmail(String email) {
     LOG.info("Finding user by email: " + email);
     User user = entityManager
-            .createQuery("SELECT u FROM User u WHERE u.email = :email", User.class)
-            .setParameter("email", email)
-            .getResultStream()
-            .findFirst().get();
+      .createQuery("SELECT u FROM User u WHERE u.email = :email", User.class)
+      .setParameter("email", email)
+      .getResultStream()
+      .findFirst().get();
 
     return convertUserToUserDto(user);
   }
 
   public UserDto findUserByLegitimationNumber(Long legitimationNumber) {
     Optional<User> userOptional = entityManager
-            .createQuery("SELECT u FROM User u WHERE u.legitimationNumber = :legitimationNumber", User.class)
-            .setParameter("legitimationNumber", legitimationNumber)
-            .getResultStream()
-            .findFirst();
+      .createQuery("SELECT u FROM User u WHERE u.legitimationNumber = :legitimationNumber", User.class)
+      .setParameter("legitimationNumber", legitimationNumber)
+      .getResultStream()
+      .findFirst();
 
     if (userOptional.isPresent()) {
       return convertUserToUserDto(userOptional.get());
@@ -80,5 +80,5 @@ public class UsersBean {
 
   private UserDto convertUserToUserDto(User user) {
     return new UserDto(user.getFirstName(), user.getLastName(), user.getEmail(), user.getPassword(), user.getPassword(), user.getLegitimationNumber());
-}
+  }
 }
