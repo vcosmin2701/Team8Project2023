@@ -25,7 +25,7 @@ public class UsersBean {
     assignGroupToUser(user.getEmail(), userRole);
   }
 
-  private void assignGroupToUser(String email, UserRole userRole) {
+  private void assignGroupToUser(String email) {
     LOG.info("assignGroupToUser");
 
     UserGroup userGroup = new UserGroup();
@@ -33,15 +33,6 @@ public class UsersBean {
     userGroup.setUserGroup(userRole);
     entityManager.persist(userGroup);
   }
-
-  private void assignGroupToUser(String email) {
-    LOG.info("assignGroupToUser");
-
-    UserGroup userGroup = new UserGroup();
-    userGroup.setEmail(email);
-    entityManager.persist(userGroup);
-  }
-
 
   public UserDto findUserByEmail(String email) {
     LOG.info("Finding user by email: " + email);
