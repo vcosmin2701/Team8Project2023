@@ -62,4 +62,21 @@ public class BookBean {
             entityManager.remove(book);
         }
     }
+
+    public BookDto findBookById(Long id){
+        Book book = entityManager.find(Book.class, id);
+        return new BookDto(book.getId(), book.getTitle(), book.getAuthor(), book.getCategory(), book.getStock(), book.getIsbn());
+    }
+
+    public void updateBook(BookDto bookDto) {
+        Book book = entityManager.find(Book.class, bookDto.getId());
+        if (book != null) {
+            book.setTitle(bookDto.getTitle());
+            book.setAuthor(bookDto.getAuthor());
+            book.setCategory(bookDto.getCategory());
+            book.setStock(bookDto.getStock());
+            book.setIsbn(bookDto.getIsbn());
+            entityManager.merge(book);
+        }
+    }
 }

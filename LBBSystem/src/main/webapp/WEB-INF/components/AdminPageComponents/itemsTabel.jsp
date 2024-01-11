@@ -24,8 +24,7 @@
               </td>
               <td>${book.author}</td>
               <td class="text-right">
-                <button class="btn btn-sm  btn-primary" onclick="showEditPopup(book)"><i
-                  class="bi bi-pencil-square"></i></button>
+                <a href="${pageContext.request.contextPath}/EditBook?id=${book.id}" class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i></a>
                 <form action="${pageContext.request.contextPath}/DeleteBook" method="post">
                   <input type="hidden" name="bookId" value="${book.id}">
                   <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
