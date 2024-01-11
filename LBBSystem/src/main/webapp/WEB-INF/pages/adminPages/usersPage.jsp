@@ -5,5 +5,5 @@
     <h1 class="title-books">Users Page</h1>
     <jsp:include page="/WEB-INF/components/AdminPageComponents/searchBar.jsp"/>
   </div>
-  <jsp:include page="/WEB-INF/components/AdminPageComponents/itemsTabel.jsp"/>
+  <jsp:include page="/WEB-INF/components/AdminPageComponents/userItemsTable.jsp"/>
 </t:adminTemplate>
