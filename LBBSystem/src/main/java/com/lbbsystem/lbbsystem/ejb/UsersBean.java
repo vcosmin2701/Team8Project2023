@@ -25,7 +25,7 @@ public class UsersBean {
     assignGroupToUser(user.getEmail(), userRole);
   }
 
-  private void assignGroupToUser(String email) {
+  private void assignGroupToUser(String email, UserRole userRole) {
     LOG.info("assignGroupToUser");
 
     UserGroup userGroup = new UserGroup();
