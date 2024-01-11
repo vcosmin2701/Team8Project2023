@@ -58,7 +58,6 @@ public class UsersBean {
     return null;
   }
 
-
   private User convertUserDtoToUser(UserDto userDto) {
     User user = new User();
     user.setFirstName(userDto.getFirstName());

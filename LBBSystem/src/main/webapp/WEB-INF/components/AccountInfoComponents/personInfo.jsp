@@ -15,7 +15,7 @@
         </div>
         <div class="d-flex align-items-center">
             <i class="fas fa-id-badge icon-box"></i>
-            <span>Legitimation ID:${LegitimationNumber}</span>
+            <span>Legitimation ID: ${LegitimationNumber}</span>
         </div>
         </div>
 </div>
