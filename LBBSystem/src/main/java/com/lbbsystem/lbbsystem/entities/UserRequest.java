@@ -14,6 +14,8 @@ public class UserRequest {
   private String password;
   private boolean isActivated;
 
+  private Long legitimationNumber;
+
   @Id
   @GeneratedValue
   public Long getUserId() {
@@ -26,6 +28,14 @@ public class UserRequest {
 
   public String getFirstName() {
     return firstName;
+  }
+
+  public Long getLegitimationNumber() {
+    return legitimationNumber;
+  }
+
+  public void setLegitimationNumber(Long legitimationNumber) {
+    this.legitimationNumber = legitimationNumber;
   }
 
   public void setFirstName(String firstName) {

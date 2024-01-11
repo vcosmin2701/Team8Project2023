@@ -2,6 +2,7 @@ package com.lbbsystem.lbbsystem.servlets;
 
 import com.lbbsystem.lbbsystem.common.UserDto;
 import com.lbbsystem.lbbsystem.ejb.UserRequestsBean;
+import com.lbbsystem.lbbsystem.entities.User;
 import com.lbbsystem.lbbsystem.utilities.EncryptionUtil;
 import com.lbbsystem.lbbsystem.emailService.ActivationEmail;
 import com.lbbsystem.lbbsystem.emailService.EmailMessage;
@@ -29,6 +30,8 @@ public class Register extends HttpServlet {
 
   @Inject
   private UserRequestsBean userRequestsBean;
+
+  private User user;
   @Inject
   private Validator validator;
   @Inject
@@ -66,14 +69,18 @@ public class Register extends HttpServlet {
   }
 
   private UserDto createUserDto(HttpServletRequest request) {
+    Long legitimationNumber = user.getLegitimationNumber();
+
     return new UserDto(
-      request.getParameter("firstName"),
-      request.getParameter("lastName"),
-      request.getParameter("email"),
-      request.getParameter("password"),
-      request.getParameter("confirmPassword")
+            request.getParameter("firstName"),
+            request.getParameter("lastName"),
+            request.getParameter("email"),
+            request.getParameter("password"),
+            request.getParameter("confirmPassword"),
+            legitimationNumber
     );
   }
+
 
   private List<String> extractErrorMessages(Set<ConstraintViolation<UserDto>> violations) {
     List<String> errors = new ArrayList<>();

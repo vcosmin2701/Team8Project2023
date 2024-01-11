@@ -13,6 +13,8 @@ public class User {
   private String email;
   private String password;
 
+  private Long legitimationNumber;
+
   @Id
   @GeneratedValue
   public Long getUserId() {
@@ -29,6 +31,14 @@ public class User {
 
   public void setFirstName(String firstName) {
     this.firstName = firstName;
+  }
+
+  public Long getLegitimationNumber() {
+    return legitimationNumber;
+  }
+
+  public void setLegitimationNumber(Long legitimationNumber) {
+    this.legitimationNumber = legitimationNumber;
   }
 
   public String getLastName() {
