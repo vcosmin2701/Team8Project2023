@@ -2,10 +2,10 @@ package com.lbbsystem.lbbsystem.ejb;
 
 import com.lbbsystem.lbbsystem.common.UserDto;
 import com.lbbsystem.lbbsystem.entities.UserRequest;
+import com.lbbsystem.lbbsystem.roles.UserRole;
 import jakarta.ejb.Stateless;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.NoResultException;
 import jakarta.persistence.PersistenceContext;
 
 import java.util.Optional;
@@ -47,7 +47,7 @@ public class UserRequestsBean {
       .filter(userRequest -> !userRequest.getIsActivated())
       .map(userRequest -> {
         userRequest.setIsActivated(true);
-        usersBean.addUser(convertToUserDto(userRequest));
+        usersBean.addUser(convertToUserDto(userRequest), UserRole.STUDENT);
         return true;
       })
       .orElseThrow(IllegalArgumentException::new);
