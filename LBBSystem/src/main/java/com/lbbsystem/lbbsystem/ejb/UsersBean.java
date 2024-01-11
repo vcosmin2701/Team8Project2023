@@ -2,6 +2,8 @@ package com.lbbsystem.lbbsystem.ejb;
 
 import com.lbbsystem.lbbsystem.common.UserDto;
 import com.lbbsystem.lbbsystem.entities.User;
+import com.lbbsystem.lbbsystem.entities.UserGroup;
+import com.lbbsystem.lbbsystem.roles.UserRole;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;

@@ -1,5 +1,9 @@
 package com.lbbsystem.lbbsystem.servlets;
 
+import com.lbbsystem.lbbsystem.common.UserDto;
+import com.lbbsystem.lbbsystem.ejb.UsersBean;
+import com.lbbsystem.lbbsystem.roles.RoleConstants;
+import jakarta.inject.Inject;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.HttpConstraint;
 import jakarta.servlet.annotation.ServletSecurity;
