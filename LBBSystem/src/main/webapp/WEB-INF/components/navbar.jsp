@@ -21,23 +21,7 @@
         <div id="navcol-2" class="collapse navbar-collapse">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active fs-5" href="#"><i class="fas fa-home"></i> First Item</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fs-5" href="#"><i class="fas fa-globe"></i> Second Item</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fs-5" href="#"><i class="fas fa-bell"></i> Third Item</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fs-5" href="#"><i class="fas fa-bell"></i> Notifications
-                <span class="badge bg-danger">3</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fs-5" href="#"><i class="fas fa-envelope"></i> Messages
-                <span class="badge bg-info">5</span>
-              </a>
+              <a class="nav-link active fs-5" href="${pageContext.request.contextPath}/MainPage"><i class="fas fa-home"></i>Home</a>
             </li>
           </ul>
 
@@ -49,7 +33,7 @@
             </button>
             <div class="dropdown-menu" aria-labelledby="userDropdown">
               <a class="dropdown-item" href="${pageContext.request.contextPath}/AccountInfo">Profile </a>
-              <a class="dropdown-item" href="#">Settings</a>
+              <a class="dropdown-item" href="${pageContext.request.contextPath}/ContactSupport">Contact Support</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="${pageContext.request.contextPath}/Logout">Logout</a>
             </div>
