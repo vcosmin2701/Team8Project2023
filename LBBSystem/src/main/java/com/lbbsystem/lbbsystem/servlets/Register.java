@@ -2,10 +2,12 @@ package com.lbbsystem.lbbsystem.servlets;
 
 import com.lbbsystem.lbbsystem.common.UserDto;
 import com.lbbsystem.lbbsystem.ejb.UserRequestsBean;
+import com.lbbsystem.lbbsystem.entities.User;
 import com.lbbsystem.lbbsystem.utilities.EncryptionUtil;
 import com.lbbsystem.lbbsystem.emailService.ActivationEmail;
 import com.lbbsystem.lbbsystem.emailService.EmailMessage;
 import com.lbbsystem.lbbsystem.emailService.EmailService;
+import com.lbbsystem.lbbsystem.utilities.LegitimationNumberGenerator;
 import jakarta.inject.Inject;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
@@ -29,12 +31,15 @@ public class Register extends HttpServlet {
 
   @Inject
   private UserRequestsBean userRequestsBean;
+
   @Inject
   private Validator validator;
   @Inject
   private EncryptionUtil encryptionUtil;
   @Inject
   private EmailService emailService;
+  @Inject
+  LegitimationNumberGenerator legitimationNumberGenerator;
 
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -66,14 +71,18 @@ public class Register extends HttpServlet {
   }
 
   private UserDto createUserDto(HttpServletRequest request) {
+    Long legitimationNumber = legitimationNumberGenerator.generateUniqueLegitimationNumber();
+
     return new UserDto(
-      request.getParameter("firstName"),
-      request.getParameter("lastName"),
-      request.getParameter("email"),
-      request.getParameter("password"),
-      request.getParameter("confirmPassword")
+            request.getParameter("firstName"),
+            request.getParameter("lastName"),
+            request.getParameter("email"),
+            request.getParameter("password"),
+            request.getParameter("confirmPassword"),
+            legitimationNumber
     );
   }
+
 
   private List<String> extractErrorMessages(Set<ConstraintViolation<UserDto>> violations) {
     List<String> errors = new ArrayList<>();
@@ -86,7 +95,7 @@ public class Register extends HttpServlet {
   private void processRegistration(EmailService emailService, UserDto userDto, HttpServletRequest request) throws Exception {
     String encryptedEmail = encryptionUtil.encrypt(userDto.getEmail());
     String activationLink = String.format("http://localhost:8080/LBBSystem-1.0-SNAPSHOT/ActivationAccount?email=%s",
-      URLEncoder.encode(encryptedEmail, StandardCharsets.UTF_8));
+            URLEncoder.encode(encryptedEmail, StandardCharsets.UTF_8));
 
     EmailMessage emailMessage = new ActivationEmail();
     emailMessage.setRecipients(new String[]{userDto.getEmail()});
@@ -95,5 +104,5 @@ public class Register extends HttpServlet {
 
     emailService.sendEmail(emailMessage);
     userRequestsBean.addRequestUser(userDto);
-  }
+}
 }

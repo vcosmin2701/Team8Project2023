@@ -3,7 +3,7 @@
     <div class="info-box p-3 mb-4">
         <div class="d-flex align-items-center mb-2">
             <i class="fas fa-user icon-box"></i>
-            <span>First Name:${FirstName}</span>
+            <span>First Name: ${FirstName}</span>
         </div>
         <div class="d-flex align-items-center mb-2">
             <i class="fas fa-user icon-box"></i>
@@ -15,7 +15,7 @@
         </div>
         <div class="d-flex align-items-center">
             <i class="fas fa-id-badge icon-box"></i>
-            <span>Legitimation ID: Student leg. nr</span>
+            <span>Legitimation ID: ${LegitimationNumber}</span>
         </div>
         </div>
 </div>

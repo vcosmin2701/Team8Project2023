@@ -8,53 +8,68 @@ import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 
-import java.util.List;
 import java.util.Optional;
 import java.util.logging.Logger;
 
 @Stateless
 public class UsersBean {
-    private static final Logger LOG = Logger.getLogger(UsersBean.class.getName());
-    @PersistenceContext
-    EntityManager entityManager;
+  private static final Logger LOG = Logger.getLogger(UsersBean.class.getName());
+  @PersistenceContext
+  EntityManager entityManager;
 
-    public void addUser(UserDto userDto, UserRole userRole) {
-        LOG.info("addUser");
+  public void addUser(UserDto userDto, UserRole userRole) {
+    LOG.info("addUser");
 
-        User user = convertUserDtoToUser(userDto);
-        entityManager.persist(user);
+    User user = convertUserDtoToUser(userDto);
+    entityManager.persist(user);
+    assignGroupToUser(user.getEmail(), userRole);
+  }
+
+  private void assignGroupToUser(String email, UserRole userRole) {
+    LOG.info("assignGroupToUser");
+
+    UserGroup userGroup = new UserGroup();
+    userGroup.setEmail(email);
+    userGroup.setUserGroup(userRole);
+    entityManager.persist(userGroup);
+  }
+
+  public UserDto findUserByEmail(String email) {
+    LOG.info("Finding user by email: " + email);
+    User user = entityManager
+      .createQuery("SELECT u FROM User u WHERE u.email = :email", User.class)
+      .setParameter("email", email)
+      .getResultStream()
+      .findFirst().get();
+
+    return convertUserToUserDto(user);
+  }
+
+  public UserDto findUserByLegitimationNumber(Long legitimationNumber) {
+    Optional<User> userOptional = entityManager
+      .createQuery("SELECT u FROM User u WHERE u.legitimationNumber = :legitimationNumber", User.class)
+      .setParameter("legitimationNumber", legitimationNumber)
+      .getResultStream()
+      .findFirst();
+
+    if (userOptional.isPresent()) {
+      return convertUserToUserDto(userOptional.get());
     }
+    return null;
+  }
 
-    private void assignGroupToUser(String email) {
-        LOG.info("assignGroupToUser");
+  private User convertUserDtoToUser(UserDto userDto) {
+    User user = new User();
+    user.setFirstName(userDto.getFirstName());
+    user.setLastName(userDto.getLastName());
+    user.setEmail(userDto.getEmail());
+    user.setPassword(userDto.getPassword());
+    user.setLegitimationNumber(userDto.getLegitimationNumber());
 
-        UserGroup userGroup = new UserGroup();
-        userGroup.setEmail(email);
-        entityManager.persist(userGroup);
-    }
+    return user;
+  }
 
-    private User convertUserDtoToUser(UserDto userDto) {
-        User user = new User();
-        user.setFirstName(userDto.getFirstName());
-        user.setLastName(userDto.getLastName());
-        user.setEmail(userDto.getEmail());
-        user.setPassword(userDto.getPassword());
-
-        return user;
-    }
-
-    public UserDto findUserByEmail(String email) {
-        LOG.info("Finding user by email: " + email);
-        User user = entityManager
-                .createQuery("SELECT u FROM User u WHERE u.email = :email", User.class)
-                .setParameter("email", email)
-                .getResultStream()
-                .findFirst().get();
-
-        return convertUserToUserDto(user);
-    }
-
-    private UserDto convertUserToUserDto(User user) {
-        return new UserDto(user.getFirstName(), user.getLastName(), user.getEmail(), user.getPassword(), user.getPassword());
-    }
+  private UserDto convertUserToUserDto(User user) {
+    return new UserDto(user.getFirstName(), user.getLastName(), user.getEmail(), user.getPassword(), user.getPassword(), user.getLegitimationNumber());
+  }
 }

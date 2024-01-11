@@ -59,16 +59,19 @@ public class UserRequestsBean {
     userRequest.setLastName(userDto.getLastName());
     userRequest.setEmail(userDto.getEmail());
     userRequest.setPassword(passwordBean.convertToSha256(userDto.getPassword()));
+    userRequest.setLegitimationNumber(userDto.getLegitimationNumber());
     return userRequest;
   }
 
   private UserDto convertToUserDto(UserRequest userRequest) {
     return new UserDto(
-      userRequest.getFirstName(),
-      userRequest.getLastName(),
-      userRequest.getEmail(),
-      userRequest.getPassword(),
-      userRequest.getPassword());
-
+            userRequest.getFirstName(),
+            userRequest.getLastName(),
+            userRequest.getEmail(),
+            userRequest.getPassword(),
+            userRequest.getPassword(),
+            userRequest.getLegitimationNumber()
+    );
   }
+
 }

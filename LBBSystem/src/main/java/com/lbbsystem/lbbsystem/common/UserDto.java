@@ -26,16 +26,27 @@ public class UserDto {
 
   private String confirmPassword;
 
-  public UserDto(String firstName, String lastName, String email, String password, String confirmPassword) {
+  private Long legitimationNumber;
+
+  public UserDto(String firstName, String lastName, String email, String password, String confirmPassword, Long legitimationNumber) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.email = email;
     this.password = password;
     this.confirmPassword = confirmPassword;
+    this.legitimationNumber=legitimationNumber;
   }
 
   public String getFirstName() {
     return firstName;
+  }
+
+  public Long getLegitimationNumber() {
+    return legitimationNumber;
+  }
+
+  public void setLegitimationNumber(Long legitimationNumber) {
+    this.legitimationNumber = legitimationNumber;
   }
 
   public void setFirstName(String firstName) {

@@ -34,6 +34,7 @@ public class AccountInfo extends HttpServlet {
         request.setAttribute("FirstName", u.getFirstName());
         request.setAttribute("LastName", u.getLastName());
         request.setAttribute("Email",userEmail);
+        request.setAttribute("LegitimationNumber",u.getLegitimationNumber());
         request.getRequestDispatcher("/WEB-INF/pages/accountInfo.jsp").forward(request, response);
     }
 
