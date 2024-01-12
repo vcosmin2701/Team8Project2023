@@ -29,7 +29,7 @@ public class AdminUsers extends HttpServlet {
         request.setAttribute("thirdColumn", "Email");
         request.setAttribute("fourColumn", "Role");
 
-        List<UserDto> users = usersBean.findAllUsers();
+        List<UserDto> users = usersBean.findAllUsersWithRole();
         request.setAttribute("users", users);
 
         request.getRequestDispatcher("/WEB-INF/pages/adminPages/usersPage.jsp").forward(request, response);

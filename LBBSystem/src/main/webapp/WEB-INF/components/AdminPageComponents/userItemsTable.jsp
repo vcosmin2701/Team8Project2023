@@ -19,7 +19,7 @@
               <td>${user.firstName} ${user.lastName}</td>
               <td>${user.legitimationNumber}</td>
               <td>${user.email}</td>
-<%--              <td>${user.role}</td>--%>
+              <td>${user.role}</td>
 <%--              later ui redesign--%>
 <%--              <td class="text-right">--%>
 <%--                <a href="${pageContext.request.contextPath}/EditBook?id=${book.id}" class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i></a>--%>

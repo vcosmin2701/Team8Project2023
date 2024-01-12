@@ -72,6 +72,13 @@ public class UsersBean {
         return user;
     }
 
+    private UserRole findUserRoleByEmail(String email) {
+        TypedQuery<UserGroup> typedQuery = entityManager.createQuery("SELECT ug FROM UserGroup ug WHERE ug.email = :email", UserGroup.class)
+                .setParameter("email", email);
+        UserGroup userGroup = typedQuery.getSingleResult();
+        return userGroup != null ? userGroup.getUserGroup() : null;
+    }
+
     private UserDto convertUserToUserDto(User user) {
         return new UserDto(user.getFirstName(), user.getLastName(), user.getEmail(), user.getPassword(), user.getPassword(), user.getLegitimationNumber());
     }
@@ -81,6 +88,19 @@ public class UsersBean {
         TypedQuery<User> typedQuery = entityManager.createQuery("SELECT u FROM User u", User.class);
         List<User> users = typedQuery.getResultList();
         return convertUsersToDto(users);
+    }
+
+    public List<UserDto> findAllUsersWithRole() {
+        LOG.info("findAllUsers");
+        TypedQuery<User> typedQuery = entityManager.createQuery("SELECT u FROM User u", User.class);
+        List<User> users = typedQuery.getResultList();
+        List<UserDto> userDtos = new ArrayList<>();
+        for (User user : users) {
+            UserRole role = findUserRoleByEmail(user.getEmail());
+            UserDto userDto = new UserDto(user.getFirstName(), user.getLastName(), user.getEmail(), user.getPassword(), user.getPassword(), user.getLegitimationNumber(), role);
+            userDtos.add(userDto);
+        }
+        return userDtos;
     }
 
     private List<UserDto> convertUsersToDto(List<User> users) {
