@@ -5,6 +5,7 @@ import com.lbbsystem.lbbsystem.entities.User;
 import com.lbbsystem.lbbsystem.entities.UserGroup;
 import com.lbbsystem.lbbsystem.roles.UserRole;
 import jakarta.ejb.Stateless;
+import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
@@ -20,12 +21,17 @@ public class UsersBean {
     @PersistenceContext
     EntityManager entityManager;
 
+    @Inject
+    UserRequestsBean userRequestBean;
+
     public void addUser(UserDto userDto, UserRole userRole) {
         LOG.info("addUser");
 
         User user = convertUserDtoToUser(userDto);
         entityManager.persist(user);
         assignGroupToUser(user.getEmail(), userRole);
+        userRequestBean.addRequestUser(userDto, true);
+
     }
 
     private void assignGroupToUser(String email, UserRole userRole) {
