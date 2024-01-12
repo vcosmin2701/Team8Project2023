@@ -3,6 +3,7 @@ package com.lbbsystem.lbbsystem.ejb;
 import com.lbbsystem.lbbsystem.common.UserDto;
 import com.lbbsystem.lbbsystem.entities.User;
 import com.lbbsystem.lbbsystem.entities.UserGroup;
+import com.lbbsystem.lbbsystem.entities.UserRequest;
 import com.lbbsystem.lbbsystem.roles.UserRole;
 import jakarta.ejb.Stateless;
 import jakarta.inject.Inject;
@@ -116,5 +117,31 @@ public class UsersBean {
             userDtoList.add(userDto);
         }
         return userDtoList;
+    }
+
+    public void deleteUser(String email) {
+        User user = entityManager
+                .createQuery("SELECT u FROM User u WHERE u.email = :email", User.class)
+                .setParameter("email", email)
+                .getSingleResult();
+        if (user != null) {
+            UserGroup userGroup = entityManager
+                    .createQuery("SELECT ug FROM UserGroup ug WHERE ug.email = :email", UserGroup.class)
+                    .setParameter("email", email)
+                    .getSingleResult();
+            if (userGroup != null) {
+                entityManager.remove(userGroup);
+            }
+
+            UserRequest userRequest = entityManager
+                    .createQuery("SELECT ur FROM UserRequest ur WHERE ur.email = :email", UserRequest.class)
+                    .setParameter("email", email)
+                    .getSingleResult();
+            if (userRequest != null) {
+                entityManager.remove(userRequest);
+            }
+
+            entityManager.remove(user);
+        }
     }
 }

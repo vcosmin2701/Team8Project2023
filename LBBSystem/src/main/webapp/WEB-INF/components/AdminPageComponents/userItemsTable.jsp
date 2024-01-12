@@ -20,14 +20,12 @@
               <td>${user.legitimationNumber}</td>
               <td>${user.email}</td>
               <td>${user.role}</td>
-<%--              later ui redesign--%>
-<%--              <td class="text-right">--%>
-<%--                <a href="${pageContext.request.contextPath}/EditBook?id=${book.id}" class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i></a>--%>
-<%--                <form action="${pageContext.request.contextPath}/DeleteBook" method="post">--%>
-<%--                  <input type="hidden" name="bookId" value="${book.id}">--%>
-<%--                  <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>--%>
-<%--                </form>--%>
-<%--              </td>--%>
+              <td class="text-right">
+                <form action="${pageContext.request.contextPath}/DeleteUser" method="post">
+                  <input type="hidden" name="email" value="${user.email}">
+                  <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                </form>
+              </td>
             </tr>
           </c:forEach>
           </tbody>
