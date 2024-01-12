@@ -22,7 +22,7 @@ public class BookBean {
         Book book = new Book();
         LOG.info("addBook");
         book.setTitle(bookDto.getTitle());
-        book.setAuthor(bookDto.getTitle());
+        book.setAuthor(bookDto.getAuthor());
         book.setCategory(bookDto.getCategory());
         book.setStock(bookDto.getStock());
         book.setIsbn(bookDto.getIsbn());
