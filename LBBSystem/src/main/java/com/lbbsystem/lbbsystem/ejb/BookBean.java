@@ -79,10 +79,22 @@ public class BookBean {
         return copyBooksToDto(books);
     }
     public List<BookDto> findBooksByCategory(String category) {
-        TypedQuery<Book> typedQuery =entityManager.createQuery("SELECT b FROM Book b WHERE b.category = :category", Book.class);
-        typedQuery.setParameter("category", category);
-        List<Book> books = typedQuery.getResultList();
-        return copyBooksToDto(books);
+        if(category == null || category.isEmpty()) {
+            return findAllBooks();
+        }
+        if(!"Others".equals(category)) {
+            TypedQuery<Book> typedQuery = entityManager.createQuery("SELECT b FROM Book b WHERE b.category = :category", Book.class);
+            typedQuery.setParameter("category", category);
+            List<Book> books = typedQuery.getResultList();
+            return copyBooksToDto(books);
+        }
+        else {
+            TypedQuery<Book> typedQuery = entityManager.createQuery(
+                    "SELECT b FROM Book b WHERE b.category NOT IN ('Science', 'Detective', 'Love', 'Novel', 'History')", Book.class);
+            List<Book> books = typedQuery.getResultList();
+            return copyBooksToDto(books);
+        }
+        
     }
 
 }
