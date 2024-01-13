@@ -24,9 +24,21 @@ public class MainPage extends HttpServlet {
 
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    List<BookDto> books = bookBean.findAllBooks();
-    request.setAttribute("books", books);
-    request.getRequestDispatcher("/WEB-INF/pages/mainPage.jsp").forward(request, response);
+    try {
+      String sortOption = request.getParameter("sort");
+      List<BookDto> books;
+
+      if (sortOption != null && !sortOption.isEmpty() && !sortOption.equals("all")) {
+        books = bookBean.findBooksSortedBy(sortOption);
+      } else {
+        books = bookBean.findAllBooks();
+      }
+
+      request.setAttribute("books", books);
+      request.getRequestDispatcher("/WEB-INF/pages/mainPage.jsp").forward(request, response);
+    } catch (Exception e) {
+      throw new ServletException(e);
+    }
   }
 
   @Override

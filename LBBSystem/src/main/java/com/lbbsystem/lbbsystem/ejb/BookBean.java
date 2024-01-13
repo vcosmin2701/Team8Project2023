@@ -43,4 +43,31 @@ public class BookBean {
         }
         return bookDtoList;
     }
+    public List<BookDto> findBooksSortedBy(String sortOption) {
+        LOG.info("findBooksSortedBy: " + sortOption);
+        try {
+            String orderByClause = determineOrderByClause(sortOption);
+            TypedQuery<Book> typedQuery = entityManager.createQuery("SELECT b FROM Book b " + orderByClause, Book.class);
+            List<Book> books = typedQuery.getResultList();
+            return copyBooksToDto(books);
+        } catch(Exception ex) {
+            throw new EJBException(ex);
+        }
+    }
+
+    private String determineOrderByClause(String sortOption) {
+        switch (sortOption) {
+            case "author-a-z":
+                return "ORDER BY b.author ASC";
+            case "author-z-a":
+                return "ORDER BY b.author DESC";
+            case "title-a-z":
+                return "ORDER BY b.title ASC";
+            case "title-z-a":
+                return "ORDER BY b.title DESC";
+            default:
+                return "";
+        }
+    }
+
 }

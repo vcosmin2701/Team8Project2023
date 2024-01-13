@@ -1,21 +1,20 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<% String currentSort = request.getParameter("sort"); %>
 <div class="container mt-4">
   <div class="row">
     <div class="col-md-10"></div>
+    <form action="${pageContext.request.contextPath}/MainPage" method="GET">
     <div class="mb-3 col-md-2">
       <label for="sortDropdown" class="form-label text-right d-block">Sort:</label>
-      <select id="sortDropdown" class="form-control" onchange="">
-        <option value="all">All Categories</option>
-        <option value="author-a-z">Author A-z</option>
-        <option value="author-z-a">Author Z-a</option>
-        <option value="date-ascending">Date Ascending</option>
-        <option value="date-descending">Date Descending</option>
-        <option value="title-a-z">Title A-z</option>
-        <option value="title-z-a">Title Z-a</option>
-        <option value="publisher-a-z">Publisher A-z</option>
-        <option value="publisher-z-a">Publisher Z-a</option>
+      <select id="sortDropdown" name="sort" class="form-control" onchange="this.form.submit()">
+        <option value="all" ${currentSort == null || "all".equals(currentSort) ? "selected" : ""}>All Categories</option>
+        <option value="author-a-z" ${"author-a-z".equals(currentSort) ? "selected" : ""}>Author A-z</option>
+        <option value="author-z-a" ${"author-z-a".equals(currentSort) ? "selected" : ""}>Author Z-a</option>
+        <option value="author-a-z" ${"title-a-z".equals(currentSort) ? "selected" : ""}>Title A-z</option>
+        <option value="author-z-a" ${"title-z-a".equals(currentSort) ? "selected" : ""}>Title Z-a</option>
       </select>
     </div>
+    </form>
   </div>
 
   <div class="row">
