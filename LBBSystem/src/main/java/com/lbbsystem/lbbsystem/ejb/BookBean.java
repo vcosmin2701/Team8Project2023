@@ -78,5 +78,11 @@ public class BookBean {
         List<Book> books = typedQuery.getResultList();
         return copyBooksToDto(books);
     }
+    public List<BookDto> findBooksByCategory(String category) {
+        TypedQuery<Book> typedQuery =entityManager.createQuery("SELECT b FROM Book b WHERE b.category = :category", Book.class);
+        typedQuery.setParameter("category", category);
+        List<Book> books = typedQuery.getResultList();
+        return copyBooksToDto(books);
+    }
 
 }
