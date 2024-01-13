@@ -5,32 +5,14 @@ import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "borrowedbook")
 public class BorrowedBook {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
+    @GeneratedValue
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "USER_ID", referencedColumnName = "USERID") // corrected reference column name
     private User user;
-
     @ManyToOne
-    @JoinColumn(name = "BOOK_ID", referencedColumnName = "ID") // corrected reference column name
-    private Book book;
-
-    @Column(name = "RETURNDATE")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date returnDate;
-
-    @Column(name = "BORROWDATE")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date borrowDate;
-
-    @Column(name = "STATUS")
-    private String status;
-
+    @JoinColumn(name = "id_user")
     public User getUser() {
         return user;
     }
@@ -39,6 +21,9 @@ public class BorrowedBook {
         this.user = user;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "id_book")
+    private Book book;
     public Book getBook() {
         return book;
     }
@@ -47,18 +32,14 @@ public class BorrowedBook {
         this.book = book;
     }
 
-    public String getStatus() {
-        return status;
-    }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
+    private Date borrowDate;
+    private Date returnDate;
+    private String status;
 
     public Long getId() {
         return id;
     }
-
 
     public void setId(Long id) {
         this.id = id;
@@ -66,6 +47,7 @@ public class BorrowedBook {
 
 
 
+    @Basic
     public Date getBorrowDate() {
         return borrowDate;
     }
@@ -82,4 +64,11 @@ public class BorrowedBook {
         this.returnDate = returnDate;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }

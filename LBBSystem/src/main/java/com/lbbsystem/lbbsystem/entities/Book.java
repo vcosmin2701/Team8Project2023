@@ -7,32 +7,29 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "book")
 public class Book {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
+    @GeneratedValue
     private Long id;
 
-    @Column(name = "CATEGORY")
     private String category;
-
-    @Column(name = "ISBN")
     private String isbn;
-
-    @Column(name = "STOCK")
     private int stock;
-
-    @Column(name = "AUTHOR")
     private String author;
-
-    @Column(name = "TITLE")
     private String title;
 
-    @OneToMany(mappedBy = "book")
-    private Collection<BorrowedBook> borrowedBooks;
 
-    // Getters and setters for all the fields, annotated with @Column where necessary
+    private Collection<BorrowedBook> borrowedBooks;
+    @OneToMany(mappedBy = "book")
+    public Collection<BorrowedBook> getBorrowedBooks() {
+        return borrowedBooks;
+    }
+
+    public void setBorrowedBooks(Collection<BorrowedBook> borrowedBooks) {
+        this.borrowedBooks = borrowedBooks;
+    }
+
+
     public Long getId() {
         return id;
     }
@@ -41,6 +38,7 @@ public class Book {
         this.id = id;
     }
 
+    @Basic
     public String getTitle() {
         return title;
     }
@@ -80,14 +78,4 @@ public class Book {
     public void setStock(int stock) {
         this.stock = stock;
     }
-
-    public Collection<BorrowedBook> getBorrowedBooks() {
-        return borrowedBooks;
-    }
-
-    public void setBorrowedBooks(Collection<BorrowedBook> borrowedBooks) {
-        this.borrowedBooks = borrowedBooks;
-    }
-
-
 }

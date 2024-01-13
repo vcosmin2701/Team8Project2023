@@ -7,32 +7,28 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "user")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "USERID")
+    @GeneratedValue
     private Long userId;
 
-    @Column(name = "FIRSTNAME")
     private String firstName;
-
-    @Column(name = "LASTNAME")
     private String lastName;
-
-    @Column(name = "EMAIL")
     private String email;
-
-    @Column(name = "PASSWORD")
     private String password;
-
-    @Column(name = "LEGITIMATIONNUMBER")
     private Long legitimationNumber;
 
-    @OneToMany(mappedBy = "user")
     private Collection<BorrowedBook> borrowedBooks;
+    @OneToMany(mappedBy = "user")
+    public Collection<BorrowedBook> getBorrowedBooks() {
+        return borrowedBooks;
+    }
 
-    // Getters and setters
+    public void setBorrowedBooks(Collection<BorrowedBook> borrowedBooks) {
+        this.borrowedBooks = borrowedBooks;
+    }
+
+
     public Long getUserId() {
         return userId;
     }
@@ -41,6 +37,7 @@ public class User {
         this.userId = userId;
     }
 
+    @Basic
     public String getFirstName() {
         return firstName;
     }
@@ -79,13 +76,5 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public Collection<BorrowedBook> getBorrowedBooks() {
-        return borrowedBooks;
-    }
-
-    public void setBorrowedBooks(Collection<BorrowedBook> borrowedBooks) {
-        this.borrowedBooks = borrowedBooks;
     }
 }
