@@ -2,6 +2,9 @@ package com.lbbsystem.lbbsystem.entities;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 public class Book {
 
@@ -66,4 +69,14 @@ public class Book {
     private String isbn;
     private int stock;
 
+    @OneToMany(mappedBy = "book")
+    private Set<BookLoan> bookLoans = new HashSet<>();
+
+    public Set<BookLoan> getBookLoans() {
+        return bookLoans;
+    }
+
+    public void setBookLoans(Set<BookLoan> bookLoans) {
+        this.bookLoans = bookLoans;
+    }
 }
