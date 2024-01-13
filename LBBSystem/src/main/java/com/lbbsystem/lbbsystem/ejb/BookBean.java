@@ -70,4 +70,13 @@ public class BookBean {
         }
     }
 
+    public List<BookDto> searchBooks(String query) {
+        TypedQuery<Book> typedQuery = entityManager.createQuery(
+                "SELECT b FROM Book b WHERE LOWER(b.title) LIKE LOWER(:query) OR LOWER(b.author) LIKE LOWER(:query)",
+                Book.class);
+        typedQuery.setParameter("query", "%" + query + "%");
+        List<Book> books = typedQuery.getResultList();
+        return copyBooksToDto(books);
+    }
+
 }

@@ -24,11 +24,15 @@ public class MainPage extends HttpServlet {
 
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    try {
-      String sortOption = request.getParameter("sort");
-      List<BookDto> books;
+    String sortOption = request.getParameter("sort");
+    String searchQuery = request.getParameter("query");
+    List<BookDto> books;
 
-      if (sortOption != null && !sortOption.isEmpty() && !sortOption.equals("all")) {
+    try {
+
+      if (searchQuery != null && !searchQuery.isEmpty()) {
+        books = bookBean.searchBooks(searchQuery);
+      } else if (sortOption != null && !sortOption.isEmpty() && !sortOption.equals("all")) {
         books = bookBean.findBooksSortedBy(sortOption);
       } else {
         books = bookBean.findAllBooks();
