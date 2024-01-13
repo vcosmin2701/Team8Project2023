@@ -34,6 +34,7 @@ public class MainPage extends HttpServlet {
         books = bookBean.findAllBooks();
       }
 
+      request.setAttribute("currentSort", sortOption);
       request.setAttribute("books", books);
       request.getRequestDispatcher("/WEB-INF/pages/mainPage.jsp").forward(request, response);
     } catch (Exception e) {

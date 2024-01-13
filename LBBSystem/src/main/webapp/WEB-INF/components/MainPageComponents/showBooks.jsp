@@ -4,16 +4,16 @@
   <div class="row">
     <div class="col-md-10"></div>
     <form action="${pageContext.request.contextPath}/MainPage" method="GET">
-    <div class="mb-3 col-md-2">
-      <label for="sortDropdown" class="form-label text-right d-block">Sort:</label>
-      <select id="sortDropdown" name="sort" class="form-control" onchange="this.form.submit()">
-        <option value="all" ${currentSort == null || "all".equals(currentSort) ? "selected" : ""}>All Categories</option>
-        <option value="author-a-z" ${"author-a-z".equals(currentSort) ? "selected" : ""}>Author A-z</option>
-        <option value="author-z-a" ${"author-z-a".equals(currentSort) ? "selected" : ""}>Author Z-a</option>
-        <option value="author-a-z" ${"title-a-z".equals(currentSort) ? "selected" : ""}>Title A-z</option>
-        <option value="author-z-a" ${"title-z-a".equals(currentSort) ? "selected" : ""}>Title Z-a</option>
-      </select>
-    </div>
+      <div class="mb-3 col-md-2">
+        <label for="sortDropdown" class="form-label text-right d-block">Sort:</label>
+        <select id="sortDropdown" name="sort" class="form-control" onchange="this.form.submit()">
+          <option value="all" ${'all'.equals(currentSort) ? 'selected' : ''}>All Categories</option>
+          <option value="author-a-z" ${'author-a-z'.equals(currentSort) ? 'selected' : ''}>Author A-z</option>
+          <option value="author-z-a" ${'author-z-a'.equals(currentSort) ? 'selected' : ''}>Author Z-a</option>
+          <option value="title-a-z" ${'title-a-z'.equals(currentSort) ? 'selected' : ''}>Title A-z</option>
+          <option value="title-z-a" ${'title-z-a'.equals(currentSort) ? 'selected' : ''}>Title Z-a</option>
+        </select>
+      </div>
     </form>
   </div>
 
