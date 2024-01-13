@@ -5,22 +5,47 @@ import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity
-public class BookLoan {
+@Table(name = "borrowedbook")
+public class BorrowedBook {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "book_id")
-    private Book book;
-
-    @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "USER_ID", referencedColumnName = "USERID") // corrected reference column name
     private User user;
 
+    @ManyToOne
+    @JoinColumn(name = "BOOK_ID", referencedColumnName = "ID") // corrected reference column name
+    private Book book;
+
+    @Column(name = "RETURNDATE")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date returnDate;
+
+    @Column(name = "BORROWDATE")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date borrowDate;
 
+    @Column(name = "STATUS")
     private String status;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
+    }
 
     public String getStatus() {
         return status;
@@ -39,21 +64,7 @@ public class BookLoan {
         this.id = id;
     }
 
-    public Book getBook() {
-        return book;
-    }
 
-    public void setBook(Book book) {
-        this.book = book;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
 
     public Date getBorrowDate() {
         return borrowDate;
@@ -71,5 +82,4 @@ public class BookLoan {
         this.returnDate = returnDate;
     }
 
-    private Date returnDate;
 }

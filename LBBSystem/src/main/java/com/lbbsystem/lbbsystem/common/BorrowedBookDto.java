@@ -1,10 +1,8 @@
 package com.lbbsystem.lbbsystem.common;
 
-import com.lbbsystem.lbbsystem.entities.BookLoan;
-
 import java.util.Date;
 
-public class BookLoanDto {
+public class BorrowedBookDto {
     private Long id;
     private Long bookId;
     private Long userId;
@@ -12,24 +10,13 @@ public class BookLoanDto {
     private Date returnDate;
     private String status;
 
-    public BookLoanDto(Long id, Long bookId, Long userId, Date borrowDate, Date returnDate, String status) {
+    public BorrowedBookDto(Long id, Long bookId, Long userId, Date borrowDate, Date returnDate, String status) {
         this.id = id;
         this.bookId = bookId;
         this.userId = userId;
         this.borrowDate = borrowDate;
         this.returnDate = returnDate;
         this.status = status;
-    }
-
-    public BookLoanDto convertToDto(BookLoan bookLoan) {
-        return new BookLoanDto(
-                bookLoan.getId(),
-                bookLoan.getBook().getId(),
-                bookLoan.getUser().getUserId(),
-                bookLoan.getBorrowDate(),
-                bookLoan.getReturnDate(),
-                bookLoan.getStatus()
-        );
     }
 
     public Long getId() {

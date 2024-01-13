@@ -2,26 +2,44 @@ package com.lbbsystem.lbbsystem.entities;
 
 import jakarta.persistence.*;
 
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@Table(name = "book")
 public class Book {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
     private Long id;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    @Column(name = "CATEGORY")
+    private String category;
 
+    @Column(name = "ISBN")
+    private String isbn;
+
+    @Column(name = "STOCK")
+    private int stock;
+
+    @Column(name = "AUTHOR")
+    private String author;
+
+    @Column(name = "TITLE")
+    private String title;
+
+    @OneToMany(mappedBy = "book")
+    private Collection<BorrowedBook> borrowedBooks;
+
+    // Getters and setters for all the fields, annotated with @Column where necessary
     public Long getId() {
         return id;
     }
 
-    @Basic
-    private String title;
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;
@@ -30,8 +48,6 @@ public class Book {
     public void setTitle(String title) {
         this.title = title;
     }
-
-    private String author;
 
     public String getAuthor() {
         return author;
@@ -65,18 +81,13 @@ public class Book {
         this.stock = stock;
     }
 
-    private String category;
-    private String isbn;
-    private int stock;
-
-    @OneToMany(mappedBy = "book")
-    private Set<BookLoan> bookLoans = new HashSet<>();
-
-    public Set<BookLoan> getBookLoans() {
-        return bookLoans;
+    public Collection<BorrowedBook> getBorrowedBooks() {
+        return borrowedBooks;
     }
 
-    public void setBookLoans(Set<BookLoan> bookLoans) {
-        this.bookLoans = bookLoans;
+    public void setBorrowedBooks(Collection<BorrowedBook> borrowedBooks) {
+        this.borrowedBooks = borrowedBooks;
     }
+
+
 }
