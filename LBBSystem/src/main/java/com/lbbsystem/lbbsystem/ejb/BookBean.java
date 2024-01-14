@@ -1,7 +1,9 @@
 package com.lbbsystem.lbbsystem.ejb;
 
 import com.lbbsystem.lbbsystem.common.BookDto;
+import com.lbbsystem.lbbsystem.common.BookPhotoDto;
 import com.lbbsystem.lbbsystem.entities.Book;
+import com.lbbsystem.lbbsystem.entities.BookPhoto;
 import jakarta.ejb.EJBException;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
@@ -55,6 +57,33 @@ public class BookBean {
         }
         return bookDtoList;
     }
+
+  public void addPhotoToBook(Long bookId, String filename, String fileType, byte[] fileContent) {
+    LOG.info("addPhotoToBook");
+    BookPhoto photo = new BookPhoto();
+    photo.setFilename(filename);
+    photo.setFileType(fileType);
+    photo.setFileContent(fileContent);
+    Book book = entityManager.find(Book.class, bookId);
+    if (book.getPhoto() != null) {
+      entityManager.remove(book.getPhoto());
+    }
+    book.setPhoto(photo);
+    photo.setBook(book);
+    entityManager.persist(photo);
+  }
+  public BookPhotoDto findPhotoByBookId(Integer bookId) {
+    List<BookPhoto> photos = entityManager
+      .createQuery("SELECT p FROM BookPhoto p where p.book.id = :id", BookPhoto.class)
+      .setParameter("id", bookId)
+      .getResultList();
+    if (photos.isEmpty()) {
+      return null;
+    }
+    BookPhoto photo = photos.get(0);
+    return new BookPhotoDto(photo.getId(), photo.getFilename(), photo.getFileType(),
+      photo.getFileContent());
+  }
 
     public void deleteBook(Long id) {
         Book book = entityManager.find(Book.class, id);
@@ -132,5 +161,4 @@ public class BookBean {
         }
 
     }
-
 }
