@@ -17,10 +17,9 @@ public class Book {
     private int stock;
     private String author;
     private String title;
-
-
+  @OneToMany(mappedBy = "book")
     private Collection<BorrowedBook> borrowedBooks;
-    @OneToMany(mappedBy = "book")
+
     public Collection<BorrowedBook> getBorrowedBooks() {
         return borrowedBooks;
     }
@@ -28,7 +27,6 @@ public class Book {
     public void setBorrowedBooks(Collection<BorrowedBook> borrowedBooks) {
         this.borrowedBooks = borrowedBooks;
     }
-
 
     public Long getId() {
         return id;
