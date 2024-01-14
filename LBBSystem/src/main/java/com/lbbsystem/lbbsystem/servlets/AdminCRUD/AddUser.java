@@ -6,6 +6,7 @@ import com.lbbsystem.lbbsystem.ejb.UsersBean;
 import com.lbbsystem.lbbsystem.emailService.AccountDetailsEmail;
 import com.lbbsystem.lbbsystem.emailService.EmailMessage;
 import com.lbbsystem.lbbsystem.emailService.EmailService;
+import com.lbbsystem.lbbsystem.roles.RoleConstants;
 import com.lbbsystem.lbbsystem.roles.UserRole;
 import com.lbbsystem.lbbsystem.utilities.LegitimationNumberGenerator;
 import com.lbbsystem.lbbsystem.utilities.PasswordGenerator;
@@ -23,6 +24,7 @@ import java.util.List;
 import java.util.Set;
 
 @WebServlet(name = "AddUser", value = "/AddUser")
+@ServletSecurity(value = @HttpConstraint(rolesAllowed = {RoleConstants.ADMIN}))
 public class AddUser extends HttpServlet {
   @Inject
   UsersBean usersBean;

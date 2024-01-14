@@ -20,7 +20,7 @@ public class BookBean {
     @PersistenceContext
     EntityManager entityManager;
 
-    public void addBook(BookDto bookDto){
+    public Long addBook(BookDto bookDto){
         Book book = new Book();
         LOG.info("addBook");
         book.setTitle(bookDto.getTitle());
@@ -29,6 +29,7 @@ public class BookBean {
         book.setStock(bookDto.getStock());
         book.setIsbn(bookDto.getIsbn());
         entityManager.persist(book);
+        return book.getId();
     }
 
     public List<BookDto> findAllBooks() {
@@ -72,7 +73,7 @@ public class BookBean {
     photo.setBook(book);
     entityManager.persist(photo);
   }
-  public BookPhotoDto findPhotoByBookId(Integer bookId) {
+  public BookPhotoDto findPhotoByBookId(Long bookId) {
     List<BookPhoto> photos = entityManager
       .createQuery("SELECT p FROM BookPhoto p where p.book.id = :id", BookPhoto.class)
       .setParameter("id", bookId)

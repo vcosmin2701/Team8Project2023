@@ -17,7 +17,7 @@ public class BookPhotos extends HttpServlet {
     BookBean bookBean;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Integer bookId=Integer.parseInt(request.getParameter("id"));
+        Long bookId=Long.parseLong(request.getParameter("id"));
         BookPhotoDto photo= bookBean.findPhotoByBookId(bookId);
         if(photo !=null){
             response.setContentType(photo.getFileType());
