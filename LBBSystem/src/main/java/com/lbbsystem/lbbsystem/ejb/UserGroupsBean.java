@@ -30,4 +30,12 @@ public class UserGroupsBean {
 
         return adminsArray;
     }
+
+    public UserRole findUserRoleByEmail(String email) {
+        LOG.info("Finding user role by email: " + email);
+        return entityManager
+                .createQuery("SELECT u.userGroup FROM UserGroup u WHERE u.email = :email", UserRole.class)
+                .setParameter("email", email)
+                .getSingleResult();
+    }
 }
