@@ -17,7 +17,7 @@ class ContactSupportEmailTest {
     @DisplayName("Test setRecipients with valid recipients")
     void testSetRecipients() {
         // Arrange
-        String[] validRecipients = {"support@example.com", "admin@example.com"};
+        String[] validRecipients = {"lastname.firstname@ulbsibiu.ro", "lastname2.firstname@ulbsibiu.ro"};
 
         // Act
         contactSupportEmail.setRecipients(validRecipients);
@@ -48,7 +48,7 @@ class ContactSupportEmailTest {
     void testSetContent() {
         // Arrange
         String userName = "John Doe";
-        String email = "john.doe@example.com";
+        String email = "doe.john@ulbsibiu.ro";
         String message = "This is a test message.";
 
         // Act

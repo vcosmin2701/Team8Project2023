@@ -31,7 +31,7 @@ class UserGroupsBeanTest {
     @DisplayName("Test findAllAdmins with available admins")
     void testFindAllAdmins() {
         // Arrange
-        List<String> mockAdminsList = Arrays.asList("admin1@example.com", "admin2@example.com");
+        List<String> mockAdminsList = Arrays.asList("lastname.firstname@ulbsibiu.ro", "lastname2.firstname@ulbsibiu.ro");
         TypedQuery<String> mockedTypedQuery = Mockito.mock(TypedQuery.class);
 
         Mockito.when(entityManager.createQuery(Mockito.anyString(), Mockito.eq(String.class)))
@@ -45,7 +45,7 @@ class UserGroupsBeanTest {
         String[] adminsArray = userGroupsBean.findAllAdmins();
 
         // Assert
-        assertArrayEquals(new String[]{"admin1@example.com", "admin2@example.com"}, adminsArray);
+        assertArrayEquals(new String[]{"lastname.firstname@ulbsibiu.ro", "lastname2.firstname@ulbsibiu.ro"}, adminsArray);
     }
 
     @Test
