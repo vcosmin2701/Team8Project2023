@@ -8,6 +8,7 @@
                     <tr>
                         <th scope="col">Book ID</th>
                         <th scope="col">User ID</th>
+                        <th scope="col">Period Loan(months)</th>
                         <th scope="col">Borrow Date</th>
                         <th scope="col">Return Date</th>
                         <th scope="col">Status</th>
@@ -18,6 +19,7 @@
                         <tr>
                             <td>${loan.bookId}</td>
                             <td>${loan.userId}</td>
+                            <td>${loan.periodLoanInMonths}</td>
                             <td>${loan.borrowDate}</td>
                             <td>${loan.returnDate}</td>
                             <td>${loan.status}</td>

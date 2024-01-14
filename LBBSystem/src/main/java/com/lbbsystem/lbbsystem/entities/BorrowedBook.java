@@ -44,6 +44,16 @@ public class BorrowedBook {
   }
 
   @Basic
+  private int periodLoanInMonths;
+
+  public int getPeriodLoanInMonths() {
+    return periodLoanInMonths;
+  }
+
+  public void setPeriodLoanInMonths(int periodLoanInMonths) {
+    this.periodLoanInMonths = periodLoanInMonths;
+  }
+
   public Date getBorrowDate() {
     return borrowDate;
   }

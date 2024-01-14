@@ -9,14 +9,25 @@ public class BorrowedBookDto {
   private Date borrowDate;
   private Date returnDate;
   private String status;
+  private int periodLoanInMonths;
 
-  public BorrowedBookDto(Long id, Long bookId, Long userId, Date borrowDate, Date returnDate, String status) {
+
+  public BorrowedBookDto(Long id, Long bookId, Long userId, Date borrowDate, Date returnDate, String status, int periodLoanInMonths) {
     this.id = id;
     this.bookId = bookId;
     this.userId = userId;
     this.borrowDate = borrowDate;
     this.returnDate = returnDate;
     this.status = status;
+    this.periodLoanInMonths = periodLoanInMonths;
+  }
+
+  public int getPeriodLoanInMonths() {
+    return periodLoanInMonths;
+  }
+
+  public void setPeriodLoanInMonths(int periodLoanInMonths) {
+    this.periodLoanInMonths = periodLoanInMonths;
   }
 
   public Long getId() {

@@ -25,7 +25,8 @@ public class BorrowedBookBean {
                 borrowedBook.getUser().getUserId(),
                 borrowedBook.getBorrowDate(),
                 borrowedBook.getReturnDate(),
-                borrowedBook.getStatus()
+                borrowedBook.getStatus(),
+                borrowedBook.getPeriodLoanInMonths()
         );
     }
 
@@ -56,7 +57,8 @@ public class BorrowedBookBean {
                     borrowedBook.getUser().getUserId(),
                     borrowedBook.getBorrowDate(),
                     borrowedBook.getReturnDate(),
-                    borrowedBook.getStatus()
+                    borrowedBook.getStatus(),
+                    borrowedBook.getPeriodLoanInMonths()
             );
             borrowedBookDtoList.add(borrowedBookDto);
         }
