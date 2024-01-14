@@ -32,7 +32,6 @@ public class UsersBean {
         entityManager.persist(user);
         assignGroupToUser(user.getEmail(), userRole);
         userRequestBean.addRequestUser(userDto, true);
-
     }
 
     private void assignGroupToUser(String email, UserRole userRole) {

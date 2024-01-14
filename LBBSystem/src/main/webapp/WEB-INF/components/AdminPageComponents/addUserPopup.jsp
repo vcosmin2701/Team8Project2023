@@ -1,4 +1,14 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add User</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="sweetalert2.min.js"></script>
+  <link rel="stylesheet" href="sweetalert2.min.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/UsersPage.css">
+</head>
+<body>
 <div id="popupDialog" class="modal popup-dialog" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -29,6 +39,28 @@
               <option value="STUDENT">Student</option>
             </select>
           </div>
+
+          <c:if test="${not empty errors}">
+            <script>
+              let errorMessages = "";
+              <c:forEach items="${errors}" var="error">
+              errorMessages += "<c:out value='${error}'/>" + "<br>";
+              </c:forEach>
+
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                html: errorMessages,
+                didOpen: () => {
+                  document.body.classList.remove('swal2-height-auto');
+                },
+                willClose: () => {
+                  document.body.classList.remove('swal2-height-auto');
+                }
+              });
+            </script>
+          </c:if>
+
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary">Close</button>
             <input type="submit" class="btn btn-primary" value="Submit">
@@ -38,3 +70,5 @@
     </div>
   </div>
 </div>
+</body>
+</html>
