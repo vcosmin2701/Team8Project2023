@@ -26,14 +26,14 @@ public class MainPage extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String sortOption = request.getParameter("sort");
         String searchQuery = request.getParameter("query");
-        String category = request.getParameter("category"); // Get the category parameter
+        String category = request.getParameter("category");
         List<BookDto> books;
 
         try {
             if (searchQuery != null && !searchQuery.isEmpty()) {
                 books = bookBean.searchBooks(searchQuery);
             } else if (category != null && !category.isEmpty()) {
-                books = bookBean.findBooksByCategory(category); // Implement this method in BookBean
+                books = bookBean.findBooksByCategory(category);
             } else if (sortOption != null && !sortOption.isEmpty() && !sortOption.equals("all")) {
                 books = bookBean.findBooksSortedBy(sortOption);
             } else {
@@ -41,7 +41,7 @@ public class MainPage extends HttpServlet {
             }
 
             request.setAttribute("currentSort", sortOption);
-            request.setAttribute("currentCategory", category); // Set the current category
+            request.setAttribute("currentCategory", category);
             request.setAttribute("books", books);
             request.getRequestDispatcher("/WEB-INF/pages/mainPage.jsp").forward(request, response);
         } catch (Exception e) {
