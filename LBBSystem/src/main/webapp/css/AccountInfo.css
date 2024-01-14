@@ -33,3 +33,11 @@
     background-color: #218838;
     border-color: #1e7e34;
 }
+.fixed-title {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1000;
+    padding: 10px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
