@@ -1,6 +1,7 @@
 package com.lbbsystem.lbbsystem.servlets;
 
 import com.lbbsystem.lbbsystem.common.BookDto;
+import com.lbbsystem.lbbsystem.common.BookPhotoDto;
 import com.lbbsystem.lbbsystem.ejb.BookBean;
 import jakarta.inject.Inject;
 import jakarta.servlet.ServletException;
@@ -20,7 +21,7 @@ public class AddBookPhoto extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Long bookId=Long.parseLong(request.getParameter("id"));
-        BookDto book=bookBean.findPhotoByBookId(bookId);
+        BookPhotoDto book=bookBean.findPhotoByBookId(bookId);
         request.setAttribute("book", book);
 
         request.getRequestDispatcher("WEB-INF/pages/adminPages/addBookPhoto.jsp");

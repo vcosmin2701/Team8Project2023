@@ -74,11 +74,11 @@ public class Book {
   public void setStock(int stock) {
     this.stock = stock;
   }
+  @OneToOne(mappedBy = "book", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 
   private BookPhoto photo;
 
-  @OneToOne(mappedBy = "book", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-  public BookPhoto getPhoto() {
+    public BookPhoto getPhoto() {
     return photo;
   }
 

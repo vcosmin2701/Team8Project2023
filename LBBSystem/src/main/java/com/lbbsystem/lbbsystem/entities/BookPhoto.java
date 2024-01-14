@@ -7,50 +7,52 @@ import jakarta.persistence.OneToOne;
 
 @Entity
 public class BookPhoto {
-    private Long id;
-    String filename;
-    String fileType;
-    byte[] fileContent;
-    Book book;
-@Id
-@GeneratedValue
-    public Long getId() {
-        return id;
-    }
+  @Id
+  @GeneratedValue
+  private Long id;
+  String filename;
+  String fileType;
+  byte[] fileContent;
+  @OneToOne
+  Book book;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+  public Long getId() {
+    return id;
+  }
 
-    public String getFilename() {
-        return filename;
-    }
+  public void setId(Long id) {
+    this.id = id;
+  }
 
-    public void setFilename(String filename) {
-        this.filename = filename;
-    }
+  public String getFilename() {
+    return filename;
+  }
 
-    public String getFileType() {
-        return fileType;
-    }
+  public void setFilename(String filename) {
+    this.filename = filename;
+  }
 
-    public void setFileType(String fileType) {
-        this.fileType = fileType;
-    }
+  public String getFileType() {
+    return fileType;
+  }
 
-    public byte[] getFileContent() {
-        return fileContent;
-    }
+  public void setFileType(String fileType) {
+    this.fileType = fileType;
+  }
 
-    public void setFileContent(byte[] fileContent) {
-        this.fileContent = fileContent;
-    }
-    @OneToOne
-    public Book getBook() {
-        return book;
-    }
+  public byte[] getFileContent() {
+    return fileContent;
+  }
 
-    public void setBook(Book book) {
-        this.book = book;
-    }
+  public void setFileContent(byte[] fileContent) {
+    this.fileContent = fileContent;
+  }
+
+  public Book getBook() {
+    return book;
+  }
+
+  public void setBook(Book book) {
+    this.book = book;
+  }
 }
