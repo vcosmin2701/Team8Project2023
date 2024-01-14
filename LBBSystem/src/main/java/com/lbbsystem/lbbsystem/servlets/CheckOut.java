@@ -1,6 +1,9 @@
 package com.lbbsystem.lbbsystem.servlets;
 
+import com.lbbsystem.lbbsystem.common.BookDto;
+import com.lbbsystem.lbbsystem.ejb.BookBean;
 import com.lbbsystem.lbbsystem.roles.RoleConstants;
+import jakarta.inject.Inject;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.HttpConstraint;
 import jakarta.servlet.annotation.ServletSecurity;
@@ -19,8 +22,15 @@ import java.io.IOException;
 }))
 @WebServlet(name = "CheckOut", value = "/CheckOut")
 public class CheckOut extends HttpServlet {
+  @Inject
+  BookBean bookBean;
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    String id = request.getParameter("id");
+    BookDto book =  bookBean.findBookById(Long.parseLong(id));
+
+    request.setAttribute("book", book);
+
     request.getRequestDispatcher("/WEB-INF/pages/checkOut.jsp").forward(request, response);
   }
 
