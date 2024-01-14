@@ -1,5 +1,7 @@
 package com.lbbsystem.lbbsystem.emailService;
 
+import com.lbbsystem.lbbsystem.roles.UserRole;
+
 public class ActivationEmail extends EmailMessage {
   public void setRecipients(String[] recipients) {
     if (recipients == null) {
@@ -47,5 +49,10 @@ public class ActivationEmail extends EmailMessage {
       + "</html>";
 
     this.content = content;
+  }
+
+  @Override
+  public void setContent(String firstName, String lastName, String email, String password, String legitimationNumber, UserRole role) {
+
   }
 }

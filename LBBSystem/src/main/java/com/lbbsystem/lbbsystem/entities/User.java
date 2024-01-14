@@ -1,22 +1,35 @@
 package com.lbbsystem.lbbsystem.entities;
 
-import jakarta.persistence.Basic;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class User {
+  @Id
+  @GeneratedValue
   private Long userId;
+
   private String firstName;
   private String lastName;
   private String email;
   private String password;
-
   private Long legitimationNumber;
 
-  @Id
-  @GeneratedValue
+  @OneToMany(mappedBy = "user")
+  private Collection<BorrowedBook> borrowedBooks;
+
+  public Collection<BorrowedBook> getBorrowedBooks() {
+    return borrowedBooks;
+  }
+
+  public void setBorrowedBooks(Collection<BorrowedBook> borrowedBooks) {
+    this.borrowedBooks = borrowedBooks;
+  }
+
+
   public Long getUserId() {
     return userId;
   }
@@ -25,6 +38,7 @@ public class User {
     this.userId = userId;
   }
 
+  @Basic
   public String getFirstName() {
     return firstName;
   }
@@ -49,7 +63,6 @@ public class User {
     this.lastName = lastName;
   }
 
-  @Basic
   public String getEmail() {
     return email;
   }

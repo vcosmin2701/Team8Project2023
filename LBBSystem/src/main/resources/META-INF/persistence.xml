@@ -7,8 +7,9 @@
     <jta-data-source>jdbc/LbbSystemResource</jta-data-source>
     <class>com.lbbsystem.lbbsystem.entities.User</class>
     <class>com.lbbsystem.lbbsystem.entities.Book</class>
+      <class>com.lbbsystem.lbbsystem.entities.BorrowedBook</class>
 
-    <properties>
+      <properties>
       <property name="jakarta.persistence.schema-generation.database.action" value="create-or-extend-tables"/>
     </properties>
 

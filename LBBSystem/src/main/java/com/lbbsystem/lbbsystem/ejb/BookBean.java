@@ -18,6 +18,17 @@ public class BookBean {
     @PersistenceContext
     EntityManager entityManager;
 
+    public void addBook(BookDto bookDto){
+        Book book = new Book();
+        LOG.info("addBook");
+        book.setTitle(bookDto.getTitle());
+        book.setAuthor(bookDto.getAuthor());
+        book.setCategory(bookDto.getCategory());
+        book.setStock(bookDto.getStock());
+        book.setIsbn(bookDto.getIsbn());
+        entityManager.persist(book);
+    }
+
     public List<BookDto> findAllBooks() {
         LOG.info("findAllBooks");
         try {
@@ -37,13 +48,37 @@ public class BookBean {
                     book.getTitle(),
                     book.getAuthor(),
                     book.getCategory(),
-                    String.valueOf(book.getStock())
+                    book.getStock(),
+                    book.getIsbn()
             );
             bookDtoList.add(bookDto);
         }
         return bookDtoList;
     }
 
+    public void deleteBook(Long id) {
+        Book book = entityManager.find(Book.class, id);
+        if(book != null) {
+            entityManager.remove(book);
+        }
+    }
+
+    public BookDto findBookById(Long id){
+        Book book = entityManager.find(Book.class, id);
+        return new BookDto(book.getId(), book.getTitle(), book.getAuthor(), book.getCategory(), book.getStock(), book.getIsbn());
+    }
+
+    public void updateBook(BookDto bookDto) {
+        Book book = entityManager.find(Book.class, bookDto.getId());
+        if (book != null) {
+            book.setTitle(bookDto.getTitle());
+            book.setAuthor(bookDto.getAuthor());
+            book.setCategory(bookDto.getCategory());
+            book.setStock(bookDto.getStock());
+            book.setIsbn(bookDto.getIsbn());
+            entityManager.merge(book);
+        }
+    }
     public List<BookDto> findBooksSortedBy(String sortOption) {
         LOG.info("findBooksSortedBy: " + sortOption);
         try {

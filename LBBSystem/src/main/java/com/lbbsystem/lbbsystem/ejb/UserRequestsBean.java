@@ -25,8 +25,14 @@ public class UserRequestsBean {
 
   public void addRequestUser(UserDto userDto) {
     LOG.info("Adding user request for email: " + userDto.getEmail());
-
     UserRequest userRequest = convertToUserRequest(userDto);
+    entityManager.persist(userRequest);
+  }
+
+  public void addRequestUser(UserDto userDto, boolean isActivated) {
+    LOG.info("Adding user request for email: " + userDto.getEmail());
+    UserRequest userRequest = convertToUserRequest(userDto);
+    userRequest.setIsActivated(isActivated);
     entityManager.persist(userRequest);
   }
 
