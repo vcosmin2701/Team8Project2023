@@ -22,11 +22,13 @@
     border-radius: 8px;
     margin-bottom: 15px;
 }
+
 .book-history-btn {
     background-color: #28a745;
     border-color: #28a745;
     color: #fff;
 }
+
 .book-history-btn:hover {
     background-color: #218838;
     border-color: #1e7e34;

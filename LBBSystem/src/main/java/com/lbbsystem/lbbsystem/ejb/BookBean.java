@@ -24,7 +24,7 @@ public class BookBean {
             TypedQuery<Book> typedQuery = entityManager.createQuery("SELECT b FROM Book b", Book.class);
             List<Book> books = typedQuery.getResultList();
             return copyBooksToDto(books);
-        } catch(Exception ex) {
+        } catch (Exception ex) {
             throw new EJBException(ex);
         }
     }
@@ -43,6 +43,7 @@ public class BookBean {
         }
         return bookDtoList;
     }
+
     public List<BookDto> findBooksSortedBy(String sortOption) {
         LOG.info("findBooksSortedBy: " + sortOption);
         try {
@@ -50,7 +51,7 @@ public class BookBean {
             TypedQuery<Book> typedQuery = entityManager.createQuery("SELECT b FROM Book b " + orderByClause, Book.class);
             List<Book> books = typedQuery.getResultList();
             return copyBooksToDto(books);
-        } catch(Exception ex) {
+        } catch (Exception ex) {
             throw new EJBException(ex);
         }
     }
@@ -78,23 +79,23 @@ public class BookBean {
         List<Book> books = typedQuery.getResultList();
         return copyBooksToDto(books);
     }
+
     public List<BookDto> findBooksByCategory(String category) {
-        if(category == null || category.isEmpty()) {
+        if (category == null || category.isEmpty()) {
             return findAllBooks();
         }
-        if(!"Others".equals(category)) {
+        if (!"Others".equals(category)) {
             TypedQuery<Book> typedQuery = entityManager.createQuery("SELECT b FROM Book b WHERE b.category = :category", Book.class);
             typedQuery.setParameter("category", category);
             List<Book> books = typedQuery.getResultList();
             return copyBooksToDto(books);
-        }
-        else {
+        } else {
             TypedQuery<Book> typedQuery = entityManager.createQuery(
                     "SELECT b FROM Book b WHERE b.category NOT IN ('Science', 'Detective', 'Love', 'Novel', 'History')", Book.class);
             List<Book> books = typedQuery.getResultList();
             return copyBooksToDto(books);
         }
-        
+
     }
 
 }

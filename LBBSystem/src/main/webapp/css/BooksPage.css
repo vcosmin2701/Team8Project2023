@@ -1,10 +1,10 @@
-.title-books{
+.title-books {
     margin-left: 7%;
     margin-top: 1.5%;
     font-size: 2rem;
 }
 
-.white-box-div{
+.white-box-div {
     margin-left: 7%;
     margin-top: 3%;
     margin-right: 2%;
@@ -12,17 +12,18 @@
     background-color: #f2f2f2;
 }
 
-.search-margin{
+.search-margin {
     margin-left: 1.5%;
 }
 
-.create-margin{
+.create-margin {
     margin-left: 58%;
 }
 
-.image-padding-right{
+.image-padding-right {
     padding-right: 4%;
 }
+
 .fixed-header {
     position: fixed;
     top: 0;
@@ -31,9 +32,10 @@
     padding: 10px 0;
 }
 
-.margin-top{
+.margin-top {
     margin-top: 15%;
 }
+
 .table-responsive {
     overflow-y: auto;
     max-height: 450px;
@@ -44,26 +46,30 @@
     border-bottom: 0.5px solid #e3e6f0;
     font-weight: lighter;
 }
+
 .list-group-item {
     border: none;
     padding: .75rem 1.25rem;
 }
-.title-list-align{
+
+.title-list-align {
     text-align: center;
 }
+
 .red-icon {
     color: red;
 }
-.padding-icons{
-    padding:2%;
+
+.padding-icons {
+    padding: 2%;
 }
 
-.list-position{
+.list-position {
     margin-left: 8%;
     margin-top: 8%;
 }
 
-.list-fixed-item{
+.list-fixed-item {
     top: 0;
     background-color: white;
 }
