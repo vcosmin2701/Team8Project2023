@@ -1,8 +1,6 @@
 package com.lbbsystem.lbbsystem.entities;
 
-import jakarta.persistence.Basic;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Book {
@@ -66,5 +64,13 @@ public class Book {
     private String category;
     private String isbn;
     private int stock;
+    private BookPhoto photo;
+    @OneToOne(mappedBy = "book", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    public BookPhoto getPhoto() {
+        return photo;
+    }
 
+    public void setPhoto(BookPhoto photo) {
+        this.photo = photo;
+    }
 }
