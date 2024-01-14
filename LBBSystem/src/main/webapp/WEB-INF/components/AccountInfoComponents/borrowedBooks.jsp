@@ -1,6 +1,6 @@
 <div class="col-md-6">
     <div class="book-list">
-        <h5 class="mb-3">Borrowed Books</h5>
+        <h5 class=" fixed-title mb-3">Borrowed Books</h5>
         <ul class="list-group">
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 Book 1
