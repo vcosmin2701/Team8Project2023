@@ -18,7 +18,7 @@ public class BookBean {
     @PersistenceContext
     EntityManager entityManager;
 
-    public void addBook(BookDto bookDto){
+    public void addBook(BookDto bookDto) {
         Book book = new Book();
         LOG.info("addBook");
         book.setTitle(bookDto.getTitle());
@@ -58,12 +58,12 @@ public class BookBean {
 
     public void deleteBook(Long id) {
         Book book = entityManager.find(Book.class, id);
-        if(book != null) {
+        if (book != null) {
             entityManager.remove(book);
         }
     }
 
-    public BookDto findBookById(Long id){
+    public BookDto findBookById(Long id) {
         Book book = entityManager.find(Book.class, id);
         return new BookDto(book.getId(), book.getTitle(), book.getAuthor(), book.getCategory(), book.getStock(), book.getIsbn());
     }
@@ -79,6 +79,7 @@ public class BookBean {
             entityManager.merge(book);
         }
     }
+
     public List<BookDto> findBooksSortedBy(String sortOption) {
         LOG.info("findBooksSortedBy: " + sortOption);
         try {
@@ -132,5 +133,6 @@ public class BookBean {
         }
 
     }
+
 
 }

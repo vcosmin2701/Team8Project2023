@@ -66,6 +66,7 @@ public class BorrowedBookBean {
         }
         return borrowedBookDtoList;
     }
+
     public void addBorrowedBook(BorrowedBookDto borrowedBookDto) {
         LOG.info("addBorrowedBook");
         BorrowedBook borrowedBook = new BorrowedBook();
@@ -81,14 +82,38 @@ public class BorrowedBookBean {
     public List<BorrowedBookDto> findBorrowedBooksByUserIdAndStatus(Long userId, String status) {
         LOG.info("findBorrowedBooksByUserId");
         TypedQuery<BorrowedBook> typedQuery = entityManager.createQuery(
-                "SELECT b FROM BorrowedBook b WHERE b.user.userId = :userId AND b.status = :status",
-                BorrowedBook.class)
+                        "SELECT b FROM BorrowedBook b WHERE b.user.userId = :userId AND b.status = :status",
+                        BorrowedBook.class)
                 .setParameter("userId", userId)
                 .setParameter("status", status);
-                
+
         List<BorrowedBook> borrowedBooks = typedQuery.getResultList();
 
         return copyBorrowedBookToDto(borrowedBooks);
+    }
+
+    public BorrowedBookDto findBorrowedBookByBookId(Long bookId) {
+        LOG.info("findBorrowedBookByBookId");
+        TypedQuery<BorrowedBook> typedQuery = entityManager.createQuery(
+                        "SELECT b FROM BorrowedBook b WHERE b.book.id = :bookId AND b.status = 'borrowed'",
+                        BorrowedBook.class)
+                .setParameter("bookId", bookId);
+
+        BorrowedBook borrowedBook = typedQuery.getSingleResult();
+
+        return convertToDto(borrowedBook);
+    }
+
+    public void updateBorrowedBook(BorrowedBookDto borrowedBookDto) {
+        LOG.info("updateBorrowedBook");
+        BorrowedBook borrowedBook = entityManager.find(BorrowedBook.class, borrowedBookDto.getId());
+        borrowedBook.setBook(entityManager.find(Book.class, borrowedBookDto.getBookId()));
+        borrowedBook.setUser(entityManager.find(User.class, borrowedBookDto.getUserId()));
+        borrowedBook.setBorrowDate(borrowedBookDto.getBorrowDate());
+        borrowedBook.setReturnDate(borrowedBookDto.getReturnDate());
+        borrowedBook.setStatus(borrowedBookDto.getStatus());
+        borrowedBook.setPeriodLoanInMonths(borrowedBookDto.getPeriodLoanInMonths());
+        entityManager.merge(borrowedBook);
     }
 
 }
