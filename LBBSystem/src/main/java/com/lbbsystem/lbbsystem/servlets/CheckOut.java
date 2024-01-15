@@ -1,8 +1,10 @@
 package com.lbbsystem.lbbsystem.servlets;
 
 import com.lbbsystem.lbbsystem.common.BookDto;
+import com.lbbsystem.lbbsystem.common.BorrowedBookDto;
 import com.lbbsystem.lbbsystem.common.UserDto;
 import com.lbbsystem.lbbsystem.ejb.BookBean;
+import com.lbbsystem.lbbsystem.ejb.BorrowedBookBean;
 import com.lbbsystem.lbbsystem.ejb.UserGroupsBean;
 import com.lbbsystem.lbbsystem.ejb.UsersBean;
 import com.lbbsystem.lbbsystem.entities.User;
@@ -18,6 +20,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.security.Principal;
+import java.util.Calendar;
+import java.util.Date;
 
 @ServletSecurity(value = @HttpConstraint(rolesAllowed = {
         RoleConstants.ADMIN,
@@ -29,7 +34,10 @@ import java.io.IOException;
 public class CheckOut extends HttpServlet {
     @Inject
     BookBean bookBean;
-
+    @Inject
+    BorrowedBookBean borrowedBookBean;
+    @Inject
+    UsersBean usersBean;
     @Inject
     UserGroupsBean userGroupsBean;
 
@@ -37,20 +45,26 @@ public class CheckOut extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");
         BookDto book = bookBean.findBookById(Long.parseLong(id));
-
         request.setAttribute("book", book);
 
         String principalName = request.getUserPrincipal().getName();
 
         UserRole userRole = userGroupsBean.findUserRoleByEmail(principalName);
-
         request.setAttribute("userRole", userRole);
+
+        UserDto u=usersBean.findUserByEmail(principalName);
+        request.setAttribute("user", u);
+
+
+
+
 
         request.getRequestDispatcher("/WEB-INF/pages/checkOut.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 
     }
 }

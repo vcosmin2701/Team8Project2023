@@ -2,14 +2,17 @@ package com.lbbsystem.lbbsystem.servlets;
 
 import com.lbbsystem.lbbsystem.common.BookDto;
 import com.lbbsystem.lbbsystem.common.BorrowedBookDto;
+import com.lbbsystem.lbbsystem.common.UserDto;
 import com.lbbsystem.lbbsystem.ejb.BookBean;
 import com.lbbsystem.lbbsystem.ejb.BorrowedBookBean;
+import com.lbbsystem.lbbsystem.ejb.UsersBean;
 import com.lbbsystem.lbbsystem.entities.BorrowedBook;
 import jakarta.inject.Inject;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
+import java.security.Principal;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -17,6 +20,9 @@ import java.io.IOException;
 
 @WebServlet(name = "AddBorrowedBook", value = "/AddBorrowedBook")
 public class AddBorrowedBook extends HttpServlet {
+
+    @Inject
+    UsersBean usersBean;
     @Inject
     BorrowedBookBean borrowedBookBean;
 
@@ -27,21 +33,24 @@ public class AddBorrowedBook extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            Long bookId = Long.valueOf(request.getParameter("bookId"));
-            Long userId = Long.valueOf(request.getParameter("userId"));
-            int loanPeriod = Integer.parseInt(request.getParameter("loanPeriodOption"));
+        String bookIdString = request.getParameter("bookId");
+        String userLegitimationString = request.getParameter("userLegitimation");
 
-            Date borrowDate = new Date();
-            Calendar calendar = Calendar.getInstance();
-            calendar.setTime(borrowDate);
-            calendar.add(Calendar.MONTH, loanPeriod);
-            Date returnDate = calendar.getTime();
+        Long userId=usersBean.findUserIdByLegitimationNumber(Long.parseLong(userLegitimationString));
+        Long bookId = Long.parseLong(bookIdString);
+        int loanPeriod = Integer.parseInt(request.getParameter("loanPeriodOption"));
 
-            BorrowedBookDto borrowedBookDto = new BorrowedBookDto(null, bookId, userId, borrowDate, returnDate, "borrowed", loanPeriod);
+        Date borrowDate = new Date();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(borrowDate);
+        calendar.add(Calendar.MONTH, loanPeriod);
+        Date returnDate = calendar.getTime();
 
-            borrowedBookBean.addBorrowedBook(borrowedBookDto);
+        BorrowedBookDto borrowedBookDto = new BorrowedBookDto(null, bookId, userId, borrowDate, returnDate, "borrowed", loanPeriod);
 
+        borrowedBookBean.addBorrowedBook(borrowedBookDto);
 
+        response.sendRedirect(request.getContextPath() + "/MainPage");
 
 
     }

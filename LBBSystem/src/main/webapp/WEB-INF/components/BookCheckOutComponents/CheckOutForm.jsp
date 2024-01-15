@@ -5,10 +5,13 @@
             <h4 class="card-title">Check Out</h4>
             <hr>
             <form action="${pageContext.request.contextPath}/AddBorrowedBook" method="POST">
+                <input type="hidden" name="bookId" value="${book.id}">
+                <input type="hidden" name="userLegitimation" value="${user.legitimationNumber}">
                 <div class="form-group">
-                    <label for="datepicker">Please enter the return date</label>
+                    <label for="datepicker">Please enter the loan date</label>
                     <input type="date" id="datepicker" name="returnDate" class="form-control">
                 </div>
+
                 <div class="form-group">
                     <label for="loanPeriod">Please select the loan period</label>
                     <select id="loanPeriod" name="loanPeriodOption" class="form-control">

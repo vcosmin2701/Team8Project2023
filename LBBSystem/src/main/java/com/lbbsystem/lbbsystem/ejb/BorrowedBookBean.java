@@ -1,7 +1,9 @@
 package com.lbbsystem.lbbsystem.ejb;
 
 import com.lbbsystem.lbbsystem.common.BorrowedBookDto;
+import com.lbbsystem.lbbsystem.entities.Book;
 import com.lbbsystem.lbbsystem.entities.BorrowedBook;
+import com.lbbsystem.lbbsystem.entities.User;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -64,11 +66,15 @@ public class BorrowedBookBean {
         }
         return borrowedBookDtoList;
     }
-    public void addBorrowedBook(BorrowedBookDto borrowedBook) {
-        try {
-            entityManager.persist(borrowedBook);
-        } catch (Exception e) {
-            LOG.severe("Error adding borrowed book: " + e.getMessage());
-        }
+    public void addBorrowedBook(BorrowedBookDto borrowedBookDto) {
+        LOG.info("addBorrowedBook");
+        BorrowedBook borrowedBook = new BorrowedBook();
+        borrowedBook.setBook(entityManager.find(Book.class, borrowedBookDto.getBookId()));
+        borrowedBook.setUser(entityManager.find(User.class, borrowedBookDto.getUserId()));
+        borrowedBook.setBorrowDate(borrowedBookDto.getBorrowDate());
+        borrowedBook.setReturnDate(borrowedBookDto.getReturnDate());
+        borrowedBook.setStatus(borrowedBookDto.getStatus());
+        borrowedBook.setPeriodLoanInMonths(borrowedBookDto.getPeriodLoanInMonths());
+        entityManager.persist(borrowedBook);
     }
 }
