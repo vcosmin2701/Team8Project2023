@@ -64,4 +64,11 @@ public class BorrowedBookBean {
         }
         return borrowedBookDtoList;
     }
+    public void addBorrowedBook(BorrowedBookDto borrowedBook) {
+        try {
+            entityManager.persist(borrowedBook);
+        } catch (Exception e) {
+            LOG.severe("Error adding borrowed book: " + e.getMessage());
+        }
+    }
 }
