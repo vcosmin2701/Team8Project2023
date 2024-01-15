@@ -25,6 +25,8 @@ public class AddBorrowedBook extends HttpServlet {
     UsersBean usersBean;
     @Inject
     BorrowedBookBean borrowedBookBean;
+    @Inject
+    BookBean bookBean;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -45,10 +47,14 @@ public class AddBorrowedBook extends HttpServlet {
         calendar.setTime(borrowDate);
         calendar.add(Calendar.MONTH, loanPeriod);
         Date returnDate = calendar.getTime();
-
+        
         BorrowedBookDto borrowedBookDto = new BorrowedBookDto(null, bookId, userId, borrowDate, returnDate, "borrowed", loanPeriod);
 
         borrowedBookBean.addBorrowedBook(borrowedBookDto);
+        BookDto book =  bookBean.findBookById(bookId);
+        book.setStock(book.getStock()-1);
+        bookBean.updateBook(book);
+
 
         response.sendRedirect(request.getContextPath() + "/MainPage");
 
