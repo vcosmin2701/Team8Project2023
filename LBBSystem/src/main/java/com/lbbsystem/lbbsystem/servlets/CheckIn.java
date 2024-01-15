@@ -46,8 +46,7 @@ public class CheckIn extends HttpServlet {
 
         Long bookId = Long.parseLong(bookIdParam);
         BookDto book =  bookBean.findBookById(bookId);
-        book.setStock(book.getStock()+1);
-        bookBean.updateBook(book);
+
 
         BorrowedBookDto borrowedBook = borrowedBookBean.findBorrowedBookByBookId(bookId);
         if (borrowedBook == null) {
@@ -55,7 +54,8 @@ public class CheckIn extends HttpServlet {
             request.getRequestDispatcher("/WEB-INF/components/AccountInfoComponents/borrowedBooks.jsp").forward(request, response);
             return;
         }
-
+        book.setStock(book.getStock()+1);
+        bookBean.updateBook(book);
         borrowedBook.setStatus("returned");
         borrowedBook.setReturnDate(new Date());
         borrowedBookBean.updateBorrowedBook(borrowedBook);
