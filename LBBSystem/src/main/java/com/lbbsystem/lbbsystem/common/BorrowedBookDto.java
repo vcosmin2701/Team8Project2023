@@ -3,78 +3,98 @@ package com.lbbsystem.lbbsystem.common;
 import java.util.Date;
 
 public class BorrowedBookDto {
-  private Long id;
-  private Long bookId;
-  private Long userId;
-  private Date borrowDate;
-  private Date returnDate;
-  private String status;
-  private int periodLoanInMonths;
+    private Long id;
+    private Long bookId;
+    private Long userId;
+    private Date borrowDate;
+    private Date returnDate;
+    private String status;
+    private int periodLoanInMonths;
+    private String bookTitle;
 
 
-  public BorrowedBookDto(Long id, Long bookId, Long userId, Date borrowDate, Date returnDate, String status, int periodLoanInMonths) {
-    this.id = id;
-    this.bookId = bookId;
-    this.userId = userId;
-    this.borrowDate = borrowDate;
-    this.returnDate = returnDate;
-    this.status = status;
-    this.periodLoanInMonths = periodLoanInMonths;
-  }
+    public BorrowedBookDto(Long id, Long bookId, Long userId, Date borrowDate, Date returnDate, String status, int periodLoanInMonths) {
+        this.id = id;
+        this.bookId = bookId;
+        this.userId = userId;
+        this.borrowDate = borrowDate;
+        this.returnDate = returnDate;
+        this.status = status;
+        this.periodLoanInMonths = periodLoanInMonths;
+    }
 
-  public int getPeriodLoanInMonths() {
-    return periodLoanInMonths;
-  }
+    public BorrowedBookDto(Long id, Long bookId, Long userId, Date borrowDate, Date returnDate, String status, int periodLoanInMonths, String bookTitle) {
+        this.id = id;
+        this.bookId = bookId;
+        this.userId = userId;
+        this.borrowDate = borrowDate;
+        this.returnDate = returnDate;
+        this.status = status;
+        this.periodLoanInMonths = periodLoanInMonths;
+        this.bookTitle = bookTitle;
+    }
 
-  public void setPeriodLoanInMonths(int periodLoanInMonths) {
-    this.periodLoanInMonths = periodLoanInMonths;
-  }
+    public String getBookTitle() {
+        return bookTitle;
+    }
 
-  public Long getId() {
-    return id;
-  }
+    public void setBookTitle(String bookTitle) {
+        this.bookTitle = bookTitle;
+    }
 
-  public void setId(Long id) {
-    this.id = id;
-  }
+    public int getPeriodLoanInMonths() {
+        return periodLoanInMonths;
+    }
 
-  public Long getBookId() {
-    return bookId;
-  }
+    public void setPeriodLoanInMonths(int periodLoanInMonths) {
+        this.periodLoanInMonths = periodLoanInMonths;
+    }
 
-  public void setBookId(Long bookId) {
-    this.bookId = bookId;
-  }
+    public Long getId() {
+        return id;
+    }
 
-  public Long getUserId() {
-    return userId;
-  }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-  public void setUserId(Long userId) {
-    this.userId = userId;
-  }
+    public Long getBookId() {
+        return bookId;
+    }
 
-  public Date getBorrowDate() {
-    return borrowDate;
-  }
+    public void setBookId(Long bookId) {
+        this.bookId = bookId;
+    }
 
-  public void setBorrowDate(Date borrowDate) {
-    this.borrowDate = borrowDate;
-  }
+    public Long getUserId() {
+        return userId;
+    }
 
-  public Date getReturnDate() {
-    return returnDate;
-  }
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
 
-  public void setReturnDate(Date returnDate) {
-    this.returnDate = returnDate;
-  }
+    public Date getBorrowDate() {
+        return borrowDate;
+    }
 
-  public String getStatus() {
-    return status;
-  }
+    public void setBorrowDate(Date borrowDate) {
+        this.borrowDate = borrowDate;
+    }
 
-  public void setStatus(String status) {
-    this.status = status;
-  }
+    public Date getReturnDate() {
+        return returnDate;
+    }
+
+    public void setReturnDate(Date returnDate) {
+        this.returnDate = returnDate;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }

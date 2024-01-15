@@ -1,5 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="container">
-    <h2>Previous Borrowed Books</h2>
+    <h2>Returned Borrowed Books</h2>
 
     <table class="table">
         <thead>
@@ -10,12 +11,13 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>Book Title 1</td>
-            <td>2023-01-01</td>
-            <td>2023-01-15</td>
-        </tr>
-
+        <c:forEach var="book" items="${borrowedBooksHistory}">
+            <tr>
+                <td>${book.bookTitle}</td>
+                <td>${book.borrowDate}</td>
+                <td>${book.returnDate}</td>
+            </tr>
+        </c:forEach>
         </tbody>
     </table>
     <div class="btn-container">

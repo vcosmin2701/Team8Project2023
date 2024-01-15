@@ -60,7 +60,8 @@ public class BorrowedBookBean {
                     borrowedBook.getBorrowDate(),
                     borrowedBook.getReturnDate(),
                     borrowedBook.getStatus(),
-                    borrowedBook.getPeriodLoanInMonths()
+                    borrowedBook.getPeriodLoanInMonths(),
+                    borrowedBook.getBook().getTitle()
             );
             borrowedBookDtoList.add(borrowedBookDto);
         }
@@ -114,6 +115,24 @@ public class BorrowedBookBean {
         borrowedBook.setStatus(borrowedBookDto.getStatus());
         borrowedBook.setPeriodLoanInMonths(borrowedBookDto.getPeriodLoanInMonths());
         entityManager.merge(borrowedBook);
+    }
+
+    public List<BorrowedBookDto> findReturnedBooksByUserId(Long userId) {
+        LOG.info("findReturnedBooksByUserId");
+        TypedQuery<BorrowedBook> typedQuery = entityManager.createQuery(
+                        "SELECT b FROM BorrowedBook b WHERE b.user.userId = :userId AND b.status = 'returned'",
+                        BorrowedBook.class)
+                .setParameter("userId", userId);
+
+        List<BorrowedBook> borrowedBooks = typedQuery.getResultList();
+
+        if (borrowedBooks.isEmpty()) {
+            LOG.info("No returned books found for user with ID: " + userId);
+        } else {
+            LOG.info("Found " + borrowedBooks.size() + " returned books for user with ID: " + userId);
+        }
+
+        return copyBorrowedBookToDto(borrowedBooks);
     }
 
 }
