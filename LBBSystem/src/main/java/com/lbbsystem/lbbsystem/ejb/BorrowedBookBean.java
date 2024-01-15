@@ -1,7 +1,9 @@
 package com.lbbsystem.lbbsystem.ejb;
 
 import com.lbbsystem.lbbsystem.common.BorrowedBookDto;
+import com.lbbsystem.lbbsystem.entities.Book;
 import com.lbbsystem.lbbsystem.entities.BorrowedBook;
+import com.lbbsystem.lbbsystem.entities.User;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -64,4 +66,29 @@ public class BorrowedBookBean {
         }
         return borrowedBookDtoList;
     }
+    public void addBorrowedBook(BorrowedBookDto borrowedBookDto) {
+        LOG.info("addBorrowedBook");
+        BorrowedBook borrowedBook = new BorrowedBook();
+        borrowedBook.setBook(entityManager.find(Book.class, borrowedBookDto.getBookId()));
+        borrowedBook.setUser(entityManager.find(User.class, borrowedBookDto.getUserId()));
+        borrowedBook.setBorrowDate(borrowedBookDto.getBorrowDate());
+        borrowedBook.setReturnDate(borrowedBookDto.getReturnDate());
+        borrowedBook.setStatus(borrowedBookDto.getStatus());
+        borrowedBook.setPeriodLoanInMonths(borrowedBookDto.getPeriodLoanInMonths());
+        entityManager.persist(borrowedBook);
+    }
+
+    public List<BorrowedBookDto> findBorrowedBooksByUserIdAndStatus(Long userId, String status) {
+        LOG.info("findBorrowedBooksByUserId");
+        TypedQuery<BorrowedBook> typedQuery = entityManager.createQuery(
+                "SELECT b FROM BorrowedBook b WHERE b.user.userId = :userId AND b.status = :status",
+                BorrowedBook.class)
+                .setParameter("userId", userId)
+                .setParameter("status", status);
+                
+        List<BorrowedBook> borrowedBooks = typedQuery.getResultList();
+
+        return copyBorrowedBookToDto(borrowedBooks);
+    }
+
 }

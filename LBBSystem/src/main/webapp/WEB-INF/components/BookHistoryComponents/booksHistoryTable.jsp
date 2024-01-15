@@ -15,11 +15,7 @@
             <td>2023-01-01</td>
             <td>2023-01-15</td>
         </tr>
-        <tr>
-            <td>Book Title 2</td>
-            <td>2023-02-01</td>
-            <td>2023-02-15</td>
-        </tr>
+
         </tbody>
     </table>
     <div class="btn-container">
