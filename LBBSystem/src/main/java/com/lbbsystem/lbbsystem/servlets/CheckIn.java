@@ -47,6 +47,7 @@ public class CheckIn extends HttpServlet {
         Long bookId = Long.parseLong(bookIdParam);
         BookDto book =  bookBean.findBookById(bookId);
         book.setStock(book.getStock()+1);
+        bookBean.updateBook(book);
 
         BorrowedBookDto borrowedBook = borrowedBookBean.findBorrowedBookByBookId(bookId);
         if (borrowedBook == null) {

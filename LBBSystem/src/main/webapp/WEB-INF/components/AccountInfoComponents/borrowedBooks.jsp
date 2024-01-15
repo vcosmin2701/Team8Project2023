@@ -5,7 +5,7 @@
         <ul class="list-group">
             <c:forEach var="book" items="${books}">
                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                    Book ${book.title}
+                    Book name: ${book.title}
                     <div class="btn-group">
                         <form action="${pageContext.request.contextPath}/CheckIn" method="POST">
                             <input type="hidden" name="bookId" value="${book.id}"/>
