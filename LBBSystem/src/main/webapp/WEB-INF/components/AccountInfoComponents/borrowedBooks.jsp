@@ -7,7 +7,10 @@
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     Book ${books.title}
                     <div class="btn-group">
-                        <button type="button" class="btn btn-success btn-sm">Hand In</button>
+                        <form action="${pageContext.request.contextPath}/CheckIn" method="POST">
+                            <input type="hidden" name="bookId" value="${book.id}" />
+                            <a class="btn btn-primary" href="${pageContext.request.contextPath}/CheckIn?id=${book.id}">Hand In</a>
+                        </form>
                     </div>
                 </li>
             </c:forEach>

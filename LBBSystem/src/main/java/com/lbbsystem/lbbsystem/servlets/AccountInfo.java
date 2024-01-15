@@ -59,6 +59,7 @@ public class AccountInfo extends HttpServlet {
             BookDto book = bookBean.findBookById(borrowedBookDto.getBookId());
             books.add(book);
         }
+
         request.setAttribute("borrowedBooks", borrowedBooks);
         request.setAttribute("books", books);
 
