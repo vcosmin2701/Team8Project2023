@@ -34,6 +34,9 @@
             <div class="dropdown-menu" aria-labelledby="userDropdown">
               <a class="dropdown-item" href="${pageContext.request.contextPath}/AccountInfo">Profile </a>
               <a class="dropdown-item" href="${pageContext.request.contextPath}/ContactSupport">Contact Support</a>
+              <c:if test="${pageContext.request.isUserInRole('ADMIN')}">
+                <a class="dropdown-item" href="${pageContext.request.contextPath}/AdminPage">Admin Page</a>
+              </c:if>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="${pageContext.request.contextPath}/Logout">Logout</a>
             </div>
