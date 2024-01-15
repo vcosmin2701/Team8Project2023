@@ -1,5 +1,6 @@
 package com.lbbsystem.lbbsystem.servlets;
 
+import com.lbbsystem.lbbsystem.common.BookDto;
 import com.lbbsystem.lbbsystem.common.BorrowedBookDto;
 import com.lbbsystem.lbbsystem.ejb.BookBean;
 import com.lbbsystem.lbbsystem.ejb.BorrowedBookBean;
@@ -26,6 +27,8 @@ import java.util.Date;
 public class CheckIn extends HttpServlet {
     @Inject
     BorrowedBookBean borrowedBookBean;
+    @Inject
+    BookBean bookBean;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -42,6 +45,8 @@ public class CheckIn extends HttpServlet {
         }
 
         Long bookId = Long.parseLong(bookIdParam);
+        BookDto book =  bookBean.findBookById(bookId);
+        book.setStock(book.getStock()+1);
 
         BorrowedBookDto borrowedBook = borrowedBookBean.findBorrowedBookByBookId(bookId);
         if (borrowedBook == null) {
