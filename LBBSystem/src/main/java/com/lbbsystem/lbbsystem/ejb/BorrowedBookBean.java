@@ -84,7 +84,7 @@ public class BorrowedBookBean {
                 "SELECT b FROM BorrowedBook b WHERE b.user.userId = :userId AND b.status = :status",
                 BorrowedBook.class)
                 .setParameter("userId", userId)
-                .setParameter("status", status);;
+                .setParameter("status", status);
                 
         List<BorrowedBook> borrowedBooks = typedQuery.getResultList();
 
