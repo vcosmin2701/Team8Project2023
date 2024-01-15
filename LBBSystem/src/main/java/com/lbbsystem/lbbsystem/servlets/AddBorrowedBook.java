@@ -47,7 +47,7 @@ public class AddBorrowedBook extends HttpServlet {
         calendar.setTime(borrowDate);
         calendar.add(Calendar.MONTH, loanPeriod);
         Date returnDate = calendar.getTime();
-        
+
         BorrowedBookDto borrowedBookDto = new BorrowedBookDto(null, bookId, userId, borrowDate, returnDate, "borrowed", loanPeriod);
 
         borrowedBookBean.addBorrowedBook(borrowedBookDto);

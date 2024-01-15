@@ -77,4 +77,18 @@ public class BorrowedBookBean {
         borrowedBook.setPeriodLoanInMonths(borrowedBookDto.getPeriodLoanInMonths());
         entityManager.persist(borrowedBook);
     }
+
+    public List<BorrowedBookDto> findBorrowedBooksByUserIdAndStatus(Long userId, String status) {
+        LOG.info("findBorrowedBooksByUserId");
+        TypedQuery<BorrowedBook> typedQuery = entityManager.createQuery(
+                "SELECT b FROM BorrowedBook b WHERE b.user.userId = :userId AND b.status = :status",
+                BorrowedBook.class)
+                .setParameter("userId", userId)
+                .setParameter("status", status);;
+                
+        List<BorrowedBook> borrowedBooks = typedQuery.getResultList();
+
+        return copyBorrowedBookToDto(borrowedBooks);
+    }
+
 }

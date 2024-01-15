@@ -1,42 +1,17 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="col-md-6">
     <div class="book-list">
         <h5 class=" fixed-title mb-3">Borrowed Books</h5>
         <ul class="list-group">
+            <div>${user.legitimationNumber}</div>
+            <c:forEach var="borrowedBooks" items="${borrowedBooks}">
             <li class="list-group-item d-flex justify-content-between align-items-center">
-                Book 1
+                Book ${borrowedBooks.bookId}
                 <div class="btn-group">
                     <button type="button" class="btn btn-success btn-sm">Hand In</button>
-                    <button type="button" class="btn btn-primary btn-sm">Edit</button>
                 </div>
             </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                Book 2
-                <div class="btn-group">
-                    <button type="button" class="btn btn-success btn-sm">Hand In</button>
-                    <button type="button" class="btn btn-primary btn-sm">Edit</button>
-                </div>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                Book 3
-                <div class="btn-group">
-                    <button type="button" class="btn btn-success btn-sm">Hand In</button>
-                    <button type="button" class="btn btn-primary btn-sm">Edit</button>
-                </div>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                Book 4
-                <div class="btn-group">
-                    <button type="button" class="btn btn-success btn-sm">Hand In</button>
-                    <button type="button" class="btn btn-primary btn-sm">Edit</button>
-                </div>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                Book 5
-                <div class="btn-group">
-                    <button type="button" class="btn btn-success btn-sm">Hand In</button>
-                    <button type="button" class="btn btn-primary btn-sm">Edit</button>
-                </div>
-            </li>
+            </c:forEach>
         </ul>
     </div>
     <div class="text-center mt-3">
