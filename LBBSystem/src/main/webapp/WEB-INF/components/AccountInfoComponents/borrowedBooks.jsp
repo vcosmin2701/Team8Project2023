@@ -4,13 +4,13 @@
         <h5 class=" fixed-title mb-3">Borrowed Books</h5>
         <ul class="list-group">
             <div>${user.legitimationNumber}</div>
-            <c:forEach var="borrowedBooks" items="${borrowedBooks}">
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                Book ${borrowedBooks.bookId}
-                <div class="btn-group">
-                    <button type="button" class="btn btn-success btn-sm">Hand In</button>
-                </div>
-            </li>
+            <c:forEach var="borrowedBook" items="${borrowedBooks}">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Book ${borrowedBook.bookId}
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-success btn-sm">Hand In</button>
+                    </div>
+                </li>
             </c:forEach>
         </ul>
     </div>

@@ -43,11 +43,9 @@ public class AccountInfo extends HttpServlet {
         request.setAttribute("LastName", u.getLastName());
         request.setAttribute("Email",userEmail);
         request.setAttribute("LegitimationNumber",u.getLegitimationNumber());
-        request.getRequestDispatcher("/WEB-INF/pages/accountInfo.jsp").forward(request, response);
-
 
         request.setAttribute("user", u);
-        Long userId=usersBean.findUserIdByLegitimationNumber(u.getLegitimationNumber());
+        Long userId= usersBean.findUserIdByLegitimationNumber(u.getLegitimationNumber());
         List<BorrowedBookDto> borrowedBooks = borrowedBookBean.findBorrowedBooksByUserIdAndStatus(userId,"borrowed");
 
         request.setAttribute("borrowedBooks", borrowedBooks);
