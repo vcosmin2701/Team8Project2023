@@ -22,12 +22,18 @@ tasks.withType(JavaCompile) {
 }
 
 dependencies {
+  implementation 'junit:junit:4.13.1'
   compileOnly('jakarta.platform:jakarta.jakartaee-api:9.1.0')
   compileOnly('org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.1')
 
   implementation 'jakarta.validation:jakarta.validation-api:3.0.1'
   implementation 'com.sun.mail:jakarta.mail:2.0.1'
 
+  implementation 'jakarta.persistence:jakarta.persistence-api:3.0.0'
+  testImplementation 'jakarta.persistence:jakarta.persistence-api:3.0.0'
+
+  testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.0'
+  testImplementation 'org.mockito:mockito-core:3.12.4'
   testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 }

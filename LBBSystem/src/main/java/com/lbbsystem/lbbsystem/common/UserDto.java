@@ -105,4 +105,5 @@ public class UserDto {
   public void setConfirmPassword(String confirmPassword) {
     this.confirmPassword = confirmPassword;
   }
+
 }
