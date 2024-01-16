@@ -1,26 +1,42 @@
 package com.lbbsystem.lbbsystem.entities;
 
-import jakarta.persistence.Basic;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Book {
-
     @Id
+    @GeneratedValue
     private Long id;
 
-    public void setId(Long id) {
-        this.id = id;
+    private String category;
+    private String isbn;
+    private int stock;
+    private String author;
+    private String title;
+  @OneToMany(mappedBy = "book")
+    private Collection<BorrowedBook> borrowedBooks;
+
+    public Collection<BorrowedBook> getBorrowedBooks() {
+        return borrowedBooks;
+    }
+
+    public void setBorrowedBooks(Collection<BorrowedBook> borrowedBooks) {
+        this.borrowedBooks = borrowedBooks;
     }
 
     public Long getId() {
         return id;
     }
 
-    @Basic
-    private String title;
+    public void setId(Long id) {
+        this.id = id;
+    }
 
+    @Basic
     public String getTitle() {
         return title;
     }
@@ -28,8 +44,6 @@ public class Book {
     public void setTitle(String title) {
         this.title = title;
     }
-
-    private String author;
 
     public String getAuthor() {
         return author;
@@ -62,9 +76,4 @@ public class Book {
     public void setStock(int stock) {
         this.stock = stock;
     }
-
-    private String category;
-    private String isbn;
-    private int stock;
-
 }

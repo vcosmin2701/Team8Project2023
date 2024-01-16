@@ -12,25 +12,45 @@ import java.io.IOException;
 import java.util.List;
 
 @ServletSecurity(value = @HttpConstraint(rolesAllowed = {
-  RoleConstants.ADMIN,
-  RoleConstants.ASSISTANT,
-  RoleConstants.DEPARTAMENT_HEAD,
-  RoleConstants.STUDENT
+        RoleConstants.ADMIN,
+        RoleConstants.ASSISTANT,
+        RoleConstants.DEPARTAMENT_HEAD,
+        RoleConstants.STUDENT
 }))
 @WebServlet(name = "MainPage", value = "/MainPage")
 public class MainPage extends HttpServlet {
-  @Inject
-  BookBean bookBean;
+    @Inject
+    BookBean bookBean;
 
-  @Override
-  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    List<BookDto> books = bookBean.findAllBooks();
-    request.setAttribute("books", books);
-    request.getRequestDispatcher("/WEB-INF/pages/mainPage.jsp").forward(request, response);
-  }
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String sortOption = request.getParameter("sort");
+        String searchQuery = request.getParameter("query");
+        String category = request.getParameter("category");
+        List<BookDto> books;
 
-  @Override
-  protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try {
+            if (searchQuery != null && !searchQuery.isEmpty()) {
+                books = bookBean.searchBooks(searchQuery);
+            } else if (category != null && !category.isEmpty()) {
+                books = bookBean.findBooksByCategory(category);
+            } else if (sortOption != null && !sortOption.isEmpty() && !sortOption.equals("all")) {
+                books = bookBean.findBooksSortedBy(sortOption);
+            } else {
+                books = bookBean.findBooksInStock();
+            }
 
-  }
+            request.setAttribute("currentSort", sortOption);
+            request.setAttribute("currentCategory", category);
+            request.setAttribute("books", books);
+            request.getRequestDispatcher("/WEB-INF/pages/mainPage.jsp").forward(request, response);
+        } catch (Exception e) {
+            throw new ServletException(e);
+        }
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    }
 }

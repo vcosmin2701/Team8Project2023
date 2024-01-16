@@ -26,9 +26,6 @@ public class BooksPage extends HttpServlet {
     request.setAttribute("thirdColumn", "Category");
     request.setAttribute("fourColumn", "Author");
 
-    request.setAttribute("popupName", "addBookPopup");
-    request.setAttribute("popupEditName", "editBookPopup");
-
     List<BookDto> books = bookBean.findAllBooks();
     request.setAttribute("books", books);
     request.getRequestDispatcher("/WEB-INF/pages/adminPages/booksPage.jsp").forward(request, response);

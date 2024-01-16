@@ -1,5 +1,6 @@
 package com.lbbsystem.lbbsystem.common;
 
+import com.lbbsystem.lbbsystem.roles.UserRole;
 import com.lbbsystem.lbbsystem.validation.PasswordMatches;
 import com.lbbsystem.lbbsystem.validation.UniqueEmail;
 import jakarta.validation.constraints.Pattern;
@@ -28,6 +29,16 @@ public class UserDto {
 
   private Long legitimationNumber;
 
+  public UserRole getRole() {
+    return role;
+  }
+
+  public void setRole(UserRole role) {
+    this.role = role;
+  }
+
+  private UserRole role;
+
   public UserDto(String firstName, String lastName, String email, String password, String confirmPassword, Long legitimationNumber) {
     this.firstName = firstName;
     this.lastName = lastName;
@@ -35,6 +46,16 @@ public class UserDto {
     this.password = password;
     this.confirmPassword = confirmPassword;
     this.legitimationNumber=legitimationNumber;
+  }
+
+  public UserDto(String firstName, String lastName, String email, String password, String confirmPassword, Long legitimationNumber, UserRole role) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.email = email;
+    this.password = password;
+    this.confirmPassword = confirmPassword;
+    this.legitimationNumber=legitimationNumber;
+    this.role = role;
   }
 
   public String getFirstName() {
@@ -84,4 +105,5 @@ public class UserDto {
   public void setConfirmPassword(String confirmPassword) {
     this.confirmPassword = confirmPassword;
   }
+
 }

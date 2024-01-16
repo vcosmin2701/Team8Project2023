@@ -14,19 +14,17 @@
           </tr>
           </thead>
           <tbody>
-          <c:forEach var="book" items="${books}">
+          <c:forEach var="user" items="${users}">
             <tr>
-              <td><img class="image-padding-right"
-                       src="${pageContext.request.contextPath}/images/books-emoji.png"/>${book.title}</td>
-              <td>${book.stock}</td>
-              <td>
-                <button type="button" class="btn btn-info me-2">${book.category}</button>
-              </td>
-              <td>${book.author}</td>
+              <td>${user.firstName} ${user.lastName}</td>
+              <td>${user.legitimationNumber}</td>
+              <td>${user.email}</td>
+              <td>${user.role}</td>
               <td class="text-right">
-                <button class="btn btn-sm  btn-primary" onclick="showEditPopup(book)"><i
-                  class="bi bi-pencil-square"></i></button>
-                <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                <form action="${pageContext.request.contextPath}/DeleteUser" method="post">
+                  <input type="hidden" name="email" value="${user.email}">
+                  <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                </form>
               </td>
             </tr>
           </c:forEach>
