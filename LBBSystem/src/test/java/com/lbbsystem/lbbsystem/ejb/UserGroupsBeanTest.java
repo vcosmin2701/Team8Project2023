@@ -84,7 +84,4 @@ class UserGroupsBeanTest {
         // Act and Assert
         assertThrows(RuntimeException.class, () -> userGroupsBean.findAllAdmins());
     }
-
-
-
 }

@@ -83,5 +83,4 @@ class ContactSupportEmailTest {
 
         assertEquals(expectedContent, contactSupportEmail.getContent());
     }
-
 }
