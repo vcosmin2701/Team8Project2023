@@ -2,7 +2,6 @@ package com.lbbsystem.lbbsystem.servlets;
 
 import com.lbbsystem.lbbsystem.common.UserDto;
 import com.lbbsystem.lbbsystem.ejb.UserRequestsBean;
-import com.lbbsystem.lbbsystem.entities.User;
 import com.lbbsystem.lbbsystem.utilities.EncryptionUtil;
 import com.lbbsystem.lbbsystem.emailService.ActivationEmail;
 import com.lbbsystem.lbbsystem.emailService.EmailMessage;
@@ -31,7 +30,6 @@ public class Register extends HttpServlet {
 
   @Inject
   private UserRequestsBean userRequestsBean;
-
   @Inject
   private Validator validator;
   @Inject

@@ -20,10 +20,11 @@
     <div class="row">
         <c:forEach var="book" items="${books}">
             <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-                <div class="card"><img class="card-img-top"
-                                       src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                       alt="Book 2"/>
-                    <div class="card-body">
+                <div class="card"> <img class="card-img-top"
+                                        src="${pageContext.request.contextPath}/BookPhotos?id=${book.id}"
+                                        alt="Book 2"
+                                        onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1543002588-bfa74002ed7e?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'">
+                  <div class="card-body">
                         <h5 class="card-title">${book.title}</h5>
                         <p class="card-text">${book.author}</p>
                         <div class="d-flex justify-content-center">

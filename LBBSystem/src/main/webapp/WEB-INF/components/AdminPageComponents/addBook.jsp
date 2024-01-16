@@ -2,7 +2,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/CRUD.css">
 <div>
     <title>Add Book</title>
-    <form id="bookFrom" method="POST" class="form" action="${pageContext.request.contextPath}/AddBook">
+    <form id="bookFrom" method="POST" class="form" enctype="multipart/form-data" action="${pageContext.request.contextPath}/AddBook">
         <div class="title">Add books to Library</div>
         <div class="input-container ic1">
             <input id="title" name="title" class="input" type="text" placeholder=" " required/>
@@ -29,6 +29,11 @@
             <div class="cut"></div>
             <label for="isbn" class="placeholder">ISBN</label>
         </div>
+      <div class="input-container ic2">
+        <label for="file">Photo</label>
+        <div class="cut"></div>
+        <input type="file" name="file" id="file" required>
+      </div>
         <button type="text" class="submit">submit</button>
     </form>
 </div>

@@ -1,7 +1,9 @@
 package com.lbbsystem.lbbsystem.ejb;
 
 import com.lbbsystem.lbbsystem.common.BookDto;
+import com.lbbsystem.lbbsystem.common.BookPhotoDto;
 import com.lbbsystem.lbbsystem.entities.Book;
+import com.lbbsystem.lbbsystem.entities.BookPhoto;
 import jakarta.ejb.EJBException;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
@@ -18,7 +20,7 @@ public class BookBean {
     @PersistenceContext
     EntityManager entityManager;
 
-    public void addBook(BookDto bookDto) {
+    public Long addBook(BookDto bookDto){
         Book book = new Book();
         LOG.info("addBook");
         book.setTitle(bookDto.getTitle());
@@ -27,6 +29,7 @@ public class BookBean {
         book.setStock(bookDto.getStock());
         book.setIsbn(bookDto.getIsbn());
         entityManager.persist(book);
+        return book.getId();
     }
 
     public List<BookDto> findAllBooks() {
@@ -56,14 +59,41 @@ public class BookBean {
         return bookDtoList;
     }
 
+  public void addPhotoToBook(Long bookId, String filename, String fileType, byte[] fileContent) {
+    LOG.info("addPhotoToBook");
+    BookPhoto photo = new BookPhoto();
+    photo.setFilename(filename);
+    photo.setFileType(fileType);
+    photo.setFileContent(fileContent);
+    Book book = entityManager.find(Book.class, bookId);
+    if (book.getPhoto() != null) {
+      entityManager.remove(book.getPhoto());
+    }
+    book.setPhoto(photo);
+    photo.setBook(book);
+    entityManager.persist(photo);
+  }
+  public BookPhotoDto findPhotoByBookId(Long bookId) {
+    List<BookPhoto> photos = entityManager
+      .createQuery("SELECT p FROM BookPhoto p where p.book.id = :id", BookPhoto.class)
+      .setParameter("id", bookId)
+      .getResultList();
+    if (photos.isEmpty()) {
+      return null;
+    }
+    BookPhoto photo = photos.get(0);
+    return new BookPhotoDto(photo.getId(), photo.getFilename(), photo.getFileType(),
+      photo.getFileContent());
+  }
+
     public void deleteBook(Long id) {
         Book book = entityManager.find(Book.class, id);
-        if (book != null) {
+        if(book != null) {
             entityManager.remove(book);
         }
     }
 
-    public BookDto findBookById(Long id) {
+    public BookDto findBookById(Long id){
         Book book = entityManager.find(Book.class, id);
         return new BookDto(book.getId(), book.getTitle(), book.getAuthor(), book.getCategory(), book.getStock(), book.getIsbn());
     }
@@ -139,6 +169,4 @@ public class BookBean {
         List<Book> books = query.getResultList();
         return copyBooksToDto(books);
     }
-
-
 }
