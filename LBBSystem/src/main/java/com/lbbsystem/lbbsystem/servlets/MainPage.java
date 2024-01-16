@@ -37,7 +37,7 @@ public class MainPage extends HttpServlet {
             } else if (sortOption != null && !sortOption.isEmpty() && !sortOption.equals("all")) {
                 books = bookBean.findBooksSortedBy(sortOption);
             } else {
-                books = bookBean.findAllBooks();
+                books = bookBean.findBooksInStock();
             }
 
             request.setAttribute("currentSort", sortOption);

@@ -3,11 +3,14 @@
     <div class="book-list">
         <h5 class=" fixed-title mb-3">Borrowed Books</h5>
         <ul class="list-group">
-            <c:forEach var="books" items="${books}">
+            <c:forEach var="book" items="${books}">
                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                    Book ${books.title}
+                    Book name: ${book.title}
                     <div class="btn-group">
-                        <button type="button" class="btn btn-success btn-sm">Hand In</button>
+                        <form action="${pageContext.request.contextPath}/CheckIn" method="POST">
+                            <input type="hidden" name="bookId" value="${book.id}"/>
+                            <input type="submit" value="Hand In"/>
+                        </form>
                     </div>
                 </li>
             </c:forEach>
