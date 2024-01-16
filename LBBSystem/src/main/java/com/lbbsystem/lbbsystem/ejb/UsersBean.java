@@ -8,6 +8,7 @@ import com.lbbsystem.lbbsystem.roles.UserRole;
 import jakarta.ejb.Stateless;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.NoResultException;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
 
@@ -141,6 +142,16 @@ public class UsersBean {
             }
 
             entityManager.remove(user);
+        }
+    }
+    public Long findUserIdByLegitimationNumber(Long legitimationNumber) {
+        TypedQuery<Long> query = entityManager.createQuery(
+                "SELECT u.userId FROM User u WHERE u.legitimationNumber = :legitimationNumber", Long.class);
+        query.setParameter("legitimationNumber", legitimationNumber);
+        try {
+            return query.getSingleResult();
+        } catch (NoResultException e) {
+            return null;
         }
     }
 }

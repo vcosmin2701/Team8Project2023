@@ -7,12 +7,11 @@
                          src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
                 </div>
                 <div class="col-8">
-                    <p class="bg-primary text-white p-3">Book Name<span class="text-success"></span></p>
+                    <p class="bg-primary text-white p-3">Name: ${book.title}<span class="text-success"></span></p>
                     <hr>
-                    <p class="bg-primary text-white p-3">Author</p>
+                    <p class="bg-primary text-white p-3">Author: ${book.author}</p>
                     <hr>
-                    <p class="bg-primary text-white p-3">A short description of the book would be nice
-                        here</p>
+                    <p class="bg-primary text-white p-3">Category: ${book.category}</p>
                 </div>
             </div>
         </div>
