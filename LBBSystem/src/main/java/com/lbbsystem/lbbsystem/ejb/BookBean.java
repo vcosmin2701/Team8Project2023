@@ -109,6 +109,7 @@ public class BookBean {
             entityManager.merge(book);
         }
     }
+
     public List<BookDto> findBooksSortedBy(String sortOption) {
         LOG.info("findBooksSortedBy: " + sortOption);
         try {
@@ -161,5 +162,11 @@ public class BookBean {
             return copyBooksToDto(books);
         }
 
+    }
+    public List<BookDto> findBooksInStock() {
+        TypedQuery<Book> query = entityManager.createQuery(
+                "SELECT b FROM Book b WHERE b.stock > 0", Book.class);
+        List<Book> books = query.getResultList();
+        return copyBooksToDto(books);
     }
 }

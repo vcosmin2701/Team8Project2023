@@ -4,7 +4,10 @@
     <div class="container mt-4">
         <div class="row">
             <jsp:include page="/WEB-INF/components/BookCheckInComponents/bookInfo.jsp"/>
-            <jsp:include page="/WEB-INF/components/BookCheckInComponents/checkInForm.jsp"/>
+            <form action="${pageContext.request.contextPath}/CheckIn" method="POST">
+                <input type="hidden" name="bookId" value="${book.id}"/>
+                <input type="submit" value="Hand In"/>
+            </form>
         </div>
     </div>
 </t:libraryTemplate>

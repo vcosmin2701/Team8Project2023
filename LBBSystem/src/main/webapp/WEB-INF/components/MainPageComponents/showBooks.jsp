@@ -28,7 +28,7 @@
                         <h5 class="card-title">${book.title}</h5>
                         <p class="card-text">${book.author}</p>
                         <div class="d-flex justify-content-center">
-                            <a class="btn btn-primary" href="${pageContext.request.contextPath}/CheckOut">CheckOut</a>
+                            <a class="btn btn-primary" href="${pageContext.request.contextPath}/CheckOut?id=${book.id}">CheckOut</a>
                         </div>
                     </div>
                 </div>
